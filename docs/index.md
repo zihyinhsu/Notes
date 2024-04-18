@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'Coding Notes'
   text: '前端沒有盡頭，趁現在還能回頭'
-  tagline: 一些雜七雜八的隨筆
+  tagline: 給學習留下一點足跡
   image:
     src: /logo.svg
     alt: zihyin Notes

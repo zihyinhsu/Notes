@@ -22,11 +22,26 @@ export default defineConfig({
         text: 'README',
         link: '/readme',
       },
-      // {
-      //   text: 'gitLab CICD',
-      //   collapsed: true,
-      //   items: [{ text: '什麼是CICD', link: '/gitLabCICD/WhatIsCICD' }],
-      // },
+      {
+        text: 'gitLab CICD',
+        collapsed: true,
+        items: [{ text: '什麼是CICD', link: '/gitLabCICD/WhatIsCICD' }],
+      },
+      {
+        text: 'vitest 前端測試',
+        collapsed: true,
+        items: [{ text: 'vitest', link: '/vitest/vitest' }],
+      },
+      {
+        text: 'Vue',
+        collapsed: true,
+        items: [
+          {
+            text: 'Vue3 為何用 Proxy 替代 defineProperty?',
+            link: '/vue/proxy',
+          },
+        ],
+      },
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/zihyinhsu' }],
