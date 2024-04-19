@@ -5,9 +5,15 @@ export default defineConfig({
   title: "Zihyin's Notes",
   description: 'My Coding Notes',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    lastUpdated: {
+      text: '最後更新於',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short',
+      },
+    },
     search: {
       provider: 'local',
     },
