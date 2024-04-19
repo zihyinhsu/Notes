@@ -16,33 +16,53 @@ export default defineConfig({
       // message: 'Released under the MIT License.',
       copyright: 'Copyright © 2024-present Zihyin Hsu',
     },
-    nav: [{ text: 'coding 筆記', link: '/readme' }],
-    sidebar: [
-      {
-        text: 'README',
-        link: '/readme',
-      },
-      {
-        text: 'gitLab CICD',
-        collapsed: true,
-        items: [{ text: '什麼是CICD', link: '/gitLabCICD/WhatIsCICD' }],
-      },
-      {
-        text: 'vitest 前端測試',
-        collapsed: true,
-        items: [{ text: 'vitest', link: '/vitest/vitest' }],
-      },
-      {
-        text: 'Vue',
-        collapsed: true,
-        items: [
-          {
-            text: 'Vue3 為何用 Proxy 替代 defineProperty?',
-            link: '/vue/proxy',
-          },
-        ],
-      },
+    nav: [
+      { text: 'About', link: '/AboutMe/readme' },
+      { text: 'Frontend', link: '/Frontend/index' },
     ],
+
+    sidebar: {
+      '/AboutMe/': [
+        {
+          text: 'About',
+          items: [
+            {
+              text: 'README',
+              link: '/AboutMe/readme',
+            },
+          ],
+        },
+      ],
+      '/Frontend/': [
+        {
+          text: '關於前端',
+          items: [
+            {
+              text: 'gitLab CICD',
+              collapsed: true,
+              items: [
+                { text: '什麼是CICD', link: '/Frontend/gitLabCICD/WhatIsCICD' },
+              ],
+            },
+            {
+              text: 'vitest 前端測試',
+              collapsed: true,
+              items: [{ text: 'vitest', link: '/Frontend/vitest/vitest' }],
+            },
+            {
+              text: 'Vue',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Vue3 為何用 Proxy 替代 defineProperty?',
+                  link: '/Frontend/vue/proxy',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/zihyinhsu' }],
   },
