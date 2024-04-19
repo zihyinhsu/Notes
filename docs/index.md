@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Here
-      link: /AboutMere/adme
+      link: /AboutMe/readme
   #   - theme: alt
   #     text: API Examples
   #     link: /api-examples
