@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Zihyin Notes',
+  title: "Zihyin's Notes",
   description: 'My Coding Notes',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: true,

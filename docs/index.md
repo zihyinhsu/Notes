@@ -8,7 +8,7 @@ hero:
   tagline: 給學習留下一點足跡
   image:
     src: /logo.svg
-    alt: zihyin Notes
+    alt: zihyin's Notes
   actions:
     - theme: brand
       text: Here

@@ -89,4 +89,6 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 ---
 
-參考自 [為你自己學 GitLab CI/CD](https://www.youtube.com/watch?v=zCFFot5HnEw&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=2)
+**參考資料：**
+
+1. [為你自己學 GitLab CI/CD](https://www.youtube.com/watch?v=zCFFot5HnEw&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=2)
