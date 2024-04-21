@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: 'Coding Notes'
+  name: "Zihyin's Notes"
   text: '前端沒有盡頭，趁現在還能回頭'
-  tagline: 給學習留下一點足跡
+  tagline: 有滋有味的觀劇雜感中夾雜了一點技術文
   image:
     src: /logo.svg
     alt: zihyin's Notes

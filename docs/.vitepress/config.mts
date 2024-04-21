@@ -25,6 +25,7 @@ export default defineConfig({
     nav: [
       { text: 'About', link: '/AboutMe/readme' },
       { text: 'Frontend', link: '/Frontend/index' },
+      { text: 'Drama-Review', link: '/DramaReview/index' },
     ],
 
     sidebar: {
@@ -47,7 +48,7 @@ export default defineConfig({
               text: 'gitLab CICD',
               collapsed: true,
               items: [
-                { text: '什麼是CICD', link: '/Frontend/gitLabCICD/WhatIsCICD' },
+                { text: 'Day 1', link: '/Frontend/gitLabCICD/CICD-Day1' },
               ],
             },
             {
@@ -62,6 +63,27 @@ export default defineConfig({
                 {
                   text: 'Vue3 為何用 Proxy 替代 defineProperty?',
                   link: '/Frontend/vue/proxy',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      '/DramaReview/': [
+        {
+          text: '劇集觀後感',
+          items: [
+            {
+              text: '不夠善良的我們',
+              collapsed: true,
+              items: [
+                {
+                  text: 'EP 1-4',
+                  link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-4',
+                },
+                {
+                  text: 'EP 5-8',
+                  link: '/DramaReview/TaiwanDrama/ImperfectUs/ep5-8',
                 },
               ],
             },

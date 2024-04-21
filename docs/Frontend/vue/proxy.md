@@ -54,7 +54,7 @@ console.log(person.lastName); // 輸出：Smith
 
 因為 `Object.defineProperty` 只有在物件屬性被定義或修改時才會觸發，而非被陣列的變化觸發。
 
-對於以上問題， Vue2 透過 hack 陣列方法，規定只監聽 `push`、`pop`、`shift`、`unshift`、`splice`、`sort` 和 `reverse` 等以上七種方法造成的陣列變化。若想直接透過索引改變元素的值（如 array[0] = 'new value'），就需要透過其他方法輔助（如：set、delete）。
+對於以上問題， Vue2 透過 hack 陣列方法，規定只監聽 `push`、`pop`、`shift`、`unshift`、`splice`、`sort` 和 `reverse` 以上七種方法造成的陣列變化。若想直接透過索引改變元素的值（如 array[0] = 'new value'），就需要透過其他方法輔助（如：set、delete）。
 
 ## Proxy 實現雙向綁定
 
