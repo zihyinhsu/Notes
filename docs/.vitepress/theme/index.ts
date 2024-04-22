@@ -2,6 +2,9 @@ import DefaultTheme from 'vitepress/theme';
 import Layout from './Layout.vue';
 import vitepressMusic from 'vitepress-plugin-music';
 import 'vitepress-plugin-music/lib/css/index.css';
+import vitepressBackToTop from 'vitepress-plugin-back-to-top';
+import 'vitepress-plugin-back-to-top/dist/style.css';
+
 import './custom.css';
 
 const playlist = [
@@ -24,5 +27,10 @@ export default {
   enhanceApp: (ctx) => {
     // https://github.com/ZhongxuYang/vitepress-plugin-music
     vitepressMusic(playlist);
+    // https://github.com/wehuss/vitepress-plugin-back-to-top
+    vitepressBackToTop({
+      // default
+      threshold: 300,
+    });
   },
 };
