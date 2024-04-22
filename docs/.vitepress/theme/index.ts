@@ -22,8 +22,9 @@ const playlist = [
 ];
 
 export default {
-  extends: DefaultTheme,
-  Layout: Layout,
+  // extends: DefaultTheme,
+  // Layout: Layout,
+  ...DefaultTheme,
   enhanceApp: (ctx) => {
     // https://github.com/ZhongxuYang/vitepress-plugin-music
     vitepressMusic(playlist);
