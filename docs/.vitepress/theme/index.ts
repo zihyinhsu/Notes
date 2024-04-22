@@ -11,7 +11,7 @@ const playlist = [
   {
     name: '都是 weather 你',
     author: '就以斯、楊子平',
-    file: '/music/都是weather你.mp3.',
+    file: '/music/都是weather你.mp3',
     // hide: true,
   },
   {
