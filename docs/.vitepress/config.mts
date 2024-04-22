@@ -3,8 +3,12 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Zihyin's Notes",
-  description: 'My Coding Notes',
+  description: '有滋有味的觀劇雜感中夾雜了一點技術文',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  sitemap: {
+    hostname: 'https://zihyin-notes.vercel.app',
+    lastmodDateOnly: false,
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     lastUpdated: {
@@ -74,16 +78,22 @@ export default defineConfig({
           text: '劇集觀後感',
           items: [
             {
-              text: '不夠善良的我們',
+              text: '台劇',
               collapsed: true,
               items: [
                 {
-                  text: 'EP 1-4',
-                  link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-4',
-                },
-                {
-                  text: 'EP 5-8',
-                  link: '/DramaReview/TaiwanDrama/ImperfectUs/ep5-8',
+                  text: '不夠善良的我們',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'EP 1-4',
+                      link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-4',
+                    },
+                    {
+                      text: 'EP 5-8',
+                      link: '/DramaReview/TaiwanDrama/ImperfectUs/ep5-8',
+                    },
+                  ],
                 },
               ],
             },
