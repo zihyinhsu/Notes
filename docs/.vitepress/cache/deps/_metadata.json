@@ -1,55 +1,61 @@
 {
-  "hash": "20a9ae8e",
+  "hash": "bc4963e7",
   "configHash": "0bf9cc3f",
-  "lockfileHash": "033120ee",
-  "browserHash": "0e7ecd9d",
+  "lockfileHash": "3acf861d",
+  "browserHash": "7e359dfa",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "98169cf5",
+      "fileHash": "f965f7ac",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "4273cbcf",
+      "fileHash": "cff0b498",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "a6ac9dd3",
+      "fileHash": "2f3b821b",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "c345cf84",
+      "fileHash": "500eff01",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "f76726b3",
+      "fileHash": "cf44832d",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "65dd384d",
+      "fileHash": "b6e52de7",
       "needsInterop": false
     },
     "vitepress-plugin-music": {
       "src": "../../../../node_modules/vitepress-plugin-music/lib/vitepress-plugin-music.js",
       "file": "vitepress-plugin-music.js",
-      "fileHash": "101828c1",
+      "fileHash": "9209891b",
       "needsInterop": false
     },
     "vitepress-plugin-back-to-top": {
       "src": "../../../../node_modules/vitepress-plugin-back-to-top/dist/vitepress-plugin-back-to-top.js",
       "file": "vitepress-plugin-back-to-top.js",
-      "fileHash": "47c6c5e9",
+      "fileHash": "9faf7ad6",
+      "needsInterop": false
+    },
+    "vitepress-plugin-image-viewer": {
+      "src": "../../../../node_modules/vitepress-plugin-image-viewer/lib/viewer.js",
+      "file": "vitepress-plugin-image-viewer.js",
+      "fileHash": "e822430d",
       "needsInterop": false
     }
   },

@@ -1,9 +1,16 @@
 import DefaultTheme from 'vitepress/theme';
 import Layout from './Layout.vue';
+
 import vitepressMusic from 'vitepress-plugin-music';
 import 'vitepress-plugin-music/lib/css/index.css';
+
 import vitepressBackToTop from 'vitepress-plugin-back-to-top';
 import 'vitepress-plugin-back-to-top/dist/style.css';
+
+import 'viewerjs/dist/viewer.min.css';
+import imageViewer from 'vitepress-plugin-image-viewer';
+import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
+import { useRoute } from 'vitepress';
 
 import './custom.css';
 
@@ -32,5 +39,13 @@ export default {
       // default
       threshold: 300,
     });
+    // https://github.com/T-miracle/vitepress-plugin-image-viewer
+    ctx.app.component('vImageViewer', vImageViewer);
+  },
+  setup() {
+    // Get route
+    const route = useRoute();
+    // Using
+    imageViewer(route);
   },
 };
