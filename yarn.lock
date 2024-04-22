@@ -1604,6 +1604,11 @@ vite@^5.2.8:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vitepress-plugin-music@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/vitepress-plugin-music/-/vitepress-plugin-music-0.0.9.tgz#756afa07e42dbfe1c9928b1e2735db8d4d21da29"
+  integrity sha512-DPWkzWEoHmHhkbriGdOMdCUj99H6Oy+giEpokN2ac1HuWATULIQ3jvOD+2x7s8qPWawbDxoxkinVZgZuYNNRHQ==
+
 vitepress@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.1.1.tgz#9b0b4a06673764bd4d313f4c885676b4c708a2e6"
