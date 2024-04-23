@@ -94,16 +94,7 @@ export default defineConfig({
                 {
                   text: '不夠善良的我們',
                   collapsed: true,
-                  items: [
-                    {
-                      text: 'EP 1-4',
-                      link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-4',
-                    },
-                    {
-                      text: 'EP 5-8',
-                      link: '/DramaReview/TaiwanDrama/ImperfectUs/ep5-8',
-                    },
-                  ],
+                  link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-8',
                 },
               ],
             },
