@@ -2,7 +2,7 @@
 date: 2024-04-18
 title: '什麼是 CI/CD?'
 author: Zihyin Hsu
-category: gitLabCICD
+category: frontend
 tags:
   - gitLabCICD
 ---
