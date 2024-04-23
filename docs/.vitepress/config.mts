@@ -9,6 +9,12 @@ export default defineConfig({
     hostname: 'https://zihyin-notes.vercel.app',
     lastmodDateOnly: false,
   },
+  markdown: {
+    image: {
+      // 圖片懶加載
+      lazyLoading: true,
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     lastUpdated: {
@@ -17,6 +23,10 @@ export default defineConfig({
         dateStyle: 'short',
         timeStyle: 'short',
       },
+    },
+    editLink: {
+      pattern: 'https://github.com/zihyinhsu/Notes/edit/main/docs/:path',
+      text: '在 GitHub 編輯此頁面',
     },
     search: {
       provider: 'local',
