@@ -4,7 +4,13 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: "Zihyin's Notes",
   description: '有滋有味的觀劇雜感中夾雜了一點技術文',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    [
+      'script',
+      { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
+    ],
+  ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
     lastmodDateOnly: false,
