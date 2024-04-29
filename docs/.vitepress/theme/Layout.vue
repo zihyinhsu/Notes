@@ -3,7 +3,7 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 import  Twikoo  from './Twikoo.vue'
-import './style.css'
+import './style.scss'
 
 const { isDark } = useData()
 
@@ -49,7 +49,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
   </DefaultTheme.Layout>
 </template>
 
-<style>
+<style lang="scss">
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -72,5 +72,24 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
 
 .VPSwitchAppearance .check {
   transform: none !important;
+}
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
