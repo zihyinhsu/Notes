@@ -16,15 +16,20 @@ import './custom.css';
 
 const playlist = [
   {
-    name: '都是 weather 你',
-    author: '就以斯、楊子平',
-    file: '/music/都是weather你.mp3',
-    // hide: true,
+    name: 'Love you for you',
+    author: '蔡健雅',
+    file: '/music/LoveYouforYou.mp3',
   },
   {
     name: 'love and pain',
     author: '이수현',
     file: '/music/love and pain.mp3',
+  },
+  {
+    name: '都是 weather 你',
+    author: '就以斯、楊子平',
+    file: '/music/都是weather你.mp3',
+    // hide: true,
   },
 ];
 
