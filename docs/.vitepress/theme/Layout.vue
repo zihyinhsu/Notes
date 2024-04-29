@@ -3,7 +3,6 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 import  Twikoo  from './Twikoo.vue'
-import './style.scss'
 
 const { isDark } = useData()
 
