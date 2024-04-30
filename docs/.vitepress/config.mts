@@ -74,7 +74,10 @@ export default defineConfig({
             {
               text: 'vitest 前端測試',
               collapsed: true,
-              items: [{ text: 'vitest', link: '/Frontend/vitest/vitest' }],
+              items: [
+                { text: '單元測試', link: '/Frontend/vitest/unitTest' },
+                { text: '元件測試', link: '/Frontend/vitest/componentTest' },
+              ],
             },
             {
               text: 'Vue',
@@ -101,6 +104,17 @@ export default defineConfig({
                   text: '不夠善良的我們',
                   collapsed: true,
                   link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-8',
+                },
+              ],
+            },
+            {
+              text: '韓劇',
+              collapsed: true,
+              items: [
+                {
+                  text: '背著善宰跑 EP1 - 8',
+                  collapsed: true,
+                  link: '/DramaReview/KoreaDrama/LovelyRunner/ep1-8',
                 },
               ],
             },

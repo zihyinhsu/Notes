@@ -1,12 +1,10 @@
 ---
-date: 2024-04-21
-title: 'Vitest'
+date: 2024-04-30
+title: '元件測試'
 author: Zihyin Hsu
 category: vitest
 tags:
   - vitest
 ---
 
-# Vitest
-
-## 如何開始？
+# 元件測試
