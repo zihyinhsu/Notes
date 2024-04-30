@@ -4,6 +4,8 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: "Zihyin's Notes",
   description: '有滋有味的觀劇雜感中夾雜了一點技術文',
+  base: '/',
+  lang: 'zh-TW',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
@@ -14,6 +16,14 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
     lastmodDateOnly: false,
+    transformItems: (items) => {
+      items.push({
+        url: '/AboutMe/readme.html',
+        changefreq: 'daily',
+        priority: 0.8,
+      });
+      return items;
+    },
   },
   markdown: {
     image: {
