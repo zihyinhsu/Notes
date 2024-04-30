@@ -211,7 +211,7 @@ it('解析無效JSON時，拋出錯誤'){
 
 - 視覺回歸測試
 
-會需要使用到`端對端測試工具` 或相關外掛，以下為`cypress-image-snapshot` 為例：
+會需要使用到 `端對端測試工具` 或相關外掛，以下為 `cypress-image-snapshot` 為例：
 
 > matchImageSnapshot: 針對視覺做圖片保存，與下一次圖片比較。
 
