@@ -125,16 +125,10 @@ Matchers 主要可分為：
 - toBe: 比對值是否完全相等。不可用於物件或陣列比對，因為 `toBe` 比對的是**同個記憶體位置**中的值是否相等。
 - toBeCloseTo: 處理浮點數運算的比對。
 
----
-
-比對大小：
-
 - toBeGreaterThan: 大於。
 - toBeGreaterThanOrEqual: 大於等於。
 - toBeLessThan: 小於。
 - toBeLessThanOrEqual: 小於等於。
-
----
 
 - toBeDefined: 比對值是否被賦值。
 - toBeUndefined: 比對值是否為 undefined。
@@ -207,7 +201,6 @@ it('cat meow',() => {
 ```js
 it('解析無效JSON時，拋出錯誤'){
   const invalidJSON = "{'name':'John Doe','age':15}" // 無效JSON
-
   expect(()=>{
     JSON.parse(invalidJSON)
   }).toThrowError()
@@ -234,6 +227,7 @@ it('視覺回歸測試', () => {
 針對資料結構做文字保存，與下一次文字比較。
 
 > toMatchSnapshot: 另建資料夾存放快照紀錄
+
 > toMatchInlineSnapshot: 直接在測試程式碼中紀錄，不另存檔案。
 
 ```js
@@ -249,6 +243,4 @@ it('快照測試', () => {
 
 ---
 
-**來源：**
-
-1. [Vue.js 3前端測試入門從這裡開始](https://www.drmaster.com.tw/bookinfo.asp?BookID=MP22333)
+**來源：** [Vue.js 3前端測試入門從這裡開始](https://www.drmaster.com.tw/bookinfo.asp?BookID=MP22333)
