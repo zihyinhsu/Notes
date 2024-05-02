@@ -16,15 +16,16 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
     lastmodDateOnly: false,
-    transformItems: (items) => {
-      items.push({
-        url: '/AboutMe/readme.html',
-        changefreq: 'daily',
-        priority: 0.8,
-      });
-      return items;
-    },
+    // transformItems: (items) => {
+    //   items.push({
+    //     url: '/AboutMe/readme.html',
+    //     changefreq: 'daily',
+    //     priority: 0.8,
+    //   });
+    //   return items;
+    // },
   },
+
   markdown: {
     image: {
       // 圖片懶加載
@@ -40,6 +41,7 @@ export default defineConfig({
         timeStyle: 'short',
       },
     },
+    outline: 'deep',
     editLink: {
       pattern: 'https://github.com/zihyinhsu/Notes/edit/main/docs/:path',
       text: '在 GitHub 編輯此頁面',
@@ -82,11 +84,15 @@ export default defineConfig({
               ],
             },
             {
-              text: 'vitest 前端測試',
+              text: 'Vitest 前端測試',
               collapsed: true,
               items: [
                 { text: '單元測試', link: '/Frontend/vitest/unitTest' },
                 { text: '元件測試', link: '/Frontend/vitest/componentTest' },
+                {
+                  text: '控制測試環境',
+                  link: '/Frontend/vitest/testEnvControl',
+                },
               ],
             },
             {
