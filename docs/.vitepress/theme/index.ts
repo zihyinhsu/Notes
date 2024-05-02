@@ -16,6 +16,11 @@ import './custom.css';
 
 const playlist = [
   {
+    name: '러브홀릭 Loveholic',
+    author: 'Loveholic',
+    file: '/music/러브홀릭 Loveholic.mp3',
+  },
+  {
     name: 'Love you for you',
     author: '蔡健雅',
     file: '/music/LoveYouforYou.mp3',
