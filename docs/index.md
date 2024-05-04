@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Zihyin's Notes"
-  text: '前端沒有盡頭，趁現在還能回頭'
-  tagline: 有滋有味的觀劇雜感中夾雜了一點技術文
+  # text: '前端沒有盡頭，趁現在還能回頭'
+  tagline: 有滋有味的觀後感中夾雜了一點技術筆記
   image:
     src: /logo.svg
     alt: zihyin's Notes

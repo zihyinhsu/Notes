@@ -412,13 +412,13 @@ it('當 slot 傳入內容', () => {
       footer: '結尾。'
     }
   });
-  expect(wrapper.html()).toMatchInlineSnapShot("<div>開頭:中間，結尾</div>");
+  expect(wrapper.html()).toMatchInlineSnapShot("<div>開頭:中間，結尾。</div>");
 });
 ```
 
 #### 作用域插槽（Scoped Slots）
 
-常見於 UI Lib 所提供的 `Table` or `Model` 元件，讓開發者可自行調整資料格式。
+常見於 UI Library 所提供的 `Table` or `Model` 元件，讓開發者可自行調整資料格式。
 
 ```vue
 <!-- BaseComponent -->

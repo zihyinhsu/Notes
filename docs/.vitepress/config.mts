@@ -84,7 +84,7 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Vitest 前端測試',
+              text: 'Vue 前端測試',
               collapsed: true,
               items: [
                 { text: '單元測試', link: '/Frontend/vitest/unitTest' },
@@ -92,6 +92,10 @@ export default defineConfig({
                 {
                   text: '控制測試環境',
                   link: '/Frontend/vitest/testEnvControl',
+                },
+                {
+                  text: 'vue Ecosystem',
+                  link: '/Frontend/vitest/vueEcosystem',
                 },
               ],
             },
