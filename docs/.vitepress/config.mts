@@ -80,7 +80,8 @@ export default defineConfig({
               text: 'gitLab CICD',
               collapsed: true,
               items: [
-                { text: 'Day 1', link: '/Frontend/gitLabCICD/CICD-Day1' },
+                { text: 'Day 1', link: '/Frontend/gitLabCICD/Day1' },
+                { text: 'Day 2', link: '/Frontend/gitLabCICD/Day2' },
               ],
             },
             {
