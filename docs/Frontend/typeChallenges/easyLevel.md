@@ -74,10 +74,22 @@ type MyPick<T, K extends T> = {
 ```
 
 ## [ReadOnly](https://github.com/type-challenges/type-challenges/blob/main/questions/00007-easy-readonly/README.zh-CN.md)
+
 > `readonly` 用於讓物件的屬性變成唯讀，不能修改。
+
 ```ts
 type MyReadonly<T> = {
   readonly [key in keyof T]: T[key];
+};
+```
+
+## [Tuple](https://tsch.js.org/11/zh-CN)
+
+> `T[number]` 可以取出 T 中所有 Key 的聯合類型。
+
+```ts
+type TupleToObject<T extends readonly any[]> = {
+  [P in T[number]]: P;
 };
 ```
 
