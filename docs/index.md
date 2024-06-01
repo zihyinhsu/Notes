@@ -5,22 +5,22 @@ layout: home
 hero:
   name: "Zihyin's Notes"
   # text: '前端沒有盡頭，趁現在還能回頭'
-  tagline: 有滋有味的觀後感中夾雜了一點技術筆記
+  tagline: 一些筆記和一些隨筆
   image:
     src: /logo.svg
     alt: zihyin's Notes
   actions:
     - theme: brand
-      text: Here
+      text: 往這邊走
       link: /AboutMe/readme
   #   - theme: alt
   #     text: API Examples
   #     link: /api-examples
-# features:
-#   - title: Feature A
-#     icon: 🛠️
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#     link: /readme
+features:
+  - title: 記錄關於前端的一些讀書筆記
+    icon: 💻
+    details: 努力克服遺忘曲線的道路，任重而道遠。
+    link: /Frontend/
 # - title: Feature B
 #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 # - title: Feature C

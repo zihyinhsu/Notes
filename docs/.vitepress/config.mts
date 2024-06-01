@@ -147,9 +147,9 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
-                  text: '背著善宰跑 EP1 - 8',
+                  text: '背著善宰跑',
                   collapsed: true,
-                  link: '/DramaReview/KoreaDrama/LovelyRunner/ep1-8',
+                  link: '/DramaReview/KoreaDrama/LovelyRunner/ep1-16',
                 },
               ],
             },
