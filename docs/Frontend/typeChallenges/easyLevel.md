@@ -93,6 +93,14 @@ type TupleToObject<T extends readonly any[]> = {
 };
 ```
 
+## [First](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.zh-CN.md)
+
+> 以下表示，若Ｔ為一個空陣列，就永遠不會返回值，若非空陣列，就取第一個值。
+
+```ts
+type First<T extends any[]> = T extends [] ? never : T[0];
+```
+
 ---
 
 **參考** ：
