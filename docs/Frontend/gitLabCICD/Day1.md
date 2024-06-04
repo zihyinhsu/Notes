@@ -1,6 +1,6 @@
 ---
 date: 2024-04-18
-title: 'gitLab CI/CD?'
+title: 'gitLab CI/CD'
 author: Zihyin Hsu
 category: frontend
 tags:
@@ -267,4 +267,4 @@ workflow:
 
 ---
 
-**來源：** [為你自己學 GitLab CI/CD](https://www.youtube.com/watch?v=zCFFot5HnEw&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=2)
+**來源：** [為你自己學 GitLab CI/CD](https://www.youtube.com/watch?v=-4XT8-znkuc&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=1&ab_channel=%E9%AB%98%E8%A6%8B%E9%BE%8D)
