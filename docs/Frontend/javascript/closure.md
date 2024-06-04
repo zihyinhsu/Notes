@@ -32,11 +32,10 @@ fn2();
 
 當內部的函式查找不到所需變數，就會向外層查找，也就是**內層函式可以取用到外層函式的變數**，此時內層函式可以稱之為一個閉包。
 
-```js{5-7}
+```js{3-6}
 function init() {
-  const name = 'John Doe';
-
   // 我成了一個閉包
+  const name = 'John Doe';
   function sayHelloWorld() {
     console.log(`${name} Hello world`); // John Doe Hello World
   }
