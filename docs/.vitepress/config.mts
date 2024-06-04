@@ -124,6 +124,14 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: 'Javascript',
+              collapsed: true,
+              items: [
+                { text: '閉包', link: '/Frontend/javascript/closure' },
+                { text: '事件循環', link: '/Frontend/javascript/eventloop' },
+              ],
+            },
           ],
         },
       ],
