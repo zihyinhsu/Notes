@@ -82,6 +82,7 @@ export default defineConfig({
               items: [
                 { text: 'Day 1', link: '/Frontend/gitLabCICD/Day1' },
                 { text: 'Day 2', link: '/Frontend/gitLabCICD/Day2' },
+                { text: 'Day 3', link: '/Frontend/gitLabCICD/Day3' },
               ],
             },
             {
@@ -122,6 +123,10 @@ export default defineConfig({
                   text: 'Easy Level',
                   link: '/Frontend/typeChallenges/easyLevel',
                 },
+                {
+                  text: 'type predicates',
+                  link: '/Frontend/typeChallenges/typePredicates',
+                },
               ],
             },
             {
@@ -130,6 +135,10 @@ export default defineConfig({
               items: [
                 { text: '閉包', link: '/Frontend/javascript/closure' },
                 { text: '事件循環', link: '/Frontend/javascript/eventloop' },
+                {
+                  text: 'require & import 的差異',
+                  link: '/Frontend/javascript/require&import',
+                },
               ],
             },
           ],
