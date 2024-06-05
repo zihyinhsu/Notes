@@ -102,10 +102,9 @@ console.log(createCounter()()); //1
 
 ```js{3-5}
 for (var i = 0; i < 10; i++) {
-  console.log(i);
   setTimeout(function () {
     console.log('這執行第' + i + '次');
-  }, 10);
+  }, 1000);
 }
 ```
 
@@ -117,10 +116,9 @@ for (var i = 0; i < 10; i++) {
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i);
   setTimeout(function () {
     console.log('這執行第' + i + '次');
-  }, 10);
+  }, 1000);
 }
 ```
 
