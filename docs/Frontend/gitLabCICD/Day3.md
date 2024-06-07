@@ -132,6 +132,7 @@ stages:
 # job
 run-test:
   stage: testing
+  image: denoland/deno:latest
   script:
     - deno test
 
@@ -140,9 +141,9 @@ build-docker-image:
   tags:
     - shell
   stage: build
-  # 只有當 run-tests有過才會跑 build-docker-image
+  # 只有當 run-test 有過才會跑 build-docker-image
   needs:
-    - run-tests
+    - run-test
   script:
     - docker build -t hellocat .
 ```
@@ -174,7 +175,7 @@ build-docker-image:
   # 允許在 Docker 容器內運行 Docker。(dind = docker in docker)
   services:
     - docker:dind
-  # 只有當 run-tests有過才會跑 build-docker-image
+  # 只有當 run-test 有過才會跑 build-docker-image
   needs:
     - run-test
   script:
@@ -183,7 +184,163 @@ build-docker-image:
 
 ## 推上 Docker Registry
 
+Docker Registry 是一種存儲 Docker image 的服務，其中 Docker Hub 是最知名的公開 Docker Registry，但 GitLab 也有提供內建的 Docker Registry 功能，因此以下我們會使用 GitLab 的 Docker Registry 來實作。
+
+找到 `部署` > `容器映像庫`，並把 `build-docker-image` 的 script 改成 `docker build -t registry.gitlab.com/zihyin/shopping-cat-v2:1.0 .`
+
+> `:1.0` 用於標示版號。
+
+![emptyDockerRegistry](img/emptyDockerRegistry.png)
+
+```yml{5,21,23-34}
+# 定義兩個 stages
+stages:
+  - testing
+  - build
+  - publish
+
+# job
+run-test:
+  stage: testing
+  image: denoland/deno:latest
+  script:
+    - deno test
+
+build-docker-image:
+  tags:
+    - shell
+  stage: build
+  needs:
+    - run-test
+  script:
+    - docker build -t registry.gitlab.com/zihyin/shopping-cat-v2:1.0 .
+
+push-to-registry:
+  stage: publish
+  tags:
+    - shell
+  needs:
+    - build-docker-image
+  # 這裡要先登入
+  # $CI_REGISTRY_USER 和 $CI_REGISTRY_PASSWORD 是 GitLab CI/CD 預設的環境變數
+  before_script:
+    - docker login registry.gitlab.com -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+  script:
+    - docker push registry.gitlab.com/zihyin/shopping-cat-v2:1.0
+```
+
+或是我們這邊也可以適時把一些固定值用預設的環境變數來替代。
+
+> $CI_REGISTRY : registry.gitlab.com
+
+> $CI_REGISTRY_IMAGE : registry.gitlab.com/zihyin/shopping-cat-v2
+
+```yml{5,21,23-34}
+# 定義兩個 stages
+stages:
+  - testing
+  - build
+  - publish
+
+# job
+run-test:
+  stage: testing
+  image: denoland/deno:latest
+  script:
+    - deno test
+
+build-docker-image:
+  tags:
+    - shell
+  stage: build
+  needs:
+    - run-test
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:1.0 .
+
+push-to-registry:
+  stage: publish
+  tags:
+    - shell
+  needs:
+    - build-docker-image
+  # 這裡要先登入
+  # $CI_REGISTRY_USER 和 $CI_REGISTRY_PASSWORD 是 GitLab CI/CD 預設的環境變數
+  before_script:
+    - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+  script:
+    - docker push $CI_REGISTRY_IMAGE:1.0
+```
+
+此時回到 `容器映像庫` 就可以找到剛剛上傳的 image 了。
+![dockerRegistry](img/dockerRegistry.png)
+
 ## 自動遞增 Image 版號
+
+如果是普通前端專案，我們可以在 `packege.json` (以此專案來說是 `deno.json` )上新增一個 `version` 屬性並指定版號，之後透過 `jq` 與以下指令撈出版號，但需要預先安裝：
+
+```bash
+brew install jq
+```
+
+語法參考：
+
+```bash
+cat deno.json | jq -r .version
+cat deno.json | jq -r .tasks.start
+```
+
+回到正題，對 yml 檔進行修改：
+
+```yml{20-21,24,26,35-36,38-39}
+# 定義兩個 stages
+stages:
+  - testing
+  - build
+  - publish
+
+# job
+run-test:
+  stage: testing
+  image: denoland/deno:latest
+  script:
+    - deno test
+
+build-docker-image:
+  tags:
+    - shell
+  stage: build
+  needs:
+    - run-test
+  before_script:
+    - export IMAGE_VERSION=$(cat deno.json | jq -r .version)
+  script:
+    # $CI_PIPELINE_IID : 每跑一次 build 的編號
+    - docker build -t $CI_REGISTRY_IMAGE:$IMAGE_VERSION-build$CI_PIPELINE_IID .
+    # latest 這個 tag 會跟著最新的版本
+    - docker tag $CI_REGISTRY_IMAGE:$IMAGE_VERSION-build$CI_PIPELINE_IID $CI_REGISTRY_IMAGE:latest
+
+push-to-registry:
+  stage: publish
+  tags:
+    - shell
+  needs:
+    - build-docker-image
+  before_script:
+    - export IMAGE_VERSION=$(cat deno.json | jq -r .version)
+    - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+  script:
+    - docker push $CI_REGISTRY_IMAGE:$IMAGE_VERSION-build$CI_PIPELINE_IID
+    - docker push $CI_REGISTRY_IMAGE:latest
+```
+
+![dockerImageWithVersion](img/dockerImageWithVersion.png)
+
+之後如果要 run 這個 image，可以就以下指令開啟：
+
+```bash
+docker run -p 8000:8000 registry.gitlab.com/zihyin/shopping-cat-v2:latest
+```
 
 ---
 
