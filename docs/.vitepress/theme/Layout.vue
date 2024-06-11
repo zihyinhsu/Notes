@@ -47,8 +47,8 @@ const cursorPosition = ref({
 
 function updateCursorPosition(e){
   cursorPosition.value = {
-    x: e.clientX,
-    y: e.clientY + window.scrollY
+    x: e.pageX,
+    y: e.pageY
   };
 }
 
