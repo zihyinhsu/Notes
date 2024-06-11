@@ -4,3 +4,43 @@
   --vp-c-brand-2: #89992e;
   --vp-c-brand-3: #797d63;
 }
+
+html,
+body {
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.myCursor {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.logo {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image-container {
+  animation: float 5s infinite ease-in-out;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

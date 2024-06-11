@@ -1,0 +1,58 @@
+.rain {
+  position: absolute;
+  top: 0;
+  opacity: 0.1;
+  border-radius: 50em;
+  width: 3px;
+  height: 25px;
+  &.dark {
+    background: #ffffff;
+  }
+  &.light {
+    background: #266cc3;
+  }
+}
+
+.drop18,
+.drop5,
+.drop2,
+.drop12,
+.drop6,
+.drop10,
+.drop14,
+.drop16 {
+  animation: move-fast 400ms linear infinite;
+}
+
+.drop3,
+.drop7,
+.drop4,
+.drop19,
+.drop13,
+.drop17 {
+  animation: move-fast 800ms linear infinite;
+}
+
+.drop8,
+.drop15,
+.drop11,
+.drop1 {
+  animation: move-slow 600ms linear infinite;
+}
+
+.drop9,
+.drop20 {
+  animation: move-fast 700ms linear infinite;
+}
+
+@keyframes move-fast {
+  100% {
+    top: 45em;
+  }
+}
+
+@keyframes move-slow {
+  100% {
+    top: 25em;
+  }
+}

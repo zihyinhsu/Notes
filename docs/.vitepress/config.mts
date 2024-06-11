@@ -12,6 +12,13 @@ export default defineConfig({
       'script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
     ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/tailwindcss@2.0.4/dist/tailwind.min.css',
+      },
+    ],
   ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
@@ -83,6 +90,7 @@ export default defineConfig({
                 { text: 'Day 1', link: '/Frontend/gitLabCICD/Day1' },
                 { text: 'Day 2', link: '/Frontend/gitLabCICD/Day2' },
                 { text: 'Day 3', link: '/Frontend/gitLabCICD/Day3' },
+                { text: 'Day 4', link: '/Frontend/gitLabCICD/Day4' },
               ],
             },
             {
@@ -175,6 +183,6 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/zihyinhsu' }],
+    // socialLinks: [{ icon: 'github', link: 'https://github.com/zihyinhsu' }],
   },
 });

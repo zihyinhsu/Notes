@@ -1,9 +1,9 @@
 <script setup>
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide } from 'vue'
+import { nextTick, provide,ref} from 'vue'
 import  Twikoo  from './Twikoo.vue'
-
+import './rain.scss'
 const { isDark } = useData()
 
 const enableTransitions = () =>
@@ -38,14 +38,40 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
     }
   )
 })
+
+// mouse event
+const cursorPosition = ref({
+  x: -50,
+  y: -50
+})
+
+function updateCursorPosition(e){
+  cursorPosition.value = {
+    x: e.clientX,
+    y: e.clientY + window.scrollY
+  };
+}
+
+const windowWidth = ref(window.innerWidth);
+
 </script>
 
 <template>
-    <DefaultTheme.Layout>
+  <DefaultTheme.Layout @mousemove="updateCursorPosition">
+    <template #layout-top>
+      <div v-for="i in 20" :key="i" class="rain" :class="['drop' + i,isDark ? 'dark' : 'light']" :style="{ left: i * (windowWidth / 21) + 'px' }"></div>
+      <img class="hidden md:block myCursor" src="/cursor.png" :style="{ left: cursorPosition.x+'px', top: cursorPosition.y+'px' }" >
+    </template>
     <template #doc-after>
       <Twikoo></Twikoo>
     </template>
+    <template #nav-bar-title-after>
+      <div>
+        <img style="margin-left:8px" src="https://visitor-badge.laobi.icu/badge?page_id=zihyinhsu.visitor-badge&left_color=%23797d63&right_color=green&left_text=visitors" alt="visitor-count">
+      </div>
+    </template>
   </DefaultTheme.Layout>
+
 </template>
 
 <style lang="scss">
