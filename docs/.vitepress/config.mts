@@ -121,6 +121,15 @@ export default defineConfig({
                   text: '虛擬 Dom & Diff 算法',
                   link: '/Frontend/vue/virtualDom＆Diff',
                 },
+                {
+                  text: 'Vue.js 設計與實踐',
+                  items: [
+                    {
+                      text: '框架設計概覽',
+                      link: '/Frontend/vue/vueDesignAndImplement/Day1',
+                    },
+                  ],
+                },
               ],
             },
             {
