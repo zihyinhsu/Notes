@@ -114,13 +114,19 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
-                  text: 'Vue3 為何用 Proxy 替代 defineProperty?',
-                  link: '/Frontend/vue/proxy',
+                  text: '相關觀念',
+                  items: [
+                    {
+                      text: 'Vue3 為何用 Proxy 替代 defineProperty?',
+                      link: '/Frontend/vue/proxy',
+                    },
+                    {
+                      text: '虛擬 Dom & Diff 算法',
+                      link: '/Frontend/vue/virtualDom＆Diff',
+                    },
+                  ],
                 },
-                {
-                  text: '虛擬 Dom & Diff 算法',
-                  link: '/Frontend/vue/virtualDom＆Diff',
-                },
+
                 {
                   text: 'Vue.js 設計與實踐',
                   items: [
