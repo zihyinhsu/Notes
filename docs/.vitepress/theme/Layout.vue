@@ -1,7 +1,7 @@
 <script setup>
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide,ref} from 'vue'
+import { nextTick, provide, ref } from 'vue'
 import  Twikoo  from './Twikoo.vue'
 import './rain.scss'
 const { isDark } = useData()
@@ -71,7 +71,6 @@ const windowWidth = ref(window.innerWidth);
       </span> -->
     </template>
   </DefaultTheme.Layout>
-
 </template>
 
 <style lang="scss">
