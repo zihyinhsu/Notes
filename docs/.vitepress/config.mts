@@ -19,6 +19,7 @@ export default defineConfig({
         href: 'https://unpkg.com/tailwindcss@2.0.4/dist/tailwind.min.css',
       },
     ],
+    ['meta', { name: 'robots', content: 'all' }],
   ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
