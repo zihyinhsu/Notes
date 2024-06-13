@@ -9,6 +9,10 @@ tags:
 
 # gitLab CI/CD
 
+## 使用 Docker Compose
+
+`部署` > `容器映像庫`
+
 ## 使用 SSH 連線伺服器
 
 這裡一樣拿 Digital Ocean 來做練習～
@@ -30,7 +34,7 @@ cat ~/.ssh/id_rsa.pub
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@159.89.205.93
 ```
 
-### 透過環境變數連線
+### 設定環境變數
 
 > 根據這篇 [如何使用 SSH 連線到 Droplet](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/) 提到，要能成功連線，我們需要以下三種資料：
 
@@ -71,6 +75,8 @@ deploy_to_dev:
   # -o strictHostKeyChecking=no 參數告訴 SSH 不要檢查目標伺服器的 SSH 金鑰是否正確。
    - ssh -o strictHostKeyChecking=no $DEV_SERVER_USER@$DEV_SERVER_URL "ls -al"
 ```
+
+## 部署 Image 到伺服器上
 
 ---
 

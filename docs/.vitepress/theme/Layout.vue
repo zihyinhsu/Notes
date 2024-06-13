@@ -66,9 +66,9 @@ const windowWidth = ref(window.innerWidth);
       <Twikoo></Twikoo>
     </template>
     <template #nav-bar-title-after>
-      <div>
-        <img style="margin-left:8px" src="https://visitor-badge.laobi.icu/badge?page_id=zihyinhsu.visitor-badge&left_color=%23797d63&right_color=green&left_text=visitors" alt="visitor-count">
-      </div>
+      <!-- <span>
+        <img style="margin-left:8px" src="https://visitor-badge.laobi.icu/badge?page_id=zihyinHsu.visitor-badge&left_color=%23797d63&right_color=green&left_text=visitors" alt="visitor-count">
+      </span> -->
     </template>
   </DefaultTheme.Layout>
 
