@@ -50,9 +50,29 @@ console.log('3');
 // 這裡的執行順序實際上是 1 > 3 > 2
 ```
 
+## 宏任務 與 微任務
+
+`任務佇列(Task Queue)` 中的任務又可分為 `宏任務` 和 `微任務`。
+
+> 宏任務（MacroTask）: 例如 script、setTimeout、setInterval、setImmediate（Node.js 環境）和 requestAnimationFrame，這些都被添加到宏任務佇列中。
+
+> 微任務（MicroTask）: 例如 Promise.then、Promise.catch、process.nextTick（Node.js 環境）、async/Await，這些都被添加到微任務佇列中。
+
+p.s. Promise 本身是同步的，是其中的 `then`、`catch` 為異步操作。
+
+### 執行順序
+
+首先執行一個宏任務(例如 script)，再執行**所有微任務**。此期間若有新的微任務加入會一併執行，接著才執行宏任務，如此循環往復。
+
+因此我們可以得知：
+
+1. 微任務的優先級高於宏任務。
+2. 微任務可以保證在同一個宏任務的後續操作之前被執行。
+
 ---
 
 參考資料：
 
 1. [你真的懂 Event Loop 嗎](https://johnnywang1994.github.io/book/articles/js/event-loop.html)
 2. [【前端八股文】事件循环-eventloop](https://www.bilibili.com/video/BV1j14y1j7us/?spm_id_from=pageDriver&vd_source=bf9e31cbb04dcc9c09d7c5869df8ca09)
+3. [【前端八股文】事件循环-宏任务和微任务](https://www.bilibili.com/video/BV1G84y1B7hZ/?p=4&spm_id_from=pageDriver)
