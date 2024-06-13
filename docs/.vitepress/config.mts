@@ -12,14 +12,19 @@ export default defineConfig({
       'script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
     ],
+
+    // [
+    //   'link',
+    //   {
+    //     rel: 'stylesheet',
+    //     href: 'https://unpkg.com/tailwindcss@2.0.4/dist/tailwind.min.css',
+    //   },
+    // ],
+    ['meta', { name: 'robots', content: 'all' }],
     [
       'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://unpkg.com/tailwindcss@2.0.4/dist/tailwind.min.css',
-      },
+      { rel: 'stylesheet', href: '/docs/.vitepress/theme/tailwind.css' },
     ],
-    ['meta', { name: 'robots', content: 'all' }],
   ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
