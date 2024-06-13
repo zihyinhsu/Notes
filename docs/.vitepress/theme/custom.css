@@ -23,6 +23,11 @@ body {
   animation: rotation 5s infinite linear;
 }
 
+.VPNavBarMenuLink.active {
+  background-color: #797d63;
+  color: #ffffff !important;
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
