@@ -10,7 +10,7 @@ const count = ref(1);
       <button
         @click="count++"
         class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700"
-      >   
+      >
         點我 {{ count }} 次
       </button>
     </div>

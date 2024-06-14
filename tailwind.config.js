@@ -1,12 +1,5 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: ['./docs/.vitepress/**/*.{js,ts,vue}', './docs/**/*.md'],
-//   options: {
-//     safelist: ['html', 'body'],
-//   },
-// };
-/ @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
+/ @type {import('tailwindcss').Config} */;
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   // mode: "jit",
@@ -19,10 +12,10 @@ module.exports = {
       // },
     },
     textShadow: {
-      sm: "1px 1px 2px rgba(0, 0, 0, .5)",
-      DEFAULT: "2px 2px 4px rgba(0, 0, 0, .5)",
-      lg: "4px 4px 8px rgba(0, 0, 0, .5)",
-      xl: "4px 4px 16px rgba(0, 0, 0, .5)",
+      sm: '1px 1px 2px rgba(0, 0, 0, .5)',
+      DEFAULT: '2px 2px 4px rgba(0, 0, 0, .5)',
+      lg: '4px 4px 8px rgba(0, 0, 0, .5)',
+      xl: '4px 4px 16px rgba(0, 0, 0, .5)',
     },
   },
   important: true,
@@ -30,11 +23,11 @@ module.exports = {
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
-          "text-shadow": (value) => ({
+          'text-shadow': (value) => ({
             textShadow: value,
           }),
         },
-        { values: theme("textShadow") }
+        { values: theme('textShadow') },
       );
     }),
   ],
