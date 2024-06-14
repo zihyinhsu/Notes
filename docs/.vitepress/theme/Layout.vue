@@ -1,66 +1,75 @@
 <script setup>
-import { useData } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide, ref } from 'vue'
-import  Twikoo  from './Twikoo.vue'
-import './rain.scss'
-const { isDark } = useData()
+import { useData } from 'vitepress';
+import DefaultTheme from 'vitepress/theme';
+import { nextTick, provide, ref } from 'vue';
+import Twikoo from './Twikoo.vue';
+import './rain.scss';
+const { isDark } = useData();
 
 const enableTransitions = () =>
   'startViewTransition' in document &&
-  window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+  window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
 
 provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
   if (!enableTransitions()) {
-    isDark.value = !isDark.value
-    return
+    isDark.value = !isDark.value;
+    return;
   }
 
   const clipPath = [
     `circle(0px at ${x}px ${y}px)`,
     `circle(${Math.hypot(
       Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y)
-    )}px at ${x}px ${y}px)`
-  ]
+      Math.max(y, innerHeight - y),
+    )}px at ${x}px ${y}px)`,
+  ];
 
   await document.startViewTransition(async () => {
-    isDark.value = !isDark.value
-    await nextTick()
-  }).ready
+    isDark.value = !isDark.value;
+    await nextTick();
+  }).ready;
 
   document.documentElement.animate(
     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
     {
       duration: 300,
       easing: 'ease-in',
-      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`
-    }
-  )
-})
+      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
+    },
+  );
+});
 
 // mouse event
 const cursorPosition = ref({
   x: -50,
-  y: -50
-})
+  y: -50,
+});
 
-function updateCursorPosition(e){
+function updateCursorPosition(e) {
   cursorPosition.value = {
     x: e.pageX,
-    y: e.pageY
+    y: e.pageY,
   };
 }
 
 const windowWidth = ref(window.innerWidth);
-
 </script>
 
 <template>
   <DefaultTheme.Layout @mousemove="updateCursorPosition">
     <template #layout-top>
-      <div v-for="i in 20" :key="i" class="rain" :class="['drop' + i,isDark ? 'dark' : 'light']" :style="{ left: i * (windowWidth / 21) + 'px' }"></div>
-      <img class="hidden md:block myCursor" src="/cursor.png" :style="{ left: cursorPosition.x+'px', top: cursorPosition.y+'px' }" >
+      <div
+        v-for="i in 20"
+        :key="i"
+        class="rain"
+        :class="['drop' + i, isDark ? 'dark' : 'light']"
+        :style="{ left: i * (windowWidth / 21) + 'px' }"
+      ></div>
+      <img
+        class="hidden md:block myCursor"
+        src="/cursor.png"
+        :style="{ left: cursorPosition.x + 'px', top: cursorPosition.y + 'px' }"
+      />
     </template>
     <template #doc-after>
       <Twikoo></Twikoo>
@@ -97,7 +106,6 @@ const windowWidth = ref(window.innerWidth);
 .VPSwitchAppearance .check {
   transform: none !important;
 }
-
 
 .embed-container {
   position: relative;

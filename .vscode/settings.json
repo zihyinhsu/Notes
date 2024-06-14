@@ -8,6 +8,10 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "mts"
+    "mts",
+    "vue"
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
 }
