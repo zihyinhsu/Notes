@@ -8,5 +8,5 @@ sidebar: false
 <Project />
 
 <script setup>
-import Project from '../.vitepress/components/Project.vue'
+import Project from '../docs/.vitepress/components/Project.vue'
 </script>
