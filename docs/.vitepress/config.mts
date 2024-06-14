@@ -7,16 +7,12 @@ export default defineConfig({
   base: '/',
   lang: 'zh-TW',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     [
       'script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
     ],
     ['meta', { name: 'robots', content: 'all' }],
-    [
-      'link',
-      { rel: 'stylesheet', href: '/docs/.vitepress/theme/tailwind.css' },
-    ],
   ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
