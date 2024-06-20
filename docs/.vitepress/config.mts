@@ -118,15 +118,20 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Vue.js 設計與實踐',
+              text: 'Nuxt 3',
               collapsed: true,
               items: [
                 {
-                  text: '框架設計概覽',
-                  link: '/Frontend/vue/vueDesignAndImplement/Day1',
+                  text: 'SSR、CSR、SSG',
+                  link: '/Frontend/nuxt3/renderMode',
                 },
               ],
             },
+          ],
+        },
+        {
+          text: '讀書筆記',
+          items: [
             {
               text: 'Vue 前端測試',
               collapsed: true,
@@ -144,12 +149,12 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Nuxt 3',
+              text: 'Vue.js 設計與實踐',
               collapsed: true,
               items: [
                 {
-                  text: 'SSR、CSR、SSG',
-                  link: '/Frontend/nuxt3/renderMode',
+                  text: '框架設計概覽',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day1',
                 },
               ],
             },
@@ -162,7 +167,7 @@ export default defineConfig({
           items: [
             {
               text: 'gitLab CICD',
-              collapsed: true,
+              // collapsed: true,
               items: [
                 { text: 'Day 1', link: '/DevOps/gitLabCICD/Day1' },
                 { text: 'Day 2', link: '/DevOps/gitLabCICD/Day2' },
@@ -183,7 +188,6 @@ export default defineConfig({
               items: [
                 {
                   text: '不夠善良的我們',
-                  collapsed: true,
                   link: '/DramaReview/TaiwanDrama/ImperfectUs/ep1-8',
                 },
               ],
@@ -194,7 +198,6 @@ export default defineConfig({
               items: [
                 {
                   text: '背著善宰跑',
-                  collapsed: true,
                   link: '/DramaReview/KoreaDrama/LovelyRunner/ep1-16',
                 },
               ],
