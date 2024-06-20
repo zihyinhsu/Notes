@@ -66,7 +66,6 @@ export default defineConfig({
       { text: 'About', link: '/AboutMe/readme' },
       { text: 'Frontend', link: '/Frontend/index' },
       { text: 'DevOps', link: '/DevOps/index' },
-      { text: 'Drama-Review', link: '/DramaReview/index' },
     ],
     sidebar: {
       '/AboutMe/': [
@@ -76,6 +75,10 @@ export default defineConfig({
             {
               text: 'README',
               link: '/AboutMe/readme',
+            },
+            {
+              text: '劇集觀後感',
+              link: '/DramaReview/index',
             },
           ],
         },
@@ -111,7 +114,7 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Vue 相關概念',
+              text: 'Vue',
               collapsed: true,
               items: [
                 {
