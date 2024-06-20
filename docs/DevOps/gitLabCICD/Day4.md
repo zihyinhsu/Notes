@@ -2,7 +2,7 @@
 date: 2024-06-18
 title: 'gitLab CI/CD'
 author: Zihyin Hsu
-category: frontend
+category: DevOps
 tags:
   - gitLabCICD
 ---
