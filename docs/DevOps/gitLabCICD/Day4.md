@@ -218,9 +218,179 @@ services:
 
 ## 整理重複的工作
 
+我們可以透過設定變數，把重複的程式碼整理成可複用的形式。
+
+```yml{10-35,40-46,51-57}
+stages:
+  - testing
+  - build
+  - publish
+  - deploy_to_dev
+  - deploy_to_staging
+
+# 將程式碼的重複部分提取出來，成為一個模板，使其能被泛用。
+# 在 job 前面加上 . 代表該 job 不會執行，而是作為模板使用。
+.deploy:
+  variables:
+    SERVER_PRIVATE_KEY: ""
+    SERVER_USER: ""
+    SERVER_URL: ""
+    ENV: ""
+    APP_PORT: ""
+
+  before_script:
+    # 啟動了 SSH 代理程式。SSH 代理程式可以管理 SSH 私鑰，讓使用者不必每次都輸入密碼就能使用私鑰。
+    - eval $(ssh-agent -s)
+    # 將開發伺服器的 SSH 私鑰添加到 SSH 代理程式。
+    - ssh-add <(echo "$SERVER_PRIVATE_KEY")
+  script:
+    # 這行命令使用 scp (安全拷貝) 來將本地的 docker-compose.yml 文件傳輸到遠程伺服器的 /root 目錄下。這裡是命令的分解和檢查：
+    - scp -o strictHostKeyChecking=no ./docker-compose.yml $SERVER_USER@$SERVER_URL:/root
+    # -o strictHostKeyChecking=no 參數告訴 SSH 不要檢查目標伺服器的 SSH 金鑰是否正確。
+    - >
+      ssh -o strictHostKeyChecking=no $SERVER_USER@$SERVER_URL "
+      export COMPOSE_PROJECT_NAME=$ENV
+      export APP_PORT=$APP_PORT
+      docker compose down && docker compose up -d
+      "
+  environment:
+    name: $ENV
+    url: http://$SERVER_URL:$APP_PORT
+
+deploy_to_dev:
+  stage: deploy_to_dev
+  # 繼承該模板，並設定變數。
+  extends: .deploy
+  variables:
+    SERVER_PRIVATE_KEY: $DEV_SERVER_PRIVATE_KEY
+    SERVER_USER: $DEV_SERVER_USER
+    SERVER_URL: $DEV_SERVER_URL
+    ENV: dev
+    APP_PORT: 3000
+
+deploy_to_staging:
+  stage: deploy_to_staging
+  # 繼承該模板，並設定變數。
+  extends: .deploy
+  variables:
+    SERVER_PRIVATE_KEY: $DEV_SERVER_PRIVATE_KEY
+    SERVER_USER: $DEV_SERVER_USER
+    SERVER_URL: $DEV_SERVER_URL
+    ENV: staging
+    APP_PORT: 5000
+```
+
 ## 手動部署 Production 環境
 
+新增一個 `deploy_to_production` ，並設定在此之前跑一些測試。
+
+我們就可以透過 `when: manual` 設定，達成當確認 `dev`、`staging` 都通過後，手動觸發並部署 `production` 環境。
+
+```yml{7,42-45,49-50,59-62,64-76}
+stages:
+  - testing
+  - build
+  - publish
+  - deploy_to_dev
+  - deploy_to_staging
+  - deploy_to_production
+
+.deploy:
+  variables:
+    SERVER_PRIVATE_KEY: ''
+    SERVER_USER: ''
+    SERVER_URL: ''
+    ENV: ''
+    APP_PORT: ''
+
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SERVER_PRIVATE_KEY")
+  script:
+    - scp -o strictHostKeyChecking=no ./docker-compose.yml $SERVER_USER@$SERVER_URL:/root
+    - >
+      ssh -o strictHostKeyChecking=no $SERVER_USER@$SERVER_URL "
+      export COMPOSE_PROJECT_NAME=$ENV
+      export APP_PORT=$APP_PORT
+      docker compose down && docker compose up -d
+      "
+  environment:
+    name: $ENV
+    url: http://$SERVER_URL:$APP_PORT
+
+deploy_to_dev:
+  stage: deploy_to_dev
+  extends: .deploy
+  variables:
+    SERVER_PRIVATE_KEY: $DEV_SERVER_PRIVATE_KEY
+    SERVER_USER: $DEV_SERVER_USER
+    SERVER_URL: $DEV_SERVER_URL
+    ENV: dev
+    APP_PORT: 3000
+
+run-test-on-dev:
+  stage: deploy_to_staging
+  script:
+    - echo "Running tests on dev server"
+
+deploy_to_staging:
+  stage: deploy_to_staging
+  needs:
+    - run-test-on-dev
+  extends: .deploy
+  variables:
+    SERVER_PRIVATE_KEY: $DEV_SERVER_PRIVATE_KEY
+    SERVER_USER: $DEV_SERVER_USER
+    SERVER_URL: $DEV_SERVER_URL
+    ENV: staging
+    APP_PORT: 5000
+
+run-test-on-staging:
+  stage: deploy_to_production
+  script:
+    - echo "Running tests on staging server"
+
+deploy_to_production:
+  stage: deploy_to_production
+  needs:
+    - run-test-on-staging
+  extends: .deploy
+  # 手動設定
+  when: manual
+  variables:
+    SERVER_PRIVATE_KEY: $DEV_SERVER_PRIVATE_KEY
+    SERVER_USER: $DEV_SERVER_USER
+    SERVER_URL: $DEV_SERVER_URL
+    ENV: production
+    APP_PORT: 80
+```
+
+![manual_deploy_to_production](img/manual_deploy_to_production.png)
+
 ## Artifacts 產物
+
+我們可以透過 `artifacts` 將測試結果輸出成 `test-report.txt`。(別忘了將這個檔案也一起加入 gitignore)。
+
+```yml{7-14}
+stages:
+  - testing
+
+run-tests:
+  stage: testing
+  image: denoland/deno:latest
+  script:
+    # 把測試的結果寫到 test-report.txt
+    - deno test > test-report.txt
+  artifacts:
+    paths:
+      - test-report.txt
+    # 保留一週
+    expire_in: 1 week
+```
+
+如此我們就能透過 `下載產物` 取得 `deno test` 的運行結果了～
+
+![artifacts](img/artifacts.png)
 
 ---
 
