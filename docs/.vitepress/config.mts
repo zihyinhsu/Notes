@@ -185,6 +185,9 @@ export default defineConfig({
                 { text: 'Day 4', link: '/DevOps/gitLabCICD/Day4' },
               ],
             },
+            {
+              text: 'Docker',
+            },
           ],
         },
       ],
