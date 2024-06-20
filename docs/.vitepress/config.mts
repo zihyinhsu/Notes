@@ -158,7 +158,7 @@ export default defineConfig({
       ],
       '/DevOps/': [
         {
-          text: 'About',
+          text: '關於 DevOps',
           items: [
             {
               text: 'gitLab CICD',
