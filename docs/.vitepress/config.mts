@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Zihyin's Notes",
-  description: '有滋有味的觀劇雜感中夾雜了一點技術文',
+  // description: '有滋有味的觀劇雜感中夾雜了一點技術文',
   base: '/',
   lang: 'zh-TW',
   head: [
@@ -58,9 +58,9 @@ export default defineConfig({
     nav: [
       { text: 'About', link: '/AboutMe/readme' },
       { text: 'Frontend', link: '/Frontend/index' },
+      { text: 'DevOps', link: '/DevOps/index' },
       { text: 'Drama-Review', link: '/DramaReview/index' },
     ],
-
     sidebar: {
       '/AboutMe/': [
         {
@@ -78,13 +78,53 @@ export default defineConfig({
           text: '關於前端',
           items: [
             {
-              text: 'gitLab CICD',
+              text: 'Javascript',
               collapsed: true,
               items: [
-                { text: 'Day 1', link: '/Frontend/gitLabCICD/Day1' },
-                { text: 'Day 2', link: '/Frontend/gitLabCICD/Day2' },
-                { text: 'Day 3', link: '/Frontend/gitLabCICD/Day3' },
-                { text: 'Day 4', link: '/Frontend/gitLabCICD/Day4' },
+                { text: '閉包', link: '/Frontend/javascript/closure' },
+                { text: '事件循環', link: '/Frontend/javascript/eventloop' },
+                {
+                  text: 'require & import 的差異',
+                  link: '/Frontend/javascript/require&import',
+                },
+              ],
+            },
+            {
+              text: 'Type-Challenges',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Easy Level',
+                  link: '/Frontend/typeChallenges/easyLevel',
+                },
+                {
+                  text: 'type predicates',
+                  link: '/Frontend/typeChallenges/typePredicates',
+                },
+              ],
+            },
+            {
+              text: 'Vue 相關概念',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Vue3 為何用 Proxy 替代 defineProperty?',
+                  link: '/Frontend/vue/proxy',
+                },
+                {
+                  text: '虛擬 Dom & Diff 算法',
+                  link: '/Frontend/vue/virtualDom＆Diff',
+                },
+              ],
+            },
+            {
+              text: 'Vue.js 設計與實踐',
+              collapsed: true,
+              items: [
+                {
+                  text: '框架設計概覽',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day1',
+                },
               ],
             },
             {
@@ -104,58 +144,30 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Vue',
+              text: 'Nuxt 3',
               collapsed: true,
               items: [
                 {
-                  text: '相關觀念',
-                  items: [
-                    {
-                      text: 'Vue3 為何用 Proxy 替代 defineProperty?',
-                      link: '/Frontend/vue/proxy',
-                    },
-                    {
-                      text: '虛擬 Dom & Diff 算法',
-                      link: '/Frontend/vue/virtualDom＆Diff',
-                    },
-                  ],
-                },
-
-                {
-                  text: 'Vue.js 設計與實踐',
-                  items: [
-                    {
-                      text: '框架設計概覽',
-                      link: '/Frontend/vue/vueDesignAndImplement/Day1',
-                    },
-                  ],
+                  text: 'SSR、CSR、SSG',
+                  link: '/Frontend/nuxt3/renderMode',
                 },
               ],
             },
+          ],
+        },
+      ],
+      '/DevOps/': [
+        {
+          text: 'About',
+          items: [
             {
-              text: 'Type-Challenges',
+              text: 'gitLab CICD',
               collapsed: true,
               items: [
-                {
-                  text: 'Easy Level',
-                  link: '/Frontend/typeChallenges/easyLevel',
-                },
-                {
-                  text: 'type predicates',
-                  link: '/Frontend/typeChallenges/typePredicates',
-                },
-              ],
-            },
-            {
-              text: 'Javascript',
-              collapsed: true,
-              items: [
-                { text: '閉包', link: '/Frontend/javascript/closure' },
-                { text: '事件循環', link: '/Frontend/javascript/eventloop' },
-                {
-                  text: 'require & import 的差異',
-                  link: '/Frontend/javascript/require&import',
-                },
+                { text: 'Day 1', link: '/DevOps/gitLabCICD/Day1' },
+                { text: 'Day 2', link: '/DevOps/gitLabCICD/Day2' },
+                { text: 'Day 3', link: '/DevOps/gitLabCICD/Day3' },
+                { text: 'Day 4', link: '/DevOps/gitLabCICD/Day4' },
               ],
             },
           ],

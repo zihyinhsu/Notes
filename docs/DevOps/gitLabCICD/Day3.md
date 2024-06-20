@@ -338,8 +338,16 @@ push-to-registry:
 
 之後如果要 run 這個 image，可以就以下指令開啟：
 
+> d:代表在背景執行
+
 ```bash
-docker run -p 8000:8000 registry.gitlab.com/zihyin/shopping-cat-v2:latest
+docker run -p 8000:8000 -d registry.gitlab.com/zihyin/shopping-cat-v2:latest
+```
+
+也可以用 docker stop 停掉它。
+
+```bash
+docker stop {containerId}
 ```
 
 ---
