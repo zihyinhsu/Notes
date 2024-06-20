@@ -114,7 +114,7 @@ Digital Ocean 是一家美國的主機商，專門提供虛擬專用伺服器。
 
 ![createTodroplets](img/createTodroplets.png)
 
-地區可以選新加坡，OS 選 Ubuntu，，MarketPlace 選 Docker，SHARED CPU 選 Basic，CPU Options 選 Rugular，$6/month，Hostname 輸入 shopping-cat，選擇 SSH Key 登入（參見 [如何產生 SSH key](/Frontend/gitLabCICD/Day1.html#如何產出-ssh-key-以下出自-github-copilot)），最後 Create Droplets。
+地區可以選新加坡，OS 選 Ubuntu，，MarketPlace 選 Docker，SHARED CPU 選 Basic，CPU Options 選 Rugular，$6/month，Hostname 輸入 shopping-cat，選擇 SSH Key 登入（參見 [如何產生 SSH key](/DevOps/gitLabCICD/Day1.html#如何產出-ssh-key-以下出自-github-copilot)），最後 Create Droplets。
 
 > 具體需求依個人而定，這裡練習用一切從簡～
 
@@ -148,7 +148,7 @@ which gitlab-runner
 gitlab-runner status
 ```
 
-[註冊 runner](/Frontend/gitLabCICD/Day2.html#註冊-gitlab-runner)：
+[註冊 runner](/DevOps/gitLabCICD/Day2.html#註冊-gitlab-runner)：
 
 ```bash
 Enter a description for the runner:

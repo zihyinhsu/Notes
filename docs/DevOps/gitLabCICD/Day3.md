@@ -119,7 +119,7 @@ docker run -p 8000:8000  hellocat
 
 #### 在本地自建 runner
 
-因此我們可以 [在本地自建 runner](/Frontend/gitLabCICD/Day2.html#註冊-gitlab-runner)，然後 executor 選擇 `shell`。(可以用 which docker 檢查 shell 是否有包含 docker)
+因此我們可以 [在本地自建 runner](/DevOps/gitLabCICD/Day2.html#註冊-gitlab-runner)，然後 executor 選擇 `shell`。(可以用 which docker 檢查 shell 是否有包含 docker)
 
 ![catRunner](img/catRunner.png)
 
