@@ -13,6 +13,13 @@ export default defineConfig({
       { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
     ],
     ['meta', { name: 'robots', content: 'all' }],
+    [
+      'meta',
+      {
+        name: 'google-site-verification',
+        content: 'MAsRVd0cCvMOIXcm7Ekm9Bdzi2OUS0hAO78NDahhLGM',
+      },
+    ],
   ],
   sitemap: {
     hostname: 'https://zihyin-notes.vercel.app',
