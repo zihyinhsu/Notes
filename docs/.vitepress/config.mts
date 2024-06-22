@@ -166,6 +166,10 @@ export default defineConfig({
                   text: '框架設計概覽',
                   link: '/Frontend/vue/vueDesignAndImplement/Day1',
                 },
+                {
+                  text: '響應式系統',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day2',
+                },
               ],
             },
           ],

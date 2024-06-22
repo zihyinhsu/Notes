@@ -100,15 +100,15 @@ Vue 已全面支援 TypeScript， 透過大量的類型判斷與處理，提升�
 
 渲染器的本質是 `createRenderer 的返回值` ( renderer Object )，而這個 renderer Object 內就包含了 `render 渲染函式`。
 
-`renderer 渲染器` 主要接收兩個參數：`VNode 虛擬 DOM` 與 `container 掛載真實 DOM 的容器`，我們可以把 VNode 渲染成真實 DOM 並‘掛載到 container 上。
+`renderer 渲染器` 主要接收兩個參數：`VNode 虛擬 DOM` 與 `container 掛載真實 DOM 的容器`，我們可以把 VNode 渲染成真實 DOM 並掛載到 container 上。
 
 > **VNode (虛擬 DOM)**：這是一個描述應用界面的虛擬節點（VNode）。它是一個輕量級的對象，代表了 DOM 結構中的節點。
 
 > **container (掛載真實 DOM 的容器)**：這是一個 DOM 元素，Vue 將使用這個元素作為根容器，將虛擬 DOM 渲染成真實 DOM 並掛載到這個容器中。
 
-### 組件的本質
+### 元件的本質
 
-在 Vue 的內部渲染中，本質上是大量的元件渲染。而元件本身就是 **一組 DOM 的集合**，因此 Vue 本質上是以組件為介質，**渲染一組一組的 DOM** 來完成渲染，
+在 Vue 的內部渲染中，本質上是大量的元件渲染。而元件本身就是 **一組 DOM 的集合**，因此 Vue 本質上是以元件為介質，**渲染一組一組的 DOM** 來完成渲染。
 
 ### 模板 (template) 的工作原理
 
