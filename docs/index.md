@@ -19,8 +19,12 @@ hero:
 features:
   - title: 記錄關於前端的一些讀書筆記
     icon: 💻
-    details: 努力克服遺忘曲線的道路，任重而道遠。
+    details: JavaScript、TypeScript、Vue、Nuxt
     link: /Frontend/
+  - title: 記錄關於DevOps的一些讀書筆記
+    icon: 💻
+    details: gitlab、Docker
+    link: /DevOps/
 # - title: Feature B
 #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 # - title: Feature C
