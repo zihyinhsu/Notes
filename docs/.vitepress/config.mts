@@ -64,7 +64,9 @@ export default defineConfig({
     },
     nav: [
       { text: 'About', link: '/AboutMe/readme' },
+      { text: 'Computer Science', link: '/Cs/index' },
       { text: 'Frontend', link: '/Frontend/index' },
+      { text: 'Backend', link: '/Backend/index' },
       { text: 'DevOps', link: '/DevOps/index' },
     ],
     sidebar: {
@@ -206,6 +208,38 @@ export default defineConfig({
                 {
                   text: '服務端渲染',
                   link: '/Frontend/vue/vueDesignAndImplement/Day6',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      '/Backend/': [
+        {
+          text: '關於資料庫',
+          items: [
+            {
+              text: 'MySQL 資料庫全攻略',
+              items: [
+                {
+                  text: 'MySQL 關聯式資料庫簡介',
+                  link: '/Backend/SQL/quickStart',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      '/Cs/': [
+        {
+          text: '關於 CS',
+          items: [
+            {
+              text: 'Hello 算法',
+              items: [
+                {
+                  text: '初識算法',
+                  link: '/Cs/helloAlgorithm/wharIsAlgorithm',
                 },
               ],
             },
