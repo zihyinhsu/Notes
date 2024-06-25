@@ -82,6 +82,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: '好物收藏區',
+          items: [
+            {
+              text: 'Workout',
+              link: '/AboutMe/workout',
+            },
+          ],
+        },
       ],
       '/Frontend/': [
         {
