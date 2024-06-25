@@ -94,8 +94,8 @@ export default defineConfig({
                 { text: '閉包', link: '/Frontend/javascript/closure' },
                 { text: '事件循環', link: '/Frontend/javascript/eventloop' },
                 {
-                  text: 'require & import 的差異',
-                  link: '/Frontend/javascript/require&import',
+                  text: 'require/exports & import/export 的差異',
+                  link: '/Frontend/javascript/requireExports&importExport',
                 },
               ],
             },
@@ -132,8 +132,20 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
+                  text: 'NuxtLink & a tag',
+                  link: '/Frontend/nuxt3/nuxtlink',
+                },
+                {
                   text: 'SSR、CSR、SSG',
                   link: '/Frontend/nuxt3/renderMode',
+                },
+                {
+                  text: 'Hydration',
+                  link: '/Frontend/nuxt3/hydration',
+                },
+                {
+                  text: 'Middleware',
+                  link: '/Frontend/nuxt3/middleware',
                 },
               ],
             },
@@ -170,6 +182,22 @@ export default defineConfig({
                   text: '響應式系統',
                   link: '/Frontend/vue/vueDesignAndImplement/Day2',
                 },
+                {
+                  text: '渲染器',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day3',
+                },
+                {
+                  text: '組件化',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day4',
+                },
+                {
+                  text: '編譯器',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day5',
+                },
+                {
+                  text: '服務端渲染',
+                  link: '/Frontend/vue/vueDesignAndImplement/Day6',
+                },
               ],
             },
           ],
@@ -177,7 +205,7 @@ export default defineConfig({
       ],
       '/DevOps/': [
         {
-          text: '關於 DevOps',
+          text: '關於 DevOps 讀書筆記',
           items: [
             {
               text: 'gitLab CICD',
