@@ -158,6 +158,10 @@ export default defineConfig({
                   text: 'Middleware',
                   link: '/Frontend/nuxt3/middleware',
                 },
+                {
+                  text: 'useFetch',
+                  link: '/Frontend/nuxt3/useFetch',
+                },
               ],
             },
           ],
@@ -216,7 +220,7 @@ export default defineConfig({
       ],
       '/Backend/': [
         {
-          text: '關於資料庫',
+          text: '讀書筆記',
           items: [
             {
               text: 'MySQL 資料庫全攻略',
@@ -232,7 +236,7 @@ export default defineConfig({
       ],
       '/Cs/': [
         {
-          text: '關於 CS',
+          text: '讀書筆記',
           items: [
             {
               text: 'Hello 算法',
