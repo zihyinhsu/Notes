@@ -1,5 +1,5 @@
 ---
-date: 2024-06-26
+date: 2024-06-27
 title: 'useFetch'
 author: Zihyin Hsu
 category: frontend
@@ -77,25 +77,19 @@ useFetch 的參數分為兩大類： `URL/請求配置` 和 `選項配置`。
 
 指定要請求的 URL。如果是函數，則每次調用 refresh 方法時，都會重新計算 URL。
 
-### 請求配置 (RequestInit 對象)
+### 請求配置 / 選項配置 (options)
 
-允許指定標準的 fetch API 參數，如 `method`, `params`, `headers`, `body`, `baseURL` 等。
-
-### 選項配置 (options)
-
-1. lazy (boolean): 如果設置為 true，則不會在組件創建時自動發起請求，需要手動調用 refresh 方法來發起請求。
-2. watch (Array): 一個依賴列表，當列表中的依賴項發生變化時，會自動重新發起請求。
-3. initialData (any): 指定初始數據，當請求尚未完成時，數據的初始值。
-4. onRequest (Function): 請求發起前的回調函數。
-5. onResponse (Function): 收到響應後的回調函數。
-6. onError (Function): 請求發生錯誤時的回調函數。
+詳情請見 [官方文檔](https://nuxt.com/docs/api/composables/use-fetch#params)
 
 ## useFetch 的回傳值
 
 1. data (Ref): 包含從遠端獲取的數據。
 2. error (Ref): 如果請求失敗，這裡會包含錯誤信息。
 3. pending (`Ref<boolean>`): 表示請求是否正在進行中。
-4. refresh (Function): 一個函數，用於手動重新發起請求。
+4. refresh/execute (Function): 一個函數，用於手動重新發起請求。
+   ...
+
+這裡列出幾個常見的，實際詳情請見 [官方文檔](https://nuxt.com/docs/api/composables/use-fetch#return-values)
 
 ## 如何阻止重複請求
 
