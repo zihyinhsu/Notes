@@ -162,6 +162,10 @@ export default defineConfig({
                   text: 'useFetch',
                   link: '/Frontend/nuxt3/useFetch',
                 },
+                {
+                  text: 'useState',
+                  link: '/Frontend/nuxt3/useState',
+                },
               ],
             },
           ],
