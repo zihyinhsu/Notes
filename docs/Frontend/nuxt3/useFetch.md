@@ -120,7 +120,7 @@ const { data: product, refresh } = await useFetch(
 
 ::: code-group
 
-```vue [app.vue]
+```vue [index.vue]
 <template>
   <NuxtLink to="/about">About</NuxtLink>
 </template>
@@ -193,7 +193,7 @@ const fetchProduct = async () => {
 
 ::: code-group
 
-```vue [app.vue]
+```vue [index.vue]
 <template>
   <NuxtLink to="/about">About</NuxtLink>
 </template>
