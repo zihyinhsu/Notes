@@ -166,6 +166,10 @@ export default defineConfig({
                   text: 'useState',
                   link: '/Frontend/nuxt3/useState',
                 },
+                {
+                  text: 'ErrorHandling',
+                  link: '/Frontend/nuxt3/errorHandling',
+                },
               ],
             },
           ],
