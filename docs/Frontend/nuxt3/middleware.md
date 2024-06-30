@@ -126,7 +126,7 @@ definePageMeta({
 
 我們可以透過 `navigateTo` 或 `abortNavigation` 來決定導航、或者阻擋進入某個路由。
 
-```js
+```js{8,12}
 export default defineNuxtRouteMiddleware((to, from) => {
   console.log(to, from);
 
