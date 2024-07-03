@@ -92,7 +92,7 @@ function formatDate(isoString) {
               <span> {{ item }} </span>
             </button>  
           </div>
-           <div class="text-[14px] text-gray-500 font-bold px-1">
+           <div class="text-[14px] text-gray-500 font-bold px-1" v-if="$frontmatter.date">
             <i class="fa-solid fa-clock mr-1"></i>
             {{ formatDate($frontmatter.date) }}
           </div>
