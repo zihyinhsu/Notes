@@ -2,9 +2,9 @@
 date: 2024-06-20
 title: '框架設計概覽'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 框架設計概覽

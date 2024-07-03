@@ -2,9 +2,9 @@
 date: 2024-06-23
 title: '組件化'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 組件化

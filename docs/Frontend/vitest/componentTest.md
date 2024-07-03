@@ -2,9 +2,9 @@
 date: 2024-04-30
 title: '元件測試'
 author: Zihyin Hsu
-category: vitest
+category: Vue
 tags:
-  - vitest
+  - Vitest
 ---
 
 # 元件測試

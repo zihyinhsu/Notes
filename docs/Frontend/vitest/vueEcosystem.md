@@ -2,9 +2,9 @@
 date: 2024-05-04
 title: 'Vue Ecosystem'
 author: Zihyin Hsu
-category: vitest
+category: Vue
 tags:
-  - vitest
+  - Vitest
 ---
 
 # Vue Ecosystem

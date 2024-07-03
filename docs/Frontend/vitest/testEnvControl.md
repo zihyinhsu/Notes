@@ -2,9 +2,9 @@
 date: 2024-05-03
 title: '控制測試環境'
 author: Zihyin Hsu
-category: vitest
+category: Vue
 tags:
-  - vitest
+  - Vitest
 ---
 
 # 控制測試環境

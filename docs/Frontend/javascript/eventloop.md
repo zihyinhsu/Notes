@@ -2,9 +2,9 @@
 date: 2024-06-04
 title: '事件循環 EventLoop'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - javascript
+  - Javascript
 ---
 
 # 事件循環 EventLoop

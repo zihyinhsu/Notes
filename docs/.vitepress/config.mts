@@ -48,18 +48,18 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    lastUpdated: {
-      text: '最後更新於',
-      formatOptions: {
-        dateStyle: 'short',
-        timeStyle: 'short',
-      },
-    },
+    // lastUpdated: {
+    //   text: '最後更新於',
+    //   formatOptions: {
+    //     dateStyle: 'short',
+    //     timeStyle: 'short',
+    //   },
+    // },
     outline: 'deep',
-    editLink: {
-      pattern: 'https://github.com/zihyinhsu/Notes/edit/main/docs/:path',
-      text: '在 GitHub 編輯此頁面',
-    },
+    // editLink: {
+    //   pattern: 'https://github.com/zihyinhsu/Notes/edit/main/docs/:path',
+    //   text: '在 GitHub 編輯此頁面',
+    // },
     search: {
       provider: 'local',
     },

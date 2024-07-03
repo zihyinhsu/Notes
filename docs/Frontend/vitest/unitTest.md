@@ -2,9 +2,9 @@
 date: 2024-04-30
 title: '單元測試'
 author: Zihyin Hsu
-category: vitest
+category: Vue
 tags:
-  - vitest
+  - Vitest
 ---
 
 # 單元測試

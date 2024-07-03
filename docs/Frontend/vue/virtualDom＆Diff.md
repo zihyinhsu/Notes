@@ -2,9 +2,9 @@
 date: 2024-06-04
 title: '虛擬 Dom & Diff 算法'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 虛擬 Dom & Diff 算法

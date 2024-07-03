@@ -2,9 +2,9 @@
 date: 2024-06-04
 title: 'require & import 的差異'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # require/exports & import/export 的差異

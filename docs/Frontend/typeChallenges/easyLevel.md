@@ -2,9 +2,9 @@
 date: 2024-05-13
 title: 'Easy Level'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - typescript
+  - Typescript
 ---
 
 # Easy Level

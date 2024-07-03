@@ -2,9 +2,9 @@
 date: 2024-04-21
 title: 'Vue3 為何用 Proxy 替代 defineProperty?'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # Vue3 為何用 Proxy 替代 defineProperty?

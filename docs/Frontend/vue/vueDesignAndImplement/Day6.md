@@ -2,9 +2,9 @@
 date: 2024-06-23
 title: '服務端渲染'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 服務端渲染

@@ -2,9 +2,9 @@
 date: 2024-06-21
 title: '響應式系統'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 響應式系統

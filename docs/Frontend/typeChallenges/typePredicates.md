@@ -2,7 +2,7 @@
 date: 2024-06-04
 title: 'Type predicates'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Typescript
 ---

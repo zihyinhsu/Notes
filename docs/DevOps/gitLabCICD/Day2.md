@@ -4,7 +4,7 @@ title: 'gitLab CI/CD'
 author: Zihyin Hsu
 category: DevOps
 tags:
-  - gitLabCICD
+  - GitLab CICD
 ---
 
 # gitLab CI/CD

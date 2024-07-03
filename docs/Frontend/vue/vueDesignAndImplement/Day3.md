@@ -2,9 +2,9 @@
 date: 2024-06-22
 title: '渲染器'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 渲染器

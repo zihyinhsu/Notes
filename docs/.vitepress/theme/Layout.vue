@@ -55,6 +55,13 @@ function updateCursorPosition(e) {
 
 const windowWidth = ref(window.innerWidth);
 
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}/${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}`;
+}
 </script>
 
 <template>
@@ -76,14 +83,20 @@ const windowWidth = ref(window.innerWidth);
     <template #doc-after>
       <Twikoo></Twikoo>
     </template>
-    <template #doc-before>
-      <!-- <div class="grid grid-cols-4 md:grid-cols-6 gap-2 items-center"> -->
-        <button v-for="item,index in $frontmatter.tags" :key="index" 
-          class="px-2 py-1 mb-4 mr-2 text-[12px] rounded-md bg-gray-200 text-primary font-bold hover:bg-gray-100 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary transition ease-in duration-150">
-          <i class="fa-solid fa-tags mr-2"></i>
-          <span> {{ item }} </span>
-        </button>      
-      <!-- </div> -->
+    <template #doc-footer-before>
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex space-x-2">
+            <button v-for="item,index in $frontmatter.tags" :key="index" 
+              class="px-2 py-1 text-[12px] rounded-md bg-gray-200 text-primary font-bold hover:bg-gray-100 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary transition ease-in duration-150">
+              <i class="fa-solid fa-tags mr-2"></i>
+              <span> {{ item }} </span>
+            </button>  
+          </div>
+           <div class="text-[14px] text-gray-500 font-bold px-1">
+            <i class="fa-solid fa-clock mr-1"></i>
+            {{ formatDate($frontmatter.date) }}
+          </div>
+        </div>
     </template>
     <template #nav-bar-title-after>
       <!-- <span>

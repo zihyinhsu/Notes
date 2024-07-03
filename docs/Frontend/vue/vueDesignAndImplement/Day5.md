@@ -2,9 +2,9 @@
 date: 2024-06-23
 title: '編譯器'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - vue
+  - Vue
 ---
 
 # 編譯器

@@ -2,9 +2,9 @@
 date: 2024-06-04
 title: '閉包 Closure'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
-  - javascript
+  - Javascript
 ---
 
 # 閉包 Closure
