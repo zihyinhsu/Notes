@@ -12,6 +12,12 @@ export default defineConfig({
       'script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js' },
     ],
+    [
+      'script',
+      {
+        src: 'https://kit.fontawesome.com/10ca216126.js',
+      },
+    ],
     ['meta', { name: 'robots', content: 'all' }],
     [
       'meta',
@@ -169,6 +175,10 @@ export default defineConfig({
                 {
                   text: 'ErrorHandling',
                   link: '/Frontend/nuxt3/errorHandling',
+                },
+                {
+                  text: 'Nitro Server',
+                  link: '/Frontend/nuxt3/nitroServer',
                 },
               ],
             },
