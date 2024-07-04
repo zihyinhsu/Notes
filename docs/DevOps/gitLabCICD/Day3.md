@@ -1,6 +1,6 @@
 ---
 date: 2024-06-04
-title: 'gitLab CI/CD'
+title: 'gitLab CI/CD Day3'
 author: Zihyin Hsu
 category: DevOps
 tags:
