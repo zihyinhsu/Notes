@@ -2,7 +2,7 @@
 date: 2024-06-27
 title: 'useFetch'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

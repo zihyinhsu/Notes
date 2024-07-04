@@ -2,7 +2,7 @@
 date: 2024-07-04
 title: 'Nitro Server'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

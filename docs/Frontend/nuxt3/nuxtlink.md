@@ -2,7 +2,7 @@
 date: 2024-06-25
 title: 'NuxtLink & a tag'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

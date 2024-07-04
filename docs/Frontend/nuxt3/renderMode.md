@@ -2,7 +2,7 @@
 date: 2024-06-20
 title: 'SSR、CSR、SSG'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

@@ -2,7 +2,7 @@
 date: 2024-06-28
 title: 'useState'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

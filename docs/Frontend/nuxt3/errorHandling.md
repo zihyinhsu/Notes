@@ -2,7 +2,7 @@
 date: 2024-06-30
 title: 'Error Handling'
 author: Zihyin Hsu
-category: frontend
+category: Frontend
 tags:
   - Nuxt3
 ---

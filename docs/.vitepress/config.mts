@@ -180,6 +180,10 @@ export default defineConfig({
                   text: 'Nitro Server',
                   link: '/Frontend/nuxt3/nitroServer',
                 },
+                {
+                  text: 'Nuxt3 & Supabase',
+                  link: '/Frontend/nuxt3/supabase',
+                },
               ],
             },
           ],
