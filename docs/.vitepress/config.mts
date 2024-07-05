@@ -181,7 +181,11 @@ export default defineConfig({
                   link: '/Frontend/nuxt3/nitroServer',
                 },
                 {
-                  text: 'Nuxt3 & Supabase',
+                  text: 'Nuxt3 Testing',
+                  link: '/Frontend/nuxt3/testing',
+                },
+                {
+                  text: '整合 Supabase',
                   link: '/Frontend/nuxt3/supabase',
                 },
               ],
