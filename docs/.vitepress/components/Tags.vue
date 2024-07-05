@@ -23,9 +23,7 @@ function filterByTag(tag) {
 
 const queryTag = computed(() => {
     const queryTag = new URLSearchParams(window.location.search);
-    if(!selectedTag.value && queryTag){
-        selectedTag.value = queryTag.get('tag');
-    }
+    selectedTag.value = queryTag.get('tag');
     return queryTag.get('tag');
 });
 
@@ -34,7 +32,7 @@ const queryTag = computed(() => {
 <template>
     <div>
         <div class="container mx-auto mt-6">
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 mb-6">
                 <button v-for="tag,index in uniqueTags" :key="index" 
                     class="px-2 py-1 rounded-md bg-gray-200 text-primary font-bold hover:bg-gray-100 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary transition ease-in duration-150"
                     :class="{ 'bg-primary text-white hover:text-primary' : selectedTag === tag || (selectedTag === queryTag === tag) }"
@@ -44,7 +42,7 @@ const queryTag = computed(() => {
                     <span> {{ tag }} </span>
                 </button> 
             </div>
-            <div class="mt-4" v-for="post in filteredPosts" :key="post.title">
+            <div class="py-2" v-for="post in filteredPosts" :key="post.title">
                 <div class="flex justify-between cursor-pointer hover:font-bold hover:text-primary" @click="router.go(post.url)">
                     <h2>{{ post.title }}</h2>
                     <p>發佈於: {{ post.date }}</p>
