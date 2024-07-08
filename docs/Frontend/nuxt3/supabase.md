@@ -289,7 +289,7 @@ definePageMeta({
 
 4. 成功建立 Credentials 之後，將 Clint ID 和 Client secret 貼回 Supabase，Enable Sign in with Google 之後 `建立`。
 
-```vue{2-5}
+```vue{3-5}
 <script setup lang="ts">
 async function handleGoogleLogin() {
   const { data, error } = await supabase.auth.signInWithOAuth({
