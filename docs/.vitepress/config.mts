@@ -142,6 +142,10 @@ export default defineConfig({
                   text: '虛擬 Dom & Diff 算法',
                   link: '/Frontend/vue/virtualDom＆Diff',
                 },
+                {
+                  text: 'SSR、CSR、SSG',
+                  link: '/Frontend/vue/renderMode',
+                },
               ],
             },
             {
@@ -151,10 +155,6 @@ export default defineConfig({
                 {
                   text: 'NuxtLink & a tag',
                   link: '/Frontend/nuxt3/nuxtlink',
-                },
-                {
-                  text: 'SSR、CSR、SSG',
-                  link: '/Frontend/nuxt3/renderMode',
                 },
                 {
                   text: 'Hydration',
@@ -181,7 +181,7 @@ export default defineConfig({
                   link: '/Frontend/nuxt3/nitroServer',
                 },
                 {
-                  text: 'Nuxt3 Testing',
+                  text: 'Testing',
                   link: '/Frontend/nuxt3/testing',
                 },
                 {
