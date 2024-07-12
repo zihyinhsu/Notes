@@ -1,59 +1,42 @@
-import { nextTick, onMounted, watch } from './chunk-O4XWQMLZ.js';
+import {
+  nextTick,
+  onMounted,
+  watch
+} from "./chunk-O4XWQMLZ.js";
 
 // node_modules/viewerjs/dist/viewer.esm.js
 function ownKeys(e, r) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e);
-    r &&
-      (o = o.filter(function (r2) {
-        return Object.getOwnPropertyDescriptor(e, r2).enumerable;
-      })),
-      t.push.apply(t, o);
+    r && (o = o.filter(function(r2) {
+      return Object.getOwnPropertyDescriptor(e, r2).enumerable;
+    })), t.push.apply(t, o);
   }
   return t;
 }
 function _objectSpread2(e) {
   for (var r = 1; r < arguments.length; r++) {
     var t = null != arguments[r] ? arguments[r] : {};
-    r % 2
-      ? ownKeys(Object(t), true).forEach(function (r2) {
-          _defineProperty(e, r2, t[r2]);
-        })
-      : Object.getOwnPropertyDescriptors
-        ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t))
-        : ownKeys(Object(t)).forEach(function (r2) {
-            Object.defineProperty(
-              e,
-              r2,
-              Object.getOwnPropertyDescriptor(t, r2),
-            );
-          });
+    r % 2 ? ownKeys(Object(t), true).forEach(function(r2) {
+      _defineProperty(e, r2, t[r2]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
+      Object.defineProperty(e, r2, Object.getOwnPropertyDescriptor(t, r2));
+    });
   }
   return e;
 }
 function _typeof(o) {
-  '@babel/helpers - typeof';
-  return (
-    (_typeof =
-      'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-        ? function (o2) {
-            return typeof o2;
-          }
-        : function (o2) {
-            return o2 &&
-              'function' == typeof Symbol &&
-              o2.constructor === Symbol &&
-              o2 !== Symbol.prototype
-              ? 'symbol'
-              : typeof o2;
-          }),
-    _typeof(o)
-  );
+  "@babel/helpers - typeof";
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof(o);
 }
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
+    throw new TypeError("Cannot call a class as a function");
   }
 }
 function _defineProperties(target, props) {
@@ -61,15 +44,18 @@ function _defineProperties(target, props) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
-    if ('value' in descriptor) descriptor.writable = true;
+    if ("value" in descriptor)
+      descriptor.writable = true;
     Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
   }
 }
 function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, 'prototype', {
-    writable: false,
+  if (protoProps)
+    _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps)
+    _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
   });
   return Constructor;
 }
@@ -80,7 +66,7 @@ function _defineProperty(obj, key, value) {
       value,
       enumerable: true,
       configurable: true,
-      writable: true,
+      writable: true
     });
   } else {
     obj[key] = value;
@@ -88,18 +74,20 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 function _toPrimitive(input, hint) {
-  if (typeof input !== 'object' || input === null) return input;
+  if (typeof input !== "object" || input === null)
+    return input;
   var prim = input[Symbol.toPrimitive];
   if (prim !== void 0) {
-    var res = prim.call(input, hint || 'default');
-    if (typeof res !== 'object') return res;
-    throw new TypeError('@@toPrimitive must return a primitive value.');
+    var res = prim.call(input, hint || "default");
+    if (typeof res !== "object")
+      return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === 'string' ? String : Number)(input);
+  return (hint === "string" ? String : Number)(input);
 }
 function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, 'string');
-  return typeof key === 'symbol' ? key : String(key);
+  var key = _toPrimitive(arg, "string");
+  return typeof key === "symbol" ? key : String(key);
 }
 var DEFAULTS = {
   /**
@@ -132,12 +120,12 @@ var DEFAULTS = {
    * Custom class name(s) to add to the viewer's root element.
    * @type {string}
    */
-  className: '',
+  className: "",
   /**
    * Define where to put the viewer in modal mode.
    * @type {string | Element}
    */
-  container: 'body',
+  container: "body",
   /**
    * Filter the images for viewing. Return true if the image is viewable.
    * @type {Function}
@@ -153,16 +141,7 @@ var DEFAULTS = {
    * Define the extra attributes to inherit from the original image.
    * @type {Array}
    */
-  inheritedAttributes: [
-    'crossOrigin',
-    'decoding',
-    'isMap',
-    'loading',
-    'referrerPolicy',
-    'sizes',
-    'srcset',
-    'useMap',
-  ],
+  inheritedAttributes: ["crossOrigin", "decoding", "isMap", "loading", "referrerPolicy", "sizes", "srcset", "useMap"],
   /**
    * Define the initial coverage of the viewing image.
    * @type {number}
@@ -293,7 +272,7 @@ var DEFAULTS = {
    * Define where to get the original image URL for viewing.
    * @type {string | Function}
    */
-  url: 'src',
+  url: "src",
   /**
    * Event shortcuts.
    * @type {Function}
@@ -314,101 +293,82 @@ var DEFAULTS = {
   zoom: null,
   zoomed: null,
   play: null,
-  stop: null,
+  stop: null
 };
-var TEMPLATE =
-  '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>';
-var IS_BROWSER =
-  typeof window !== 'undefined' && typeof window.document !== 'undefined';
+var TEMPLATE = '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>';
+var IS_BROWSER = typeof window !== "undefined" && typeof window.document !== "undefined";
 var WINDOW = IS_BROWSER ? window : {};
-var IS_TOUCH_DEVICE =
-  IS_BROWSER && WINDOW.document.documentElement
-    ? 'ontouchstart' in WINDOW.document.documentElement
-    : false;
-var HAS_POINTER_EVENT = IS_BROWSER ? 'PointerEvent' in WINDOW : false;
-var NAMESPACE = 'viewer';
-var ACTION_MOVE = 'move';
-var ACTION_SWITCH = 'switch';
-var ACTION_ZOOM = 'zoom';
-var CLASS_ACTIVE = ''.concat(NAMESPACE, '-active');
-var CLASS_CLOSE = ''.concat(NAMESPACE, '-close');
-var CLASS_FADE = ''.concat(NAMESPACE, '-fade');
-var CLASS_FIXED = ''.concat(NAMESPACE, '-fixed');
-var CLASS_FULLSCREEN = ''.concat(NAMESPACE, '-fullscreen');
-var CLASS_FULLSCREEN_EXIT = ''.concat(NAMESPACE, '-fullscreen-exit');
-var CLASS_HIDE = ''.concat(NAMESPACE, '-hide');
-var CLASS_HIDE_MD_DOWN = ''.concat(NAMESPACE, '-hide-md-down');
-var CLASS_HIDE_SM_DOWN = ''.concat(NAMESPACE, '-hide-sm-down');
-var CLASS_HIDE_XS_DOWN = ''.concat(NAMESPACE, '-hide-xs-down');
-var CLASS_IN = ''.concat(NAMESPACE, '-in');
-var CLASS_INVISIBLE = ''.concat(NAMESPACE, '-invisible');
-var CLASS_LOADING = ''.concat(NAMESPACE, '-loading');
-var CLASS_MOVE = ''.concat(NAMESPACE, '-move');
-var CLASS_OPEN = ''.concat(NAMESPACE, '-open');
-var CLASS_SHOW = ''.concat(NAMESPACE, '-show');
-var CLASS_TRANSITION = ''.concat(NAMESPACE, '-transition');
-var EVENT_CLICK = 'click';
-var EVENT_DBLCLICK = 'dblclick';
-var EVENT_DRAG_START = 'dragstart';
-var EVENT_FOCUSIN = 'focusin';
-var EVENT_KEY_DOWN = 'keydown';
-var EVENT_LOAD = 'load';
-var EVENT_ERROR = 'error';
-var EVENT_TOUCH_END = IS_TOUCH_DEVICE ? 'touchend touchcancel' : 'mouseup';
-var EVENT_TOUCH_MOVE = IS_TOUCH_DEVICE ? 'touchmove' : 'mousemove';
-var EVENT_TOUCH_START = IS_TOUCH_DEVICE ? 'touchstart' : 'mousedown';
-var EVENT_POINTER_DOWN = HAS_POINTER_EVENT ? 'pointerdown' : EVENT_TOUCH_START;
-var EVENT_POINTER_MOVE = HAS_POINTER_EVENT ? 'pointermove' : EVENT_TOUCH_MOVE;
-var EVENT_POINTER_UP = HAS_POINTER_EVENT
-  ? 'pointerup pointercancel'
-  : EVENT_TOUCH_END;
-var EVENT_RESIZE = 'resize';
-var EVENT_TRANSITION_END = 'transitionend';
-var EVENT_WHEEL = 'wheel';
-var EVENT_READY = 'ready';
-var EVENT_SHOW = 'show';
-var EVENT_SHOWN = 'shown';
-var EVENT_HIDE = 'hide';
-var EVENT_HIDDEN = 'hidden';
-var EVENT_VIEW = 'view';
-var EVENT_VIEWED = 'viewed';
-var EVENT_MOVE = 'move';
-var EVENT_MOVED = 'moved';
-var EVENT_ROTATE = 'rotate';
-var EVENT_ROTATED = 'rotated';
-var EVENT_SCALE = 'scale';
-var EVENT_SCALED = 'scaled';
-var EVENT_ZOOM = 'zoom';
-var EVENT_ZOOMED = 'zoomed';
-var EVENT_PLAY = 'play';
-var EVENT_STOP = 'stop';
-var DATA_ACTION = ''.concat(NAMESPACE, 'Action');
+var IS_TOUCH_DEVICE = IS_BROWSER && WINDOW.document.documentElement ? "ontouchstart" in WINDOW.document.documentElement : false;
+var HAS_POINTER_EVENT = IS_BROWSER ? "PointerEvent" in WINDOW : false;
+var NAMESPACE = "viewer";
+var ACTION_MOVE = "move";
+var ACTION_SWITCH = "switch";
+var ACTION_ZOOM = "zoom";
+var CLASS_ACTIVE = "".concat(NAMESPACE, "-active");
+var CLASS_CLOSE = "".concat(NAMESPACE, "-close");
+var CLASS_FADE = "".concat(NAMESPACE, "-fade");
+var CLASS_FIXED = "".concat(NAMESPACE, "-fixed");
+var CLASS_FULLSCREEN = "".concat(NAMESPACE, "-fullscreen");
+var CLASS_FULLSCREEN_EXIT = "".concat(NAMESPACE, "-fullscreen-exit");
+var CLASS_HIDE = "".concat(NAMESPACE, "-hide");
+var CLASS_HIDE_MD_DOWN = "".concat(NAMESPACE, "-hide-md-down");
+var CLASS_HIDE_SM_DOWN = "".concat(NAMESPACE, "-hide-sm-down");
+var CLASS_HIDE_XS_DOWN = "".concat(NAMESPACE, "-hide-xs-down");
+var CLASS_IN = "".concat(NAMESPACE, "-in");
+var CLASS_INVISIBLE = "".concat(NAMESPACE, "-invisible");
+var CLASS_LOADING = "".concat(NAMESPACE, "-loading");
+var CLASS_MOVE = "".concat(NAMESPACE, "-move");
+var CLASS_OPEN = "".concat(NAMESPACE, "-open");
+var CLASS_SHOW = "".concat(NAMESPACE, "-show");
+var CLASS_TRANSITION = "".concat(NAMESPACE, "-transition");
+var EVENT_CLICK = "click";
+var EVENT_DBLCLICK = "dblclick";
+var EVENT_DRAG_START = "dragstart";
+var EVENT_FOCUSIN = "focusin";
+var EVENT_KEY_DOWN = "keydown";
+var EVENT_LOAD = "load";
+var EVENT_ERROR = "error";
+var EVENT_TOUCH_END = IS_TOUCH_DEVICE ? "touchend touchcancel" : "mouseup";
+var EVENT_TOUCH_MOVE = IS_TOUCH_DEVICE ? "touchmove" : "mousemove";
+var EVENT_TOUCH_START = IS_TOUCH_DEVICE ? "touchstart" : "mousedown";
+var EVENT_POINTER_DOWN = HAS_POINTER_EVENT ? "pointerdown" : EVENT_TOUCH_START;
+var EVENT_POINTER_MOVE = HAS_POINTER_EVENT ? "pointermove" : EVENT_TOUCH_MOVE;
+var EVENT_POINTER_UP = HAS_POINTER_EVENT ? "pointerup pointercancel" : EVENT_TOUCH_END;
+var EVENT_RESIZE = "resize";
+var EVENT_TRANSITION_END = "transitionend";
+var EVENT_WHEEL = "wheel";
+var EVENT_READY = "ready";
+var EVENT_SHOW = "show";
+var EVENT_SHOWN = "shown";
+var EVENT_HIDE = "hide";
+var EVENT_HIDDEN = "hidden";
+var EVENT_VIEW = "view";
+var EVENT_VIEWED = "viewed";
+var EVENT_MOVE = "move";
+var EVENT_MOVED = "moved";
+var EVENT_ROTATE = "rotate";
+var EVENT_ROTATED = "rotated";
+var EVENT_SCALE = "scale";
+var EVENT_SCALED = "scaled";
+var EVENT_ZOOM = "zoom";
+var EVENT_ZOOMED = "zoomed";
+var EVENT_PLAY = "play";
+var EVENT_STOP = "stop";
+var DATA_ACTION = "".concat(NAMESPACE, "Action");
 var REGEXP_SPACES = /\s\s*/;
-var BUTTONS = [
-  'zoom-in',
-  'zoom-out',
-  'one-to-one',
-  'reset',
-  'prev',
-  'play',
-  'next',
-  'rotate-left',
-  'rotate-right',
-  'flip-horizontal',
-  'flip-vertical',
-];
+var BUTTONS = ["zoom-in", "zoom-out", "one-to-one", "reset", "prev", "play", "next", "rotate-left", "rotate-right", "flip-horizontal", "flip-vertical"];
 function isString(value) {
-  return typeof value === 'string';
+  return typeof value === "string";
 }
 var isNaN = Number.isNaN || WINDOW.isNaN;
 function isNumber(value) {
-  return typeof value === 'number' && !isNaN(value);
+  return typeof value === "number" && !isNaN(value);
 }
 function isUndefined(value) {
-  return typeof value === 'undefined';
+  return typeof value === "undefined";
 }
 function isObject(value) {
-  return _typeof(value) === 'object' && value !== null;
+  return _typeof(value) === "object" && value !== null;
 }
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 function isPlainObject(value) {
@@ -418,17 +378,13 @@ function isPlainObject(value) {
   try {
     var _constructor = value.constructor;
     var prototype = _constructor.prototype;
-    return (
-      _constructor &&
-      prototype &&
-      hasOwnProperty.call(prototype, 'isPrototypeOf')
-    );
+    return _constructor && prototype && hasOwnProperty.call(prototype, "isPrototypeOf");
   } catch (error) {
     return false;
   }
 }
 function isFunction(value) {
-  return typeof value === 'function';
+  return typeof value === "function";
 }
 function forEach(data, callback) {
   if (data && isFunction(callback)) {
@@ -441,70 +397,53 @@ function forEach(data, callback) {
         }
       }
     } else if (isObject(data)) {
-      Object.keys(data).forEach(function (key) {
+      Object.keys(data).forEach(function(key) {
         callback.call(data, data[key], key, data);
       });
     }
   }
   return data;
 }
-var assign =
-  Object.assign ||
-  function assign2(obj) {
-    for (
-      var _len = arguments.length,
-        args = new Array(_len > 1 ? _len - 1 : 0),
-        _key = 1;
-      _key < _len;
-      _key++
-    ) {
-      args[_key - 1] = arguments[_key];
-    }
-    if (isObject(obj) && args.length > 0) {
-      args.forEach(function (arg) {
-        if (isObject(arg)) {
-          Object.keys(arg).forEach(function (key) {
-            obj[key] = arg[key];
-          });
-        }
-      });
-    }
-    return obj;
-  };
+var assign = Object.assign || function assign2(obj) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  if (isObject(obj) && args.length > 0) {
+    args.forEach(function(arg) {
+      if (isObject(arg)) {
+        Object.keys(arg).forEach(function(key) {
+          obj[key] = arg[key];
+        });
+      }
+    });
+  }
+  return obj;
+};
 var REGEXP_SUFFIX = /^(?:width|height|left|top|marginLeft|marginTop)$/;
 function setStyle(element, styles) {
   var style = element.style;
-  forEach(styles, function (value, property) {
+  forEach(styles, function(value, property) {
     if (REGEXP_SUFFIX.test(property) && isNumber(value)) {
-      value += 'px';
+      value += "px";
     }
     style[property] = value;
   });
 }
 function escapeHTMLEntities(value) {
-  return isString(value)
-    ? value
-        .replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, '&amp;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-    : value;
+  return isString(value) ? value.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : value;
 }
 function hasClass(element, value) {
   if (!element || !value) {
     return false;
   }
-  return element.classList
-    ? element.classList.contains(value)
-    : element.className.indexOf(value) > -1;
+  return element.classList ? element.classList.contains(value) : element.className.indexOf(value) > -1;
 }
 function addClass(element, value) {
   if (!element || !value) {
     return;
   }
   if (isNumber(element.length)) {
-    forEach(element, function (elem) {
+    forEach(element, function(elem) {
       addClass(elem, value);
     });
     return;
@@ -517,7 +456,7 @@ function addClass(element, value) {
   if (!className) {
     element.className = value;
   } else if (className.indexOf(value) < 0) {
-    element.className = ''.concat(className, ' ').concat(value);
+    element.className = "".concat(className, " ").concat(value);
   }
 }
 function removeClass(element, value) {
@@ -525,7 +464,7 @@ function removeClass(element, value) {
     return;
   }
   if (isNumber(element.length)) {
-    forEach(element, function (elem) {
+    forEach(element, function(elem) {
       removeClass(elem, value);
     });
     return;
@@ -535,7 +474,7 @@ function removeClass(element, value) {
     return;
   }
   if (element.className.indexOf(value) >= 0) {
-    element.className = element.className.replace(value, '');
+    element.className = element.className.replace(value, "");
   }
 }
 function toggleClass(element, value, added) {
@@ -543,7 +482,7 @@ function toggleClass(element, value, added) {
     return;
   }
   if (isNumber(element.length)) {
-    forEach(element, function (elem) {
+    forEach(element, function(elem) {
       toggleClass(elem, value, added);
     });
     return;
@@ -556,7 +495,7 @@ function toggleClass(element, value, added) {
 }
 var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
 function hyphenate(value) {
-  return value.replace(REGEXP_HYPHENATE, '$1-$2').toLowerCase();
+  return value.replace(REGEXP_HYPHENATE, "$1-$2").toLowerCase();
 }
 function getData(element, name) {
   if (isObject(element[name])) {
@@ -565,7 +504,7 @@ function getData(element, name) {
   if (element.dataset) {
     return element.dataset[name];
   }
-  return element.getAttribute('data-'.concat(hyphenate(name)));
+  return element.getAttribute("data-".concat(hyphenate(name)));
 }
 function setData(element, name, data) {
   if (isObject(data)) {
@@ -573,15 +512,16 @@ function setData(element, name, data) {
   } else if (element.dataset) {
     element.dataset[name] = data;
   } else {
-    element.setAttribute('data-'.concat(hyphenate(name)), data);
+    element.setAttribute("data-".concat(hyphenate(name)), data);
   }
 }
-var onceSupported = (function () {
+var onceSupported = function() {
   var supported = false;
   if (IS_BROWSER) {
     var once = false;
-    var listener = function listener2() {};
-    var options = Object.defineProperty({}, 'once', {
+    var listener = function listener2() {
+    };
+    var options = Object.defineProperty({}, "once", {
       get: function get() {
         supported = true;
         return once;
@@ -593,92 +533,69 @@ var onceSupported = (function () {
        */
       set: function set(value) {
         once = value;
-      },
+      }
     });
-    WINDOW.addEventListener('test', listener, options);
-    WINDOW.removeEventListener('test', listener, options);
+    WINDOW.addEventListener("test", listener, options);
+    WINDOW.removeEventListener("test", listener, options);
   }
   return supported;
-})();
+}();
 function removeListener(element, type, listener) {
-  var options =
-    arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+  var options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
   var handler = listener;
-  type
-    .trim()
-    .split(REGEXP_SPACES)
-    .forEach(function (event) {
-      if (!onceSupported) {
-        var listeners = element.listeners;
-        if (listeners && listeners[event] && listeners[event][listener]) {
-          handler = listeners[event][listener];
-          delete listeners[event][listener];
-          if (Object.keys(listeners[event]).length === 0) {
-            delete listeners[event];
-          }
-          if (Object.keys(listeners).length === 0) {
-            delete element.listeners;
-          }
+  type.trim().split(REGEXP_SPACES).forEach(function(event) {
+    if (!onceSupported) {
+      var listeners = element.listeners;
+      if (listeners && listeners[event] && listeners[event][listener]) {
+        handler = listeners[event][listener];
+        delete listeners[event][listener];
+        if (Object.keys(listeners[event]).length === 0) {
+          delete listeners[event];
+        }
+        if (Object.keys(listeners).length === 0) {
+          delete element.listeners;
         }
       }
-      element.removeEventListener(event, handler, options);
-    });
+    }
+    element.removeEventListener(event, handler, options);
+  });
 }
 function addListener(element, type, listener) {
-  var options =
-    arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+  var options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
   var _handler = listener;
-  type
-    .trim()
-    .split(REGEXP_SPACES)
-    .forEach(function (event) {
-      if (options.once && !onceSupported) {
-        var _element$listeners = element.listeners,
-          listeners = _element$listeners === void 0 ? {} : _element$listeners;
-        _handler = function handler() {
-          delete listeners[event][listener];
-          element.removeEventListener(event, _handler, options);
-          for (
-            var _len2 = arguments.length, args = new Array(_len2), _key2 = 0;
-            _key2 < _len2;
-            _key2++
-          ) {
-            args[_key2] = arguments[_key2];
-          }
-          listener.apply(element, args);
-        };
-        if (!listeners[event]) {
-          listeners[event] = {};
+  type.trim().split(REGEXP_SPACES).forEach(function(event) {
+    if (options.once && !onceSupported) {
+      var _element$listeners = element.listeners, listeners = _element$listeners === void 0 ? {} : _element$listeners;
+      _handler = function handler() {
+        delete listeners[event][listener];
+        element.removeEventListener(event, _handler, options);
+        for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          args[_key2] = arguments[_key2];
         }
-        if (listeners[event][listener]) {
-          element.removeEventListener(
-            event,
-            listeners[event][listener],
-            options,
-          );
-        }
-        listeners[event][listener] = _handler;
-        element.listeners = listeners;
+        listener.apply(element, args);
+      };
+      if (!listeners[event]) {
+        listeners[event] = {};
       }
-      element.addEventListener(event, _handler, options);
-    });
+      if (listeners[event][listener]) {
+        element.removeEventListener(event, listeners[event][listener], options);
+      }
+      listeners[event][listener] = _handler;
+      element.listeners = listeners;
+    }
+    element.addEventListener(event, _handler, options);
+  });
 }
 function dispatchEvent(element, type, data, options) {
   var event;
   if (isFunction(Event) && isFunction(CustomEvent)) {
-    event = new CustomEvent(
-      type,
-      _objectSpread2(
-        {
-          bubbles: true,
-          cancelable: true,
-          detail: data,
-        },
-        options,
-      ),
-    );
+    event = new CustomEvent(type, _objectSpread2({
+      bubbles: true,
+      cancelable: true,
+      detail: data
+    }, options));
   } else {
-    event = document.createEvent('CustomEvent');
+    event = document.createEvent("CustomEvent");
     event.initCustomEvent(type, true, true, data);
   }
   return element.dispatchEvent(event);
@@ -687,60 +604,52 @@ function getOffset(element) {
   var box = element.getBoundingClientRect();
   return {
     left: box.left + (window.pageXOffset - document.documentElement.clientLeft),
-    top: box.top + (window.pageYOffset - document.documentElement.clientTop),
+    top: box.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
 function getTransforms(_ref) {
-  var rotate2 = _ref.rotate,
-    scaleX2 = _ref.scaleX,
-    scaleY2 = _ref.scaleY,
-    translateX = _ref.translateX,
-    translateY = _ref.translateY;
+  var rotate2 = _ref.rotate, scaleX2 = _ref.scaleX, scaleY2 = _ref.scaleY, translateX = _ref.translateX, translateY = _ref.translateY;
   var values = [];
   if (isNumber(translateX) && translateX !== 0) {
-    values.push('translateX('.concat(translateX, 'px)'));
+    values.push("translateX(".concat(translateX, "px)"));
   }
   if (isNumber(translateY) && translateY !== 0) {
-    values.push('translateY('.concat(translateY, 'px)'));
+    values.push("translateY(".concat(translateY, "px)"));
   }
   if (isNumber(rotate2) && rotate2 !== 0) {
-    values.push('rotate('.concat(rotate2, 'deg)'));
+    values.push("rotate(".concat(rotate2, "deg)"));
   }
   if (isNumber(scaleX2) && scaleX2 !== 1) {
-    values.push('scaleX('.concat(scaleX2, ')'));
+    values.push("scaleX(".concat(scaleX2, ")"));
   }
   if (isNumber(scaleY2) && scaleY2 !== 1) {
-    values.push('scaleY('.concat(scaleY2, ')'));
+    values.push("scaleY(".concat(scaleY2, ")"));
   }
-  var transform = values.length ? values.join(' ') : 'none';
+  var transform = values.length ? values.join(" ") : "none";
   return {
     WebkitTransform: transform,
     msTransform: transform,
-    transform,
+    transform
   };
 }
 function getImageNameFromURL(url) {
-  return isString(url)
-    ? decodeURIComponent(url.replace(/^.*\//, '').replace(/[?&#].*$/, ''))
-    : '';
+  return isString(url) ? decodeURIComponent(url.replace(/^.*\//, "").replace(/[?&#].*$/, "")) : "";
 }
-var IS_SAFARI =
-  WINDOW.navigator &&
-  /Version\/\d+(\.\d+)+?\s+Safari/i.test(WINDOW.navigator.userAgent);
+var IS_SAFARI = WINDOW.navigator && /Version\/\d+(\.\d+)+?\s+Safari/i.test(WINDOW.navigator.userAgent);
 function getImageNaturalSizes(image, options, callback) {
-  var newImage = document.createElement('img');
+  var newImage = document.createElement("img");
   if (image.naturalWidth && !IS_SAFARI) {
     callback(image.naturalWidth, image.naturalHeight);
     return newImage;
   }
   var body = document.body || document.documentElement;
-  newImage.onload = function () {
+  newImage.onload = function() {
     callback(newImage.width, newImage.height);
     if (!IS_SAFARI) {
       body.removeChild(newImage);
     }
   };
-  forEach(options.inheritedAttributes, function (name) {
+  forEach(options.inheritedAttributes, function(name) {
     var value = image.getAttribute(name);
     if (value !== null) {
       newImage.setAttribute(name, value);
@@ -748,8 +657,7 @@ function getImageNaturalSizes(image, options, callback) {
   });
   newImage.src = image.src;
   if (!IS_SAFARI) {
-    newImage.style.cssText =
-      'left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;';
+    newImage.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;";
     body.appendChild(newImage);
   }
   return newImage;
@@ -763,15 +671,15 @@ function getResponsiveClass(type) {
     case 4:
       return CLASS_HIDE_MD_DOWN;
     default:
-      return '';
+      return "";
   }
 }
 function getMaxZoomRatio(pointers) {
   var pointers2 = _objectSpread2({}, pointers);
   var ratios = [];
-  forEach(pointers, function (pointer, pointerId) {
+  forEach(pointers, function(pointer, pointerId) {
     delete pointers2[pointerId];
-    forEach(pointers2, function (pointer2) {
+    forEach(pointers2, function(pointer2) {
       var x1 = Math.abs(pointer.startX - pointer2.startX);
       var y1 = Math.abs(pointer.startY - pointer2.startY);
       var x2 = Math.abs(pointer.endX - pointer2.endX);
@@ -782,36 +690,29 @@ function getMaxZoomRatio(pointers) {
       ratios.push(ratio);
     });
   });
-  ratios.sort(function (a, b) {
+  ratios.sort(function(a, b) {
     return Math.abs(a) < Math.abs(b);
   });
   return ratios[0];
 }
 function getPointer(_ref2, endOnly) {
-  var pageX = _ref2.pageX,
-    pageY = _ref2.pageY;
+  var pageX = _ref2.pageX, pageY = _ref2.pageY;
   var end = {
     endX: pageX,
-    endY: pageY,
+    endY: pageY
   };
-  return endOnly
-    ? end
-    : _objectSpread2(
-        {
-          timeStamp: Date.now(),
-          startX: pageX,
-          startY: pageY,
-        },
-        end,
-      );
+  return endOnly ? end : _objectSpread2({
+    timeStamp: Date.now(),
+    startX: pageX,
+    startY: pageY
+  }, end);
 }
 function getPointersCenter(pointers) {
   var pageX = 0;
   var pageY = 0;
   var count = 0;
-  forEach(pointers, function (_ref3) {
-    var startX = _ref3.startX,
-      startY = _ref3.startY;
+  forEach(pointers, function(_ref3) {
+    var startX = _ref3.startX, startY = _ref3.startY;
     pageX += startX;
     pageY += startY;
     count += 1;
@@ -820,7 +721,7 @@ function getPointersCenter(pointers) {
   pageY /= count;
   return {
     pageX,
-    pageY,
+    pageY
   };
 }
 var render = {
@@ -834,26 +735,23 @@ var render = {
     var ownerDocument = this.element.ownerDocument;
     var body = ownerDocument.body || ownerDocument.documentElement;
     this.body = body;
-    this.scrollbarWidth =
-      window.innerWidth - ownerDocument.documentElement.clientWidth;
+    this.scrollbarWidth = window.innerWidth - ownerDocument.documentElement.clientWidth;
     this.initialBodyPaddingRight = body.style.paddingRight;
-    this.initialBodyComputedPaddingRight =
-      window.getComputedStyle(body).paddingRight;
+    this.initialBodyComputedPaddingRight = window.getComputedStyle(body).paddingRight;
   },
   initContainer: function initContainer() {
     this.containerData = {
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerHeight
     };
   },
   initViewer: function initViewer() {
-    var options = this.options,
-      parent = this.parent;
+    var options = this.options, parent = this.parent;
     var viewerData;
     if (options.inline) {
       viewerData = {
         width: Math.max(parent.offsetWidth, options.minWidth),
-        height: Math.max(parent.offsetHeight, options.minHeight),
+        height: Math.max(parent.offsetHeight, options.minHeight)
       };
       this.parentData = viewerData;
     }
@@ -869,19 +767,17 @@ var render = {
   },
   initList: function initList() {
     var _this = this;
-    var element = this.element,
-      options = this.options,
-      list = this.list;
+    var element = this.element, options = this.options, list = this.list;
     var items = [];
-    list.innerHTML = '';
-    forEach(this.images, function (image, index) {
+    list.innerHTML = "";
+    forEach(this.images, function(image, index) {
       var src = image.src;
       var alt = image.alt || getImageNameFromURL(src);
       var url = _this.getImageURL(image);
       if (src || url) {
-        var item = document.createElement('li');
-        var img = document.createElement('img');
-        forEach(options.inheritedAttributes, function (name) {
+        var item = document.createElement("li");
+        var img = document.createElement("img");
+        forEach(options.inheritedAttributes, function(name) {
           var value = image.getAttribute(name);
           if (value !== null) {
             img.setAttribute(name, value);
@@ -891,12 +787,12 @@ var render = {
           img.src = src || url;
         }
         img.alt = alt;
-        img.setAttribute('data-original-url', url || src);
-        item.setAttribute('data-index', index);
-        item.setAttribute('data-viewer-action', 'view');
-        item.setAttribute('role', 'button');
+        img.setAttribute("data-original-url", url || src);
+        item.setAttribute("data-index", index);
+        item.setAttribute("data-viewer-action", "view");
+        item.setAttribute("role", "button");
         if (options.keyboard) {
-          item.setAttribute('tabindex', 0);
+          item.setAttribute("tabindex", 0);
         }
         item.appendChild(img);
         list.appendChild(item);
@@ -904,53 +800,38 @@ var render = {
       }
     });
     this.items = items;
-    forEach(items, function (item) {
+    forEach(items, function(item) {
       var image = item.firstElementChild;
       var onLoad;
       var onError;
-      setData(image, 'filled', true);
+      setData(image, "filled", true);
       if (options.loading) {
         addClass(item, CLASS_LOADING);
       }
-      addListener(
-        image,
-        EVENT_LOAD,
-        (onLoad = function onLoad2(event) {
-          removeListener(image, EVENT_ERROR, onError);
-          if (options.loading) {
-            removeClass(item, CLASS_LOADING);
-          }
-          _this.loadImage(event);
-        }),
-        {
-          once: true,
-        },
-      );
-      addListener(
-        image,
-        EVENT_ERROR,
-        (onError = function onError2() {
-          removeListener(image, EVENT_LOAD, onLoad);
-          if (options.loading) {
-            removeClass(item, CLASS_LOADING);
-          }
-        }),
-        {
-          once: true,
-        },
-      );
+      addListener(image, EVENT_LOAD, onLoad = function onLoad2(event) {
+        removeListener(image, EVENT_ERROR, onError);
+        if (options.loading) {
+          removeClass(item, CLASS_LOADING);
+        }
+        _this.loadImage(event);
+      }, {
+        once: true
+      });
+      addListener(image, EVENT_ERROR, onError = function onError2() {
+        removeListener(image, EVENT_LOAD, onLoad);
+        if (options.loading) {
+          removeClass(item, CLASS_LOADING);
+        }
+      }, {
+        once: true
+      });
     });
     if (options.transition) {
-      addListener(
-        element,
-        EVENT_VIEWED,
-        function () {
-          addClass(list, CLASS_TRANSITION);
-        },
-        {
-          once: true,
-        },
-      );
+      addListener(element, EVENT_VIEWED, function() {
+        addClass(list, CLASS_TRANSITION);
+      }, {
+        once: true
+      });
     }
   },
   renderList: function renderList() {
@@ -960,41 +841,26 @@ var render = {
       return;
     }
     var next2 = item.nextElementSibling;
-    var gutter = parseInt(
-      window.getComputedStyle(next2 || item).marginLeft,
-      10,
-    );
+    var gutter = parseInt(window.getComputedStyle(next2 || item).marginLeft, 10);
     var offsetWidth = item.offsetWidth;
     var outerWidth = offsetWidth + gutter;
-    setStyle(
-      this.list,
-      assign(
-        {
-          width: outerWidth * this.length - gutter,
-        },
-        getTransforms({
-          translateX:
-            (this.viewerData.width - offsetWidth) / 2 - outerWidth * index,
-        }),
-      ),
-    );
+    setStyle(this.list, assign({
+      width: outerWidth * this.length - gutter
+    }, getTransforms({
+      translateX: (this.viewerData.width - offsetWidth) / 2 - outerWidth * index
+    })));
   },
   resetList: function resetList() {
     var list = this.list;
-    list.innerHTML = '';
+    list.innerHTML = "";
     removeClass(list, CLASS_TRANSITION);
-    setStyle(
-      list,
-      getTransforms({
-        translateX: 0,
-      }),
-    );
+    setStyle(list, getTransforms({
+      translateX: 0
+    }));
   },
   initImage: function initImage(done) {
     var _this2 = this;
-    var options = this.options,
-      image = this.image,
-      viewerData = this.viewerData;
+    var options = this.options, image = this.image, viewerData = this.viewerData;
     var footerHeight = this.footer.offsetHeight;
     var viewerWidth = viewerData.width;
     var viewerHeight = Math.max(viewerData.height - footerHeight, footerHeight);
@@ -1003,86 +869,67 @@ var render = {
     this.imageInitializing = {
       abort: function abort() {
         sizingImage.onload = null;
-      },
+      }
     };
-    sizingImage = getImageNaturalSizes(
-      image,
-      options,
-      function (naturalWidth, naturalHeight) {
-        var aspectRatio = naturalWidth / naturalHeight;
-        var initialCoverage = Math.max(0, Math.min(1, options.initialCoverage));
-        var width = viewerWidth;
-        var height = viewerHeight;
-        _this2.imageInitializing = false;
-        if (viewerHeight * aspectRatio > viewerWidth) {
-          height = viewerWidth / aspectRatio;
-        } else {
-          width = viewerHeight * aspectRatio;
-        }
-        initialCoverage = isNumber(initialCoverage) ? initialCoverage : 0.9;
-        width = Math.min(width * initialCoverage, naturalWidth);
-        height = Math.min(height * initialCoverage, naturalHeight);
-        var left = (viewerWidth - width) / 2;
-        var top = (viewerHeight - height) / 2;
-        var imageData = {
-          left,
-          top,
-          x: left,
-          y: top,
-          width,
-          height,
-          oldRatio: 1,
-          ratio: width / naturalWidth,
-          aspectRatio,
-          naturalWidth,
-          naturalHeight,
-        };
-        var initialImageData = assign({}, imageData);
-        if (options.rotatable) {
-          imageData.rotate = oldImageData.rotate || 0;
-          initialImageData.rotate = 0;
-        }
-        if (options.scalable) {
-          imageData.scaleX = oldImageData.scaleX || 1;
-          imageData.scaleY = oldImageData.scaleY || 1;
-          initialImageData.scaleX = 1;
-          initialImageData.scaleY = 1;
-        }
-        _this2.imageData = imageData;
-        _this2.initialImageData = initialImageData;
-        if (done) {
-          done();
-        }
-      },
-    );
+    sizingImage = getImageNaturalSizes(image, options, function(naturalWidth, naturalHeight) {
+      var aspectRatio = naturalWidth / naturalHeight;
+      var initialCoverage = Math.max(0, Math.min(1, options.initialCoverage));
+      var width = viewerWidth;
+      var height = viewerHeight;
+      _this2.imageInitializing = false;
+      if (viewerHeight * aspectRatio > viewerWidth) {
+        height = viewerWidth / aspectRatio;
+      } else {
+        width = viewerHeight * aspectRatio;
+      }
+      initialCoverage = isNumber(initialCoverage) ? initialCoverage : 0.9;
+      width = Math.min(width * initialCoverage, naturalWidth);
+      height = Math.min(height * initialCoverage, naturalHeight);
+      var left = (viewerWidth - width) / 2;
+      var top = (viewerHeight - height) / 2;
+      var imageData = {
+        left,
+        top,
+        x: left,
+        y: top,
+        width,
+        height,
+        oldRatio: 1,
+        ratio: width / naturalWidth,
+        aspectRatio,
+        naturalWidth,
+        naturalHeight
+      };
+      var initialImageData = assign({}, imageData);
+      if (options.rotatable) {
+        imageData.rotate = oldImageData.rotate || 0;
+        initialImageData.rotate = 0;
+      }
+      if (options.scalable) {
+        imageData.scaleX = oldImageData.scaleX || 1;
+        imageData.scaleY = oldImageData.scaleY || 1;
+        initialImageData.scaleX = 1;
+        initialImageData.scaleY = 1;
+      }
+      _this2.imageData = imageData;
+      _this2.initialImageData = initialImageData;
+      if (done) {
+        done();
+      }
+    });
   },
   renderImage: function renderImage(done) {
     var _this3 = this;
-    var image = this.image,
-      imageData = this.imageData;
-    setStyle(
-      image,
-      assign(
-        {
-          width: imageData.width,
-          height: imageData.height,
-          // XXX: Not to use translateX/Y to avoid image shaking when zooming
-          marginLeft: imageData.x,
-          marginTop: imageData.y,
-        },
-        getTransforms(imageData),
-      ),
-    );
+    var image = this.image, imageData = this.imageData;
+    setStyle(image, assign({
+      width: imageData.width,
+      height: imageData.height,
+      // XXX: Not to use translateX/Y to avoid image shaking when zooming
+      marginLeft: imageData.x,
+      marginTop: imageData.y
+    }, getTransforms(imageData)));
     if (done) {
-      if (
-        (this.viewing ||
-          this.moving ||
-          this.rotating ||
-          this.scaling ||
-          this.zooming) &&
-        this.options.transition &&
-        hasClass(image, CLASS_TRANSITION)
-      ) {
+      if ((this.viewing || this.moving || this.rotating || this.scaling || this.zooming) && this.options.transition && hasClass(image, CLASS_TRANSITION)) {
         var onTransitionEnd = function onTransitionEnd2() {
           _this3.imageRendering = false;
           done();
@@ -1090,10 +937,10 @@ var render = {
         this.imageRendering = {
           abort: function abort() {
             removeListener(image, EVENT_TRANSITION_END, onTransitionEnd);
-          },
+          }
         };
         addListener(image, EVENT_TRANSITION_END, onTransitionEnd, {
-          once: true,
+          once: true
         });
       } else {
         done();
@@ -1108,66 +955,33 @@ var render = {
       }
       image.parentNode.removeChild(image);
       this.image = null;
-      this.title.innerHTML = '';
+      this.title.innerHTML = "";
     }
-  },
+  }
 };
 var events = {
   bind: function bind() {
-    var options = this.options,
-      viewer2 = this.viewer,
-      canvas = this.canvas;
+    var options = this.options, viewer2 = this.viewer, canvas = this.canvas;
     var document2 = this.element.ownerDocument;
-    addListener(viewer2, EVENT_CLICK, (this.onClick = this.click.bind(this)));
-    addListener(
-      viewer2,
-      EVENT_DRAG_START,
-      (this.onDragStart = this.dragstart.bind(this)),
-    );
-    addListener(
-      canvas,
-      EVENT_POINTER_DOWN,
-      (this.onPointerDown = this.pointerdown.bind(this)),
-    );
-    addListener(
-      document2,
-      EVENT_POINTER_MOVE,
-      (this.onPointerMove = this.pointermove.bind(this)),
-    );
-    addListener(
-      document2,
-      EVENT_POINTER_UP,
-      (this.onPointerUp = this.pointerup.bind(this)),
-    );
-    addListener(
-      document2,
-      EVENT_KEY_DOWN,
-      (this.onKeyDown = this.keydown.bind(this)),
-    );
-    addListener(window, EVENT_RESIZE, (this.onResize = this.resize.bind(this)));
+    addListener(viewer2, EVENT_CLICK, this.onClick = this.click.bind(this));
+    addListener(viewer2, EVENT_DRAG_START, this.onDragStart = this.dragstart.bind(this));
+    addListener(canvas, EVENT_POINTER_DOWN, this.onPointerDown = this.pointerdown.bind(this));
+    addListener(document2, EVENT_POINTER_MOVE, this.onPointerMove = this.pointermove.bind(this));
+    addListener(document2, EVENT_POINTER_UP, this.onPointerUp = this.pointerup.bind(this));
+    addListener(document2, EVENT_KEY_DOWN, this.onKeyDown = this.keydown.bind(this));
+    addListener(window, EVENT_RESIZE, this.onResize = this.resize.bind(this));
     if (options.zoomable && options.zoomOnWheel) {
-      addListener(
-        viewer2,
-        EVENT_WHEEL,
-        (this.onWheel = this.wheel.bind(this)),
-        {
-          passive: false,
-          capture: true,
-        },
-      );
+      addListener(viewer2, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
+        passive: false,
+        capture: true
+      });
     }
     if (options.toggleOnDblclick) {
-      addListener(
-        canvas,
-        EVENT_DBLCLICK,
-        (this.onDblclick = this.dblclick.bind(this)),
-      );
+      addListener(canvas, EVENT_DBLCLICK, this.onDblclick = this.dblclick.bind(this));
     }
   },
   unbind: function unbind() {
-    var options = this.options,
-      viewer2 = this.viewer,
-      canvas = this.canvas;
+    var options = this.options, viewer2 = this.viewer, canvas = this.canvas;
     var document2 = this.element.ownerDocument;
     removeListener(viewer2, EVENT_CLICK, this.onClick);
     removeListener(viewer2, EVENT_DRAG_START, this.onDragStart);
@@ -1179,25 +993,20 @@ var events = {
     if (options.zoomable && options.zoomOnWheel) {
       removeListener(viewer2, EVENT_WHEEL, this.onWheel, {
         passive: false,
-        capture: true,
+        capture: true
       });
     }
     if (options.toggleOnDblclick) {
       removeListener(canvas, EVENT_DBLCLICK, this.onDblclick);
     }
-  },
+  }
 };
 var handlers = {
   click: function click(event) {
-    var options = this.options,
-      imageData = this.imageData;
+    var options = this.options, imageData = this.imageData;
     var target = event.target;
     var action = getData(target, DATA_ACTION);
-    if (
-      !action &&
-      target.localName === 'img' &&
-      target.parentElement.localName === 'li'
-    ) {
+    if (!action && target.localName === "img" && target.parentElement.localName === "li") {
       target = target.parentElement;
       action = getData(target, DATA_ACTION);
     }
@@ -1205,7 +1014,7 @@ var handlers = {
       clearTimeout(this.clickCanvasTimeout);
     }
     switch (action) {
-      case 'mix':
+      case "mix":
         if (this.played) {
           this.stop();
         } else if (options.inline) {
@@ -1218,45 +1027,45 @@ var handlers = {
           this.hide();
         }
         break;
-      case 'hide':
+      case "hide":
         if (!this.pointerMoved) {
           this.hide();
         }
         break;
-      case 'view':
-        this.view(getData(target, 'index'));
+      case "view":
+        this.view(getData(target, "index"));
         break;
-      case 'zoom-in':
+      case "zoom-in":
         this.zoom(0.1, true);
         break;
-      case 'zoom-out':
+      case "zoom-out":
         this.zoom(-0.1, true);
         break;
-      case 'one-to-one':
+      case "one-to-one":
         this.toggle();
         break;
-      case 'reset':
+      case "reset":
         this.reset();
         break;
-      case 'prev':
+      case "prev":
         this.prev(options.loop);
         break;
-      case 'play':
+      case "play":
         this.play(options.fullscreen);
         break;
-      case 'next':
+      case "next":
         this.next(options.loop);
         break;
-      case 'rotate-left':
+      case "rotate-left":
         this.rotate(-90);
         break;
-      case 'rotate-right':
+      case "rotate-right":
         this.rotate(90);
         break;
-      case 'flip-horizontal':
+      case "flip-horizontal":
         this.scaleX(-imageData.scaleX || -1);
         break;
-      case 'flip-vertical':
+      case "flip-vertical":
         this.scaleY(-imageData.scaleY || -1);
         break;
       default:
@@ -1271,9 +1080,7 @@ var handlers = {
       if (IS_TOUCH_DEVICE && event.isTrusted) {
         clearTimeout(this.doubleClickImageTimeout);
       }
-      this.toggle(
-        event.isTrusted ? event : event.detail && event.detail.originalEvent,
-      );
+      this.toggle(event.isTrusted ? event : event.detail && event.detail.originalEvent);
     }
   },
   load: function load() {
@@ -1282,43 +1089,30 @@ var handlers = {
       clearTimeout(this.timeout);
       this.timeout = false;
     }
-    var element = this.element,
-      options = this.options,
-      image = this.image,
-      index = this.index,
-      viewerData = this.viewerData;
+    var element = this.element, options = this.options, image = this.image, index = this.index, viewerData = this.viewerData;
     removeClass(image, CLASS_INVISIBLE);
     if (options.loading) {
       removeClass(this.canvas, CLASS_LOADING);
     }
-    image.style.cssText =
-      'height:0;' +
-      'margin-left:'.concat(viewerData.width / 2, 'px;') +
-      'margin-top:'.concat(viewerData.height / 2, 'px;') +
-      'max-width:none!important;position:relative;width:0;';
-    this.initImage(function () {
+    image.style.cssText = "height:0;" + "margin-left:".concat(viewerData.width / 2, "px;") + "margin-top:".concat(viewerData.height / 2, "px;") + "max-width:none!important;position:relative;width:0;";
+    this.initImage(function() {
       toggleClass(image, CLASS_MOVE, options.movable);
       toggleClass(image, CLASS_TRANSITION, options.transition);
-      _this.renderImage(function () {
+      _this.renderImage(function() {
         _this.viewed = true;
         _this.viewing = false;
         if (isFunction(options.viewed)) {
           addListener(element, EVENT_VIEWED, options.viewed, {
-            once: true,
+            once: true
           });
         }
-        dispatchEvent(
-          element,
-          EVENT_VIEWED,
-          {
-            originalImage: _this.images[index],
-            index,
-            image,
-          },
-          {
-            cancelable: false,
-          },
-        );
+        dispatchEvent(element, EVENT_VIEWED, {
+          originalImage: _this.images[index],
+          index,
+          image
+        }, {
+          cancelable: false
+        });
       });
     });
   },
@@ -1327,40 +1121,30 @@ var handlers = {
     var parent = image.parentNode;
     var parentWidth = parent.offsetWidth || 30;
     var parentHeight = parent.offsetHeight || 50;
-    var filled = !!getData(image, 'filled');
-    getImageNaturalSizes(
-      image,
-      this.options,
-      function (naturalWidth, naturalHeight) {
-        var aspectRatio = naturalWidth / naturalHeight;
-        var width = parentWidth;
-        var height = parentHeight;
-        if (parentHeight * aspectRatio > parentWidth) {
-          if (filled) {
-            width = parentHeight * aspectRatio;
-          } else {
-            height = parentWidth / aspectRatio;
-          }
-        } else if (filled) {
-          height = parentWidth / aspectRatio;
-        } else {
+    var filled = !!getData(image, "filled");
+    getImageNaturalSizes(image, this.options, function(naturalWidth, naturalHeight) {
+      var aspectRatio = naturalWidth / naturalHeight;
+      var width = parentWidth;
+      var height = parentHeight;
+      if (parentHeight * aspectRatio > parentWidth) {
+        if (filled) {
           width = parentHeight * aspectRatio;
+        } else {
+          height = parentWidth / aspectRatio;
         }
-        setStyle(
-          image,
-          assign(
-            {
-              width,
-              height,
-            },
-            getTransforms({
-              translateX: (parentWidth - width) / 2,
-              translateY: (parentHeight - height) / 2,
-            }),
-          ),
-        );
-      },
-    );
+      } else if (filled) {
+        height = parentWidth / aspectRatio;
+      } else {
+        width = parentHeight * aspectRatio;
+      }
+      setStyle(image, assign({
+        width,
+        height
+      }, getTransforms({
+        translateX: (parentWidth - width) / 2,
+        translateY: (parentHeight - height) / 2
+      })));
+    });
   },
   keydown: function keydown(event) {
     var options = this.options;
@@ -1427,68 +1211,45 @@ var handlers = {
     }
   },
   dragstart: function dragstart(event) {
-    if (event.target.localName === 'img') {
+    if (event.target.localName === "img") {
       event.preventDefault();
     }
   },
   pointerdown: function pointerdown(event) {
-    var options = this.options,
-      pointers = this.pointers;
-    var buttons = event.buttons,
-      button = event.button;
+    var options = this.options, pointers = this.pointers;
+    var buttons = event.buttons, button = event.button;
     this.pointerMoved = false;
-    if (
-      !this.viewed ||
-      this.showing ||
-      this.viewing ||
-      this.hiding ||
-      ((event.type === 'mousedown' ||
-        (event.type === 'pointerdown' && event.pointerType === 'mouse')) && // No primary button (Usually the left button)
-        ((isNumber(buttons) && buttons !== 1) ||
-          (isNumber(button) && button !== 0) ||
-          event.ctrlKey))
-    ) {
+    if (!this.viewed || this.showing || this.viewing || this.hiding || (event.type === "mousedown" || event.type === "pointerdown" && event.pointerType === "mouse") && // No primary button (Usually the left button)
+    (isNumber(buttons) && buttons !== 1 || isNumber(button) && button !== 0 || event.ctrlKey)) {
       return;
     }
     event.preventDefault();
     if (event.changedTouches) {
-      forEach(event.changedTouches, function (touch) {
+      forEach(event.changedTouches, function(touch) {
         pointers[touch.identifier] = getPointer(touch);
       });
     } else {
       pointers[event.pointerId || 0] = getPointer(event);
     }
     var action = options.movable ? ACTION_MOVE : false;
-    if (
-      options.zoomOnTouch &&
-      options.zoomable &&
-      Object.keys(pointers).length > 1
-    ) {
+    if (options.zoomOnTouch && options.zoomable && Object.keys(pointers).length > 1) {
       action = ACTION_ZOOM;
-    } else if (
-      options.slideOnTouch &&
-      (event.pointerType === 'touch' || event.type === 'touchstart') &&
-      this.isSwitchable()
-    ) {
+    } else if (options.slideOnTouch && (event.pointerType === "touch" || event.type === "touchstart") && this.isSwitchable()) {
       action = ACTION_SWITCH;
     }
-    if (
-      options.transition &&
-      (action === ACTION_MOVE || action === ACTION_ZOOM)
-    ) {
+    if (options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
       removeClass(this.image, CLASS_TRANSITION);
     }
     this.action = action;
   },
   pointermove: function pointermove(event) {
-    var pointers = this.pointers,
-      action = this.action;
+    var pointers = this.pointers, action = this.action;
     if (!this.viewed || !action) {
       return;
     }
     event.preventDefault();
     if (event.changedTouches) {
-      forEach(event.changedTouches, function (touch) {
+      forEach(event.changedTouches, function(touch) {
         assign(pointers[touch.identifier] || {}, getPointer(touch, true));
       });
     } else {
@@ -1498,12 +1259,10 @@ var handlers = {
   },
   pointerup: function pointerup(event) {
     var _this2 = this;
-    var options = this.options,
-      action = this.action,
-      pointers = this.pointers;
+    var options = this.options, action = this.action, pointers = this.pointers;
     var pointer;
     if (event.changedTouches) {
-      forEach(event.changedTouches, function (touch) {
+      forEach(event.changedTouches, function(touch) {
         pointer = pointers[touch.identifier];
         delete pointers[touch.identifier];
       });
@@ -1515,49 +1274,33 @@ var handlers = {
       return;
     }
     event.preventDefault();
-    if (
-      options.transition &&
-      (action === ACTION_MOVE || action === ACTION_ZOOM)
-    ) {
+    if (options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
       addClass(this.image, CLASS_TRANSITION);
     }
     this.action = false;
-    if (
-      IS_TOUCH_DEVICE &&
-      action !== ACTION_ZOOM &&
-      pointer &&
-      Date.now() - pointer.timeStamp < 500
-    ) {
+    if (IS_TOUCH_DEVICE && action !== ACTION_ZOOM && pointer && Date.now() - pointer.timeStamp < 500) {
       clearTimeout(this.clickCanvasTimeout);
       clearTimeout(this.doubleClickImageTimeout);
-      if (
-        options.toggleOnDblclick &&
-        this.viewed &&
-        event.target === this.image
-      ) {
+      if (options.toggleOnDblclick && this.viewed && event.target === this.image) {
         if (this.imageClicked) {
           this.imageClicked = false;
-          this.doubleClickImageTimeout = setTimeout(function () {
+          this.doubleClickImageTimeout = setTimeout(function() {
             dispatchEvent(_this2.image, EVENT_DBLCLICK, {
-              originalEvent: event,
+              originalEvent: event
             });
           }, 50);
         } else {
           this.imageClicked = true;
-          this.doubleClickImageTimeout = setTimeout(function () {
+          this.doubleClickImageTimeout = setTimeout(function() {
             _this2.imageClicked = false;
           }, 500);
         }
       } else {
         this.imageClicked = false;
-        if (
-          options.backdrop &&
-          options.backdrop !== 'static' &&
-          event.target === this.canvas
-        ) {
-          this.clickCanvasTimeout = setTimeout(function () {
+        if (options.backdrop && options.backdrop !== "static" && event.target === this.canvas) {
+          this.clickCanvasTimeout = setTimeout(function() {
             dispatchEvent(_this2.canvas, EVENT_CLICK, {
-              originalEvent: event,
+              originalEvent: event
             });
           }, 50);
         }
@@ -1579,27 +1322,18 @@ var handlers = {
     this.renderViewer();
     this.renderList();
     if (this.viewed) {
-      this.initImage(function () {
+      this.initImage(function() {
         _this3.renderImage();
       });
     }
     if (this.played) {
-      if (
-        this.options.fullscreen &&
-        this.fulled &&
-        !(
-          document.fullscreenElement ||
-          document.webkitFullscreenElement ||
-          document.mozFullScreenElement ||
-          document.msFullscreenElement
-        )
-      ) {
+      if (this.options.fullscreen && this.fulled && !(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
         this.stop();
         return;
       }
-      forEach(this.player.getElementsByTagName('img'), function (image) {
+      forEach(this.player.getElementsByTagName("img"), function(image) {
         addListener(image, EVENT_LOAD, _this3.loadImage.bind(_this3), {
-          once: true,
+          once: true
         });
         dispatchEvent(image, EVENT_LOAD);
       });
@@ -1615,7 +1349,7 @@ var handlers = {
       return;
     }
     this.wheeling = true;
-    setTimeout(function () {
+    setTimeout(function() {
       _this4.wheeling = false;
     }, 50);
     var ratio = Number(this.options.zoomRatio) || 0.1;
@@ -1628,7 +1362,7 @@ var handlers = {
       delta = event.detail > 0 ? 1 : -1;
     }
     this.zoom(-delta * ratio, true, null, event);
-  },
+  }
 };
 var methods = {
   /** Show the viewer (only available in modal mode)
@@ -1636,10 +1370,8 @@ var methods = {
    * @returns {Viewer} this
    */
   show: function show() {
-    var immediate =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
-    var element = this.element,
-      options = this.options;
+    var immediate = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var element = this.element, options = this.options;
     if (options.inline || this.showing || this.isShown || this.showing) {
       return this;
     }
@@ -1652,7 +1384,7 @@ var methods = {
     }
     if (isFunction(options.show)) {
       addListener(element, EVENT_SHOW, options.show, {
-        once: true,
+        once: true
       });
     }
     if (dispatchEvent(element, EVENT_SHOW) === false || !this.ready) {
@@ -1665,22 +1397,22 @@ var methods = {
     this.open();
     var viewer2 = this.viewer;
     removeClass(viewer2, CLASS_HIDE);
-    viewer2.setAttribute('role', 'dialog');
-    viewer2.setAttribute('aria-labelledby', this.title.id);
-    viewer2.setAttribute('aria-modal', true);
-    viewer2.removeAttribute('aria-hidden');
+    viewer2.setAttribute("role", "dialog");
+    viewer2.setAttribute("aria-labelledby", this.title.id);
+    viewer2.setAttribute("aria-modal", true);
+    viewer2.removeAttribute("aria-hidden");
     if (options.transition && !immediate) {
       var shown2 = this.shown.bind(this);
       this.transitioning = {
         abort: function abort() {
           removeListener(viewer2, EVENT_TRANSITION_END, shown2);
           removeClass(viewer2, CLASS_IN);
-        },
+        }
       };
       addClass(viewer2, CLASS_TRANSITION);
       viewer2.initialOffsetWidth = viewer2.offsetWidth;
       addListener(viewer2, EVENT_TRANSITION_END, shown2, {
-        once: true,
+        once: true
       });
       addClass(viewer2, CLASS_IN);
     } else {
@@ -1696,16 +1428,14 @@ var methods = {
    */
   hide: function hide() {
     var _this = this;
-    var immediate =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
-    var element = this.element,
-      options = this.options;
+    var immediate = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var element = this.element, options = this.options;
     if (options.inline || this.hiding || !(this.isShown || this.showing)) {
       return this;
     }
     if (isFunction(options.hide)) {
       addListener(element, EVENT_HIDE, options.hide, {
-        once: true,
+        once: true
       });
     }
     if (dispatchEvent(element, EVENT_HIDE) === false) {
@@ -1720,8 +1450,7 @@ var methods = {
     } else if (this.viewing) {
       this.viewing.abort();
     }
-    var viewer2 = this.viewer,
-      image = this.image;
+    var viewer2 = this.viewer, image = this.image;
     var hideImmediately = function hideImmediately2() {
       removeClass(viewer2, CLASS_IN);
       _this.hidden();
@@ -1746,17 +1475,13 @@ var methods = {
           if (_this.viewed && hasClass(image, CLASS_TRANSITION)) {
             removeListener(image, EVENT_TRANSITION_END, onImageTransitionEnd);
           } else if (hasClass(viewer2, CLASS_TRANSITION)) {
-            removeListener(
-              viewer2,
-              EVENT_TRANSITION_END,
-              onViewerTransitionEnd,
-            );
+            removeListener(viewer2, EVENT_TRANSITION_END, onViewerTransitionEnd);
           }
-        },
+        }
       };
       if (this.viewed && hasClass(image, CLASS_TRANSITION)) {
         addListener(image, EVENT_TRANSITION_END, onImageTransitionEnd, {
-          once: true,
+          once: true
         });
         this.zoomTo(0, false, null, null, true);
       } else {
@@ -1774,18 +1499,9 @@ var methods = {
    */
   view: function view() {
     var _this2 = this;
-    var index =
-      arguments.length > 0 && arguments[0] !== void 0
-        ? arguments[0]
-        : this.options.initialViewIndex;
+    var index = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.options.initialViewIndex;
     index = Number(index) || 0;
-    if (
-      this.hiding ||
-      this.played ||
-      index < 0 ||
-      index >= this.length ||
-      (this.viewed && index === this.index)
-    ) {
+    if (this.hiding || this.played || index < 0 || index >= this.length || this.viewed && index === this.index) {
       return this;
     }
     if (!this.isShown) {
@@ -1795,16 +1511,13 @@ var methods = {
     if (this.viewing) {
       this.viewing.abort();
     }
-    var element = this.element,
-      options = this.options,
-      title = this.title,
-      canvas = this.canvas;
+    var element = this.element, options = this.options, title = this.title, canvas = this.canvas;
     var item = this.items[index];
-    var img = item.querySelector('img');
-    var url = getData(img, 'originalUrl');
-    var alt = img.getAttribute('alt');
-    var image = document.createElement('img');
-    forEach(options.inheritedAttributes, function (name) {
+    var img = item.querySelector("img");
+    var url = getData(img, "originalUrl");
+    var alt = img.getAttribute("alt");
+    var image = document.createElement("img");
+    forEach(options.inheritedAttributes, function(name) {
       var value = img.getAttribute(name);
       if (value !== null) {
         image.setAttribute(name, value);
@@ -1814,28 +1527,23 @@ var methods = {
     image.alt = alt;
     if (isFunction(options.view)) {
       addListener(element, EVENT_VIEW, options.view, {
-        once: true,
+        once: true
       });
     }
-    if (
-      dispatchEvent(element, EVENT_VIEW, {
-        originalImage: this.images[index],
-        index,
-        image,
-      }) === false ||
-      !this.isShown ||
-      this.hiding ||
-      this.played
-    ) {
+    if (dispatchEvent(element, EVENT_VIEW, {
+      originalImage: this.images[index],
+      index,
+      image
+    }) === false || !this.isShown || this.hiding || this.played) {
       return this;
     }
     var activeItem = this.items[this.index];
     if (activeItem) {
       removeClass(activeItem, CLASS_ACTIVE);
-      activeItem.removeAttribute('aria-selected');
+      activeItem.removeAttribute("aria-selected");
     }
     addClass(item, CLASS_ACTIVE);
-    item.setAttribute('aria-selected', true);
+    item.setAttribute("aria-selected", true);
     if (options.focus) {
       item.focus();
     }
@@ -1847,28 +1555,19 @@ var methods = {
     if (options.loading) {
       addClass(canvas, CLASS_LOADING);
     }
-    canvas.innerHTML = '';
+    canvas.innerHTML = "";
     canvas.appendChild(image);
     this.renderList();
-    title.innerHTML = '';
+    title.innerHTML = "";
     var onViewed = function onViewed2() {
       var imageData = _this2.imageData;
-      var render3 = Array.isArray(options.title)
-        ? options.title[1]
-        : options.title;
-      title.innerHTML = escapeHTMLEntities(
-        isFunction(render3)
-          ? render3.call(_this2, image, imageData)
-          : ''
-              .concat(alt, ' (')
-              .concat(imageData.naturalWidth, ' × ')
-              .concat(imageData.naturalHeight, ')'),
-      );
+      var render3 = Array.isArray(options.title) ? options.title[1] : options.title;
+      title.innerHTML = escapeHTMLEntities(isFunction(render3) ? render3.call(_this2, image, imageData) : "".concat(alt, " (").concat(imageData.naturalWidth, " × ").concat(imageData.naturalHeight, ")"));
     };
     var onLoad;
     var onError;
     addListener(element, EVENT_VIEWED, onViewed, {
-      once: true,
+      once: true
     });
     this.viewing = {
       abort: function abort() {
@@ -1880,50 +1579,40 @@ var methods = {
             _this2.imageInitializing.abort();
           }
         } else {
-          image.src = '';
+          image.src = "";
           removeListener(image, EVENT_LOAD, onLoad);
           if (_this2.timeout) {
             clearTimeout(_this2.timeout);
           }
         }
-      },
+      }
     };
     if (image.complete) {
       this.load();
     } else {
-      addListener(
-        image,
-        EVENT_LOAD,
-        (onLoad = function onLoad2() {
-          removeListener(image, EVENT_ERROR, onError);
-          _this2.load();
-        }),
-        {
-          once: true,
-        },
-      );
-      addListener(
-        image,
-        EVENT_ERROR,
-        (onError = function onError2() {
-          removeListener(image, EVENT_LOAD, onLoad);
-          if (_this2.timeout) {
-            clearTimeout(_this2.timeout);
-            _this2.timeout = false;
-          }
-          removeClass(image, CLASS_INVISIBLE);
-          if (options.loading) {
-            removeClass(_this2.canvas, CLASS_LOADING);
-          }
-        }),
-        {
-          once: true,
-        },
-      );
+      addListener(image, EVENT_LOAD, onLoad = function onLoad2() {
+        removeListener(image, EVENT_ERROR, onError);
+        _this2.load();
+      }, {
+        once: true
+      });
+      addListener(image, EVENT_ERROR, onError = function onError2() {
+        removeListener(image, EVENT_LOAD, onLoad);
+        if (_this2.timeout) {
+          clearTimeout(_this2.timeout);
+          _this2.timeout = false;
+        }
+        removeClass(image, CLASS_INVISIBLE);
+        if (options.loading) {
+          removeClass(_this2.canvas, CLASS_LOADING);
+        }
+      }, {
+        once: true
+      });
       if (this.timeout) {
         clearTimeout(this.timeout);
       }
-      this.timeout = setTimeout(function () {
+      this.timeout = setTimeout(function() {
         removeClass(image, CLASS_INVISIBLE);
         _this2.timeout = false;
       }, 1e3);
@@ -1937,8 +1626,7 @@ var methods = {
    * @returns {Viewer} this
    */
   prev: function prev() {
-    var loop =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var loop = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
     var index = this.index - 1;
     if (index < 0) {
       index = loop ? this.length - 1 : 0;
@@ -1953,8 +1641,7 @@ var methods = {
    * @returns {Viewer} this
    */
   next: function next() {
-    var loop =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var loop = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
     var maxIndex = this.length - 1;
     var index = this.index + 1;
     if (index > maxIndex) {
@@ -1972,10 +1659,7 @@ var methods = {
   move: function move(x) {
     var y = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : x;
     var imageData = this.imageData;
-    this.moveTo(
-      isUndefined(x) ? x : imageData.x + Number(x),
-      isUndefined(y) ? y : imageData.y + Number(y),
-    );
+    this.moveTo(isUndefined(x) ? x : imageData.x + Number(x), isUndefined(y) ? y : imageData.y + Number(y));
     return this;
   },
   /**
@@ -1988,11 +1672,8 @@ var methods = {
   moveTo: function moveTo(x) {
     var _this3 = this;
     var y = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : x;
-    var _originalEvent =
-      arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
-    var element = this.element,
-      options = this.options,
-      imageData = this.imageData;
+    var _originalEvent = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
+    var element = this.element, options = this.options, imageData = this.imageData;
     x = Number(x);
     y = Number(y);
     if (this.viewed && !this.played && options.movable) {
@@ -2012,18 +1693,16 @@ var methods = {
       if (changed) {
         if (isFunction(options.move)) {
           addListener(element, EVENT_MOVE, options.move, {
-            once: true,
+            once: true
           });
         }
-        if (
-          dispatchEvent(element, EVENT_MOVE, {
-            x,
-            y,
-            oldX,
-            oldY,
-            originalEvent: _originalEvent,
-          }) === false
-        ) {
+        if (dispatchEvent(element, EVENT_MOVE, {
+          x,
+          y,
+          oldX,
+          oldY,
+          originalEvent: _originalEvent
+        }) === false) {
           return this;
         }
         imageData.x = x;
@@ -2031,27 +1710,22 @@ var methods = {
         imageData.left = x;
         imageData.top = y;
         this.moving = true;
-        this.renderImage(function () {
+        this.renderImage(function() {
           _this3.moving = false;
           if (isFunction(options.moved)) {
             addListener(element, EVENT_MOVED, options.moved, {
-              once: true,
+              once: true
             });
           }
-          dispatchEvent(
-            element,
-            EVENT_MOVED,
-            {
-              x,
-              y,
-              oldX,
-              oldY,
-              originalEvent: _originalEvent,
-            },
-            {
-              cancelable: false,
-            },
-          );
+          dispatchEvent(element, EVENT_MOVED, {
+            x,
+            y,
+            oldX,
+            oldY,
+            originalEvent: _originalEvent
+          }, {
+            cancelable: false
+          });
         });
       }
     }
@@ -2073,45 +1747,36 @@ var methods = {
    */
   rotateTo: function rotateTo(degree) {
     var _this4 = this;
-    var element = this.element,
-      options = this.options,
-      imageData = this.imageData;
+    var element = this.element, options = this.options, imageData = this.imageData;
     degree = Number(degree);
     if (isNumber(degree) && this.viewed && !this.played && options.rotatable) {
       var oldDegree = imageData.rotate;
       if (isFunction(options.rotate)) {
         addListener(element, EVENT_ROTATE, options.rotate, {
-          once: true,
+          once: true
         });
       }
-      if (
-        dispatchEvent(element, EVENT_ROTATE, {
-          degree,
-          oldDegree,
-        }) === false
-      ) {
+      if (dispatchEvent(element, EVENT_ROTATE, {
+        degree,
+        oldDegree
+      }) === false) {
         return this;
       }
       imageData.rotate = degree;
       this.rotating = true;
-      this.renderImage(function () {
+      this.renderImage(function() {
         _this4.rotating = false;
         if (isFunction(options.rotated)) {
           addListener(element, EVENT_ROTATED, options.rotated, {
-            once: true,
+            once: true
           });
         }
-        dispatchEvent(
-          element,
-          EVENT_ROTATED,
-          {
-            degree,
-            oldDegree,
-          },
-          {
-            cancelable: false,
-          },
-        );
+        dispatchEvent(element, EVENT_ROTATED, {
+          degree,
+          oldDegree
+        }, {
+          cancelable: false
+        });
       });
     }
     return this;
@@ -2142,11 +1807,8 @@ var methods = {
    */
   scale: function scale(scaleX2) {
     var _this5 = this;
-    var scaleY2 =
-      arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : scaleX2;
-    var element = this.element,
-      options = this.options,
-      imageData = this.imageData;
+    var scaleY2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : scaleX2;
+    var element = this.element, options = this.options, imageData = this.imageData;
     scaleX2 = Number(scaleX2);
     scaleY2 = Number(scaleY2);
     if (this.viewed && !this.played && options.scalable) {
@@ -2166,42 +1828,35 @@ var methods = {
       if (changed) {
         if (isFunction(options.scale)) {
           addListener(element, EVENT_SCALE, options.scale, {
-            once: true,
+            once: true
           });
         }
-        if (
-          dispatchEvent(element, EVENT_SCALE, {
-            scaleX: scaleX2,
-            scaleY: scaleY2,
-            oldScaleX,
-            oldScaleY,
-          }) === false
-        ) {
+        if (dispatchEvent(element, EVENT_SCALE, {
+          scaleX: scaleX2,
+          scaleY: scaleY2,
+          oldScaleX,
+          oldScaleY
+        }) === false) {
           return this;
         }
         imageData.scaleX = scaleX2;
         imageData.scaleY = scaleY2;
         this.scaling = true;
-        this.renderImage(function () {
+        this.renderImage(function() {
           _this5.scaling = false;
           if (isFunction(options.scaled)) {
             addListener(element, EVENT_SCALED, options.scaled, {
-              once: true,
+              once: true
             });
           }
-          dispatchEvent(
-            element,
-            EVENT_SCALED,
-            {
-              scaleX: scaleX2,
-              scaleY: scaleY2,
-              oldScaleX,
-              oldScaleY,
-            },
-            {
-              cancelable: false,
-            },
-          );
+          dispatchEvent(element, EVENT_SCALED, {
+            scaleX: scaleX2,
+            scaleY: scaleY2,
+            oldScaleX,
+            oldScaleY
+          }, {
+            cancelable: false
+          });
         });
       }
     }
@@ -2216,12 +1871,9 @@ var methods = {
    * @returns {Viewer} this
    */
   zoom: function zoom(ratio) {
-    var showTooltip =
-      arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
-    var pivot =
-      arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
-    var _originalEvent =
-      arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
+    var showTooltip = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
+    var pivot = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
+    var _originalEvent = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
     var imageData = this.imageData;
     ratio = Number(ratio);
     if (ratio < 0) {
@@ -2229,12 +1881,7 @@ var methods = {
     } else {
       ratio = 1 + ratio;
     }
-    this.zoomTo(
-      (imageData.width * ratio) / imageData.naturalWidth,
-      showTooltip,
-      pivot,
-      _originalEvent,
-    );
+    this.zoomTo(imageData.width * ratio / imageData.naturalWidth, showTooltip, pivot, _originalEvent);
     return this;
   },
   /**
@@ -2248,31 +1895,14 @@ var methods = {
    */
   zoomTo: function zoomTo(ratio) {
     var _this6 = this;
-    var showTooltip =
-      arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
-    var pivot =
-      arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
-    var _originalEvent =
-      arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
-    var _zoomable =
-      arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : false;
-    var element = this.element,
-      options = this.options,
-      pointers = this.pointers,
-      imageData = this.imageData;
-    var x = imageData.x,
-      y = imageData.y,
-      width = imageData.width,
-      height = imageData.height,
-      naturalWidth = imageData.naturalWidth,
-      naturalHeight = imageData.naturalHeight;
+    var showTooltip = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
+    var pivot = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
+    var _originalEvent = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
+    var _zoomable = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : false;
+    var element = this.element, options = this.options, pointers = this.pointers, imageData = this.imageData;
+    var x = imageData.x, y = imageData.y, width = imageData.width, height = imageData.height, naturalWidth = imageData.naturalWidth, naturalHeight = imageData.naturalHeight;
     ratio = Math.max(0, ratio);
-    if (
-      isNumber(ratio) &&
-      this.viewed &&
-      !this.played &&
-      (_zoomable || options.zoomable)
-    ) {
+    if (isNumber(ratio) && this.viewed && !this.played && (_zoomable || options.zoomable)) {
       if (!_zoomable) {
         var minZoomRatio = Math.max(0.01, options.minZoomRatio);
         var maxZoomRatio = Math.min(100, options.maxZoomRatio);
@@ -2280,14 +1910,14 @@ var methods = {
       }
       if (_originalEvent) {
         switch (_originalEvent.type) {
-          case 'wheel':
+          case "wheel":
             if (options.zoomRatio >= 0.055 && ratio > 0.95 && ratio < 1.05) {
               ratio = 1;
             }
             break;
-          case 'pointermove':
-          case 'touchmove':
-          case 'mousemove':
+          case "pointermove":
+          case "touchmove":
+          case "mousemove":
             if (ratio > 0.99 && ratio < 1.01) {
               ratio = 1;
             }
@@ -2301,36 +1931,26 @@ var methods = {
       var oldRatio = imageData.ratio;
       if (isFunction(options.zoom)) {
         addListener(element, EVENT_ZOOM, options.zoom, {
-          once: true,
+          once: true
         });
       }
-      if (
-        dispatchEvent(element, EVENT_ZOOM, {
-          ratio,
-          oldRatio,
-          originalEvent: _originalEvent,
-        }) === false
-      ) {
+      if (dispatchEvent(element, EVENT_ZOOM, {
+        ratio,
+        oldRatio,
+        originalEvent: _originalEvent
+      }) === false) {
         return this;
       }
       this.zooming = true;
       if (_originalEvent) {
         var offset = getOffset(this.viewer);
-        var center =
-          pointers && Object.keys(pointers).length > 0
-            ? getPointersCenter(pointers)
-            : {
-                pageX: _originalEvent.pageX,
-                pageY: _originalEvent.pageY,
-              };
+        var center = pointers && Object.keys(pointers).length > 0 ? getPointersCenter(pointers) : {
+          pageX: _originalEvent.pageX,
+          pageY: _originalEvent.pageY
+        };
         imageData.x -= offsetWidth * ((center.pageX - offset.left - x) / width);
-        imageData.y -=
-          offsetHeight * ((center.pageY - offset.top - y) / height);
-      } else if (
-        isPlainObject(pivot) &&
-        isNumber(pivot.x) &&
-        isNumber(pivot.y)
-      ) {
+        imageData.y -= offsetHeight * ((center.pageY - offset.top - y) / height);
+      } else if (isPlainObject(pivot) && isNumber(pivot.x) && isNumber(pivot.y)) {
         imageData.x -= offsetWidth * ((pivot.x - x) / width);
         imageData.y -= offsetHeight * ((pivot.y - y) / height);
       } else {
@@ -2343,25 +1963,20 @@ var methods = {
       imageData.height = newHeight;
       imageData.oldRatio = oldRatio;
       imageData.ratio = ratio;
-      this.renderImage(function () {
+      this.renderImage(function() {
         _this6.zooming = false;
         if (isFunction(options.zoomed)) {
           addListener(element, EVENT_ZOOMED, options.zoomed, {
-            once: true,
+            once: true
           });
         }
-        dispatchEvent(
-          element,
-          EVENT_ZOOMED,
-          {
-            ratio,
-            oldRatio,
-            originalEvent: _originalEvent,
-          },
-          {
-            cancelable: false,
-          },
-        );
+        dispatchEvent(element, EVENT_ZOOMED, {
+          ratio,
+          oldRatio,
+          originalEvent: _originalEvent
+        }, {
+          cancelable: false
+        });
       });
       if (showTooltip) {
         this.tooltip();
@@ -2376,16 +1991,14 @@ var methods = {
    */
   play: function play() {
     var _this7 = this;
-    var fullscreen =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var fullscreen = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
     if (!this.isShown || this.played) {
       return this;
     }
-    var element = this.element,
-      options = this.options;
+    var element = this.element, options = this.options;
     if (isFunction(options.play)) {
       addListener(element, EVENT_PLAY, options.play, {
-        once: true,
+        once: true
       });
     }
     if (dispatchEvent(element, EVENT_PLAY) === false) {
@@ -2402,11 +2015,11 @@ var methods = {
       this.requestFullscreen(fullscreen);
     }
     addClass(player, CLASS_SHOW);
-    forEach(this.items, function (item, i) {
-      var img = item.querySelector('img');
-      var image = document.createElement('img');
-      image.src = getData(img, 'originalUrl');
-      image.alt = img.getAttribute('alt');
+    forEach(this.items, function(item, i) {
+      var img = item.querySelector("img");
+      var image = document.createElement("img");
+      image.src = getData(img, "originalUrl");
+      image.alt = img.getAttribute("alt");
       image.referrerPolicy = img.referrerPolicy;
       total += 1;
       addClass(image, CLASS_FADE);
@@ -2417,7 +2030,7 @@ var methods = {
       }
       list.push(image);
       addListener(image, EVENT_LOAD, onLoad, {
-        once: true,
+        once: true
       });
       player.appendChild(image);
     });
@@ -2442,7 +2055,7 @@ var methods = {
         this.playing = {
           prev: prev2,
           next: next2,
-          timeout: setTimeout(next2, options.interval),
+          timeout: setTimeout(next2, options.interval)
         };
       }
     }
@@ -2454,11 +2067,10 @@ var methods = {
     if (!this.played) {
       return this;
     }
-    var element = this.element,
-      options = this.options;
+    var element = this.element, options = this.options;
     if (isFunction(options.stop)) {
       addListener(element, EVENT_STOP, options.stop, {
-        once: true,
+        once: true
       });
     }
     if (dispatchEvent(element, EVENT_STOP) === false) {
@@ -2468,21 +2080,18 @@ var methods = {
     clearTimeout(this.playing.timeout);
     this.playing = false;
     this.played = false;
-    forEach(player.getElementsByTagName('img'), function (image) {
+    forEach(player.getElementsByTagName("img"), function(image) {
       removeListener(image, EVENT_LOAD, _this8.onLoadWhenPlay);
     });
     removeClass(player, CLASS_SHOW);
-    player.innerHTML = '';
+    player.innerHTML = "";
     this.exitFullscreen();
     return this;
   },
   // Enter modal mode (only available in inline mode)
   full: function full() {
     var _this9 = this;
-    var options = this.options,
-      viewer2 = this.viewer,
-      image = this.image,
-      list = this.list;
+    var options = this.options, viewer2 = this.viewer, image = this.image, list = this.list;
     if (!this.isShown || this.played || this.fulled || !options.inline) {
       return this;
     }
@@ -2496,12 +2105,12 @@ var methods = {
       }
     }
     addClass(viewer2, CLASS_FIXED);
-    viewer2.setAttribute('role', 'dialog');
-    viewer2.setAttribute('aria-labelledby', this.title.id);
-    viewer2.setAttribute('aria-modal', true);
-    viewer2.removeAttribute('style');
+    viewer2.setAttribute("role", "dialog");
+    viewer2.setAttribute("aria-labelledby", this.title.id);
+    viewer2.setAttribute("aria-modal", true);
+    viewer2.removeAttribute("style");
     setStyle(viewer2, {
-      zIndex: options.zIndex,
+      zIndex: options.zIndex
     });
     if (options.focus) {
       this.enforceFocus();
@@ -2510,10 +2119,10 @@ var methods = {
     this.viewerData = assign({}, this.containerData);
     this.renderList();
     if (this.viewed) {
-      this.initImage(function () {
-        _this9.renderImage(function () {
+      this.initImage(function() {
+        _this9.renderImage(function() {
           if (options.transition) {
-            setTimeout(function () {
+            setTimeout(function() {
               addClass(image, CLASS_TRANSITION);
               addClass(list, CLASS_TRANSITION);
             }, 0);
@@ -2526,10 +2135,7 @@ var methods = {
   // Exit modal mode (only available in inline mode)
   exit: function exit() {
     var _this10 = this;
-    var options = this.options,
-      viewer2 = this.viewer,
-      image = this.image,
-      list = this.list;
+    var options = this.options, viewer2 = this.viewer, image = this.image, list = this.list;
     if (!this.isShown || this.played || !this.fulled || !options.inline) {
       return this;
     }
@@ -2545,21 +2151,21 @@ var methods = {
     if (options.focus) {
       this.clearEnforceFocus();
     }
-    viewer2.removeAttribute('role');
-    viewer2.removeAttribute('aria-labelledby');
-    viewer2.removeAttribute('aria-modal');
+    viewer2.removeAttribute("role");
+    viewer2.removeAttribute("aria-labelledby");
+    viewer2.removeAttribute("aria-modal");
     removeClass(viewer2, CLASS_FIXED);
     setStyle(viewer2, {
-      zIndex: options.zIndexInline,
+      zIndex: options.zIndexInline
     });
     this.viewerData = assign({}, this.parentData);
     this.renderViewer();
     this.renderList();
     if (this.viewed) {
-      this.initImage(function () {
-        _this10.renderImage(function () {
+      this.initImage(function() {
+        _this10.renderImage(function() {
           if (options.transition) {
-            setTimeout(function () {
+            setTimeout(function() {
               addClass(image, CLASS_TRANSITION);
               addClass(list, CLASS_TRANSITION);
             }, 0);
@@ -2572,13 +2178,11 @@ var methods = {
   // Show the current ratio of the image with percentage
   tooltip: function tooltip() {
     var _this11 = this;
-    var options = this.options,
-      tooltipBox = this.tooltipBox,
-      imageData = this.imageData;
+    var options = this.options, tooltipBox = this.tooltipBox, imageData = this.imageData;
     if (!this.viewed || this.played || !options.tooltip) {
       return this;
     }
-    tooltipBox.textContent = ''.concat(Math.round(imageData.ratio * 100), '%');
+    tooltipBox.textContent = "".concat(Math.round(imageData.ratio * 100), "%");
     if (!this.tooltipping) {
       if (options.transition) {
         if (this.fading) {
@@ -2587,37 +2191,32 @@ var methods = {
         addClass(tooltipBox, CLASS_SHOW);
         addClass(tooltipBox, CLASS_FADE);
         addClass(tooltipBox, CLASS_TRANSITION);
-        tooltipBox.removeAttribute('aria-hidden');
+        tooltipBox.removeAttribute("aria-hidden");
         tooltipBox.initialOffsetWidth = tooltipBox.offsetWidth;
         addClass(tooltipBox, CLASS_IN);
       } else {
         addClass(tooltipBox, CLASS_SHOW);
-        tooltipBox.removeAttribute('aria-hidden');
+        tooltipBox.removeAttribute("aria-hidden");
       }
     } else {
       clearTimeout(this.tooltipping);
     }
-    this.tooltipping = setTimeout(function () {
+    this.tooltipping = setTimeout(function() {
       if (options.transition) {
-        addListener(
-          tooltipBox,
-          EVENT_TRANSITION_END,
-          function () {
-            removeClass(tooltipBox, CLASS_SHOW);
-            removeClass(tooltipBox, CLASS_FADE);
-            removeClass(tooltipBox, CLASS_TRANSITION);
-            tooltipBox.setAttribute('aria-hidden', true);
-            _this11.fading = false;
-          },
-          {
-            once: true,
-          },
-        );
+        addListener(tooltipBox, EVENT_TRANSITION_END, function() {
+          removeClass(tooltipBox, CLASS_SHOW);
+          removeClass(tooltipBox, CLASS_FADE);
+          removeClass(tooltipBox, CLASS_TRANSITION);
+          tooltipBox.setAttribute("aria-hidden", true);
+          _this11.fading = false;
+        }, {
+          once: true
+        });
         removeClass(tooltipBox, CLASS_IN);
         _this11.fading = true;
       } else {
         removeClass(tooltipBox, CLASS_SHOW);
-        tooltipBox.setAttribute('aria-hidden', true);
+        tooltipBox.setAttribute("aria-hidden", true);
       }
       _this11.tooltipping = false;
     }, 1e3);
@@ -2629,8 +2228,7 @@ var methods = {
    * @returns {Viewer} this
    */
   toggle: function toggle() {
-    var _originalEvent =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
+    var _originalEvent = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
     if (this.imageData.ratio === 1) {
       this.zoomTo(this.imageData.oldRatio, true, null, _originalEvent);
     } else {
@@ -2649,25 +2247,20 @@ var methods = {
   // Update viewer when images changed
   update: function update() {
     var _this12 = this;
-    var element = this.element,
-      options = this.options,
-      isImg = this.isImg;
+    var element = this.element, options = this.options, isImg = this.isImg;
     if (isImg && !element.parentNode) {
       return this.destroy();
     }
     var images = [];
-    forEach(
-      isImg ? [element] : element.querySelectorAll('img'),
-      function (image) {
-        if (isFunction(options.filter)) {
-          if (options.filter.call(_this12, image)) {
-            images.push(image);
-          }
-        } else if (_this12.getImageURL(image)) {
+    forEach(isImg ? [element] : element.querySelectorAll("img"), function(image) {
+      if (isFunction(options.filter)) {
+        if (options.filter.call(_this12, image)) {
           images.push(image);
         }
-      },
-    );
+      } else if (_this12.getImageURL(image)) {
+        images.push(image);
+      }
+    });
     if (!images.length) {
       return this;
     }
@@ -2675,8 +2268,8 @@ var methods = {
     this.length = images.length;
     if (this.ready) {
       var changedIndexes = [];
-      forEach(this.items, function (item, i) {
-        var img = item.querySelector('img');
+      forEach(this.items, function(item, i) {
+        var img = item.querySelector("img");
         var image = images[i];
         if (image && img) {
           if (image.src !== img.src || image.alt !== img.alt) {
@@ -2687,7 +2280,7 @@ var methods = {
         }
       });
       setStyle(this.list, {
-        width: 'auto',
+        width: "auto"
       });
       this.initList();
       if (this.isShown) {
@@ -2696,16 +2289,11 @@ var methods = {
             var changedIndex = changedIndexes.indexOf(this.index);
             if (changedIndex >= 0) {
               this.viewed = false;
-              this.view(
-                Math.max(
-                  Math.min(this.index - changedIndex, this.length - 1),
-                  0,
-                ),
-              );
+              this.view(Math.max(Math.min(this.index - changedIndex, this.length - 1), 0));
             } else {
               var activeItem = this.items[this.index];
               addClass(activeItem, CLASS_ACTIVE);
-              activeItem.setAttribute('aria-selected', true);
+              activeItem.setAttribute("aria-selected", true);
             }
           }
         } else {
@@ -2713,8 +2301,8 @@ var methods = {
           this.viewed = false;
           this.index = 0;
           this.imageData = {};
-          this.canvas.innerHTML = '';
-          this.title.innerHTML = '';
+          this.canvas.innerHTML = "";
+          this.title.innerHTML = "";
         }
       }
     } else {
@@ -2724,8 +2312,7 @@ var methods = {
   },
   // Destroy the viewer
   destroy: function destroy() {
-    var element = this.element,
-      options = this.options;
+    var element = this.element, options = this.options;
     if (!element[NAMESPACE]) {
       return this;
     }
@@ -2769,7 +2356,7 @@ var methods = {
     }
     element[NAMESPACE] = void 0;
     return this;
-  },
+  }
 };
 var others = {
   getImageURL: function getImageURL(image) {
@@ -2779,38 +2366,27 @@ var others = {
     } else if (isFunction(url)) {
       url = url.call(this, image);
     } else {
-      url = '';
+      url = "";
     }
     return url;
   },
   enforceFocus: function enforceFocus() {
     var _this = this;
     this.clearEnforceFocus();
-    addListener(
-      document,
-      EVENT_FOCUSIN,
-      (this.onFocusin = function (event) {
-        var viewer2 = _this.viewer;
-        var target = event.target;
-        if (
-          target === document ||
-          target === viewer2 ||
-          viewer2.contains(target)
-        ) {
+    addListener(document, EVENT_FOCUSIN, this.onFocusin = function(event) {
+      var viewer2 = _this.viewer;
+      var target = event.target;
+      if (target === document || target === viewer2 || viewer2.contains(target)) {
+        return;
+      }
+      while (target) {
+        if (target.getAttribute("tabindex") !== null || target.getAttribute("aria-modal") === "true") {
           return;
         }
-        while (target) {
-          if (
-            target.getAttribute('tabindex') !== null ||
-            target.getAttribute('aria-modal') === 'true'
-          ) {
-            return;
-          }
-          target = target.parentElement;
-        }
-        viewer2.focus();
-      }),
-    );
+        target = target.parentElement;
+      }
+      viewer2.focus();
+    });
   },
   clearEnforceFocus: function clearEnforceFocus() {
     if (this.onFocusin) {
@@ -2822,11 +2398,7 @@ var others = {
     var body = this.body;
     addClass(body, CLASS_OPEN);
     if (this.scrollbarWidth > 0) {
-      body.style.paddingRight = ''.concat(
-        this.scrollbarWidth +
-          (parseFloat(this.initialBodyComputedPaddingRight) || 0),
-        'px',
-      );
+      body.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px");
     }
   },
   close: function close() {
@@ -2837,9 +2409,7 @@ var others = {
     }
   },
   shown: function shown() {
-    var element = this.element,
-      options = this.options,
-      viewer2 = this.viewer;
+    var element = this.element, options = this.options, viewer2 = this.viewer;
     this.fulled = true;
     this.isShown = true;
     this.render();
@@ -2851,7 +2421,7 @@ var others = {
     }
     if (isFunction(options.shown)) {
       addListener(element, EVENT_SHOWN, options.shown, {
-        once: true,
+        once: true
       });
     }
     if (dispatchEvent(element, EVENT_SHOWN) === false) {
@@ -2862,19 +2432,17 @@ var others = {
     }
   },
   hidden: function hidden() {
-    var element = this.element,
-      options = this.options,
-      viewer2 = this.viewer;
+    var element = this.element, options = this.options, viewer2 = this.viewer;
     if (options.fucus) {
       this.clearEnforceFocus();
     }
     this.close();
     this.unbind();
     addClass(viewer2, CLASS_HIDE);
-    viewer2.removeAttribute('role');
-    viewer2.removeAttribute('aria-labelledby');
-    viewer2.removeAttribute('aria-modal');
-    viewer2.setAttribute('aria-hidden', true);
+    viewer2.removeAttribute("role");
+    viewer2.removeAttribute("aria-labelledby");
+    viewer2.removeAttribute("aria-modal");
+    viewer2.setAttribute("aria-hidden", true);
     this.resetList();
     this.resetImage();
     this.fulled = false;
@@ -2884,25 +2452,17 @@ var others = {
     if (!this.destroyed) {
       if (isFunction(options.hidden)) {
         addListener(element, EVENT_HIDDEN, options.hidden, {
-          once: true,
+          once: true
         });
       }
       dispatchEvent(element, EVENT_HIDDEN, null, {
-        cancelable: false,
+        cancelable: false
       });
     }
   },
   requestFullscreen: function requestFullscreen(options) {
     var document2 = this.element.ownerDocument;
-    if (
-      this.fulled &&
-      !(
-        document2.fullscreenElement ||
-        document2.webkitFullscreenElement ||
-        document2.mozFullScreenElement ||
-        document2.msFullscreenElement
-      )
-    ) {
+    if (this.fulled && !(document2.fullscreenElement || document2.webkitFullscreenElement || document2.mozFullScreenElement || document2.msFullscreenElement)) {
       var documentElement = document2.documentElement;
       if (documentElement.requestFullscreen) {
         if (isPlainObject(options)) {
@@ -2921,13 +2481,7 @@ var others = {
   },
   exitFullscreen: function exitFullscreen() {
     var document2 = this.element.ownerDocument;
-    if (
-      this.fulled &&
-      (document2.fullscreenElement ||
-        document2.webkitFullscreenElement ||
-        document2.mozFullScreenElement ||
-        document2.msFullscreenElement)
-    ) {
+    if (this.fulled && (document2.fullscreenElement || document2.webkitFullscreenElement || document2.mozFullScreenElement || document2.msFullscreenElement)) {
       if (document2.exitFullscreen) {
         document2.exitFullscreen();
       } else if (document2.webkitExitFullscreen) {
@@ -2940,8 +2494,7 @@ var others = {
     }
   },
   change: function change(event) {
-    var options = this.options,
-      pointers = this.pointers;
+    var options = this.options, pointers = this.pointers;
     var pointer = pointers[Object.keys(pointers)[0]];
     if (!pointer) {
       return;
@@ -2959,7 +2512,7 @@ var others = {
         this.zoom(getMaxZoomRatio(pointers), false, null, event);
         break;
       case ACTION_SWITCH: {
-        this.action = 'switched';
+        this.action = "switched";
         var absoluteOffsetX = Math.abs(offsetX);
         if (absoluteOffsetX > 1 && absoluteOffsetX > Math.abs(offsetY)) {
           this.pointers = {};
@@ -2972,37 +2525,29 @@ var others = {
         break;
       }
     }
-    forEach(pointers, function (p) {
+    forEach(pointers, function(p) {
       p.startX = p.endX;
       p.startY = p.endY;
     });
   },
   isSwitchable: function isSwitchable() {
-    var imageData = this.imageData,
-      viewerData = this.viewerData;
-    return (
-      this.length > 1 &&
-      imageData.x >= 0 &&
-      imageData.y >= 0 &&
-      imageData.width <= viewerData.width &&
-      imageData.height <= viewerData.height
-    );
-  },
+    var imageData = this.imageData, viewerData = this.viewerData;
+    return this.length > 1 && imageData.x >= 0 && imageData.y >= 0 && imageData.width <= viewerData.width && imageData.height <= viewerData.height;
+  }
 };
 var AnotherViewer = WINDOW.Viewer;
-var getUniqueID = /* @__PURE__ */ (function (id) {
-  return function () {
+var getUniqueID = /* @__PURE__ */ function(id) {
+  return function() {
     id += 1;
     return id;
   };
-})(-1);
-var Viewer = (function () {
+}(-1);
+var Viewer = function() {
   function Viewer2(element) {
-    var options =
-      arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     _classCallCheck(this, Viewer2);
     if (!element || element.nodeType !== 1) {
-      throw new Error('The first argument is required and must be an element.');
+      throw new Error("The first argument is required and must be an element.");
     }
     this.element = element;
     this.options = assign({}, DEFAULTS, isPlainObject(options) && options);
@@ -3034,328 +2579,264 @@ var Viewer = (function () {
     this.id = getUniqueID();
     this.init();
   }
-  _createClass(
-    Viewer2,
-    [
-      {
-        key: 'init',
-        value: function init() {
-          var _this = this;
-          var element = this.element,
-            options = this.options;
-          if (element[NAMESPACE]) {
-            return;
+  _createClass(Viewer2, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      var element = this.element, options = this.options;
+      if (element[NAMESPACE]) {
+        return;
+      }
+      element[NAMESPACE] = this;
+      if (options.focus && !options.keyboard) {
+        options.focus = false;
+      }
+      var isImg = element.localName === "img";
+      var images = [];
+      forEach(isImg ? [element] : element.querySelectorAll("img"), function(image) {
+        if (isFunction(options.filter)) {
+          if (options.filter.call(_this, image)) {
+            images.push(image);
           }
-          element[NAMESPACE] = this;
-          if (options.focus && !options.keyboard) {
-            options.focus = false;
-          }
-          var isImg = element.localName === 'img';
-          var images = [];
-          forEach(
-            isImg ? [element] : element.querySelectorAll('img'),
-            function (image) {
-              if (isFunction(options.filter)) {
-                if (options.filter.call(_this, image)) {
-                  images.push(image);
-                }
-              } else if (_this.getImageURL(image)) {
-                images.push(image);
-              }
-            },
-          );
-          this.isImg = isImg;
-          this.length = images.length;
-          this.images = images;
-          this.initBody();
-          if (isUndefined(document.createElement(NAMESPACE).style.transition)) {
-            options.transition = false;
-          }
-          if (options.inline) {
-            var count = 0;
-            var progress = function progress2() {
-              count += 1;
-              if (count === _this.length) {
-                var timeout;
-                _this.initializing = false;
-                _this.delaying = {
-                  abort: function abort() {
-                    clearTimeout(timeout);
-                  },
-                };
-                timeout = setTimeout(function () {
-                  _this.delaying = false;
-                  _this.build();
-                }, 0);
-              }
-            };
-            this.initializing = {
+        } else if (_this.getImageURL(image)) {
+          images.push(image);
+        }
+      });
+      this.isImg = isImg;
+      this.length = images.length;
+      this.images = images;
+      this.initBody();
+      if (isUndefined(document.createElement(NAMESPACE).style.transition)) {
+        options.transition = false;
+      }
+      if (options.inline) {
+        var count = 0;
+        var progress = function progress2() {
+          count += 1;
+          if (count === _this.length) {
+            var timeout;
+            _this.initializing = false;
+            _this.delaying = {
               abort: function abort() {
-                forEach(images, function (image) {
-                  if (!image.complete) {
-                    removeListener(image, EVENT_LOAD, progress);
-                    removeListener(image, EVENT_ERROR, progress);
-                  }
-                });
-              },
+                clearTimeout(timeout);
+              }
             };
-            forEach(images, function (image) {
-              if (image.complete) {
-                progress();
-              } else {
-                var onLoad;
-                var onError;
-                addListener(
-                  image,
-                  EVENT_LOAD,
-                  (onLoad = function onLoad2() {
-                    removeListener(image, EVENT_ERROR, onError);
-                    progress();
-                  }),
-                  {
-                    once: true,
-                  },
-                );
-                addListener(
-                  image,
-                  EVENT_ERROR,
-                  (onError = function onError2() {
-                    removeListener(image, EVENT_LOAD, onLoad);
-                    progress();
-                  }),
-                  {
-                    once: true,
-                  },
-                );
+            timeout = setTimeout(function() {
+              _this.delaying = false;
+              _this.build();
+            }, 0);
+          }
+        };
+        this.initializing = {
+          abort: function abort() {
+            forEach(images, function(image) {
+              if (!image.complete) {
+                removeListener(image, EVENT_LOAD, progress);
+                removeListener(image, EVENT_ERROR, progress);
               }
             });
-          } else {
-            addListener(
-              element,
-              EVENT_CLICK,
-              (this.onStart = function (_ref) {
-                var target = _ref.target;
-                if (
-                  target.localName === 'img' &&
-                  (!isFunction(options.filter) ||
-                    options.filter.call(_this, target))
-                ) {
-                  _this.view(_this.images.indexOf(target));
-                }
-              }),
-            );
           }
-        },
-      },
-      {
-        key: 'build',
-        value: function build() {
-          if (this.ready) {
+        };
+        forEach(images, function(image) {
+          if (image.complete) {
+            progress();
+          } else {
+            var onLoad;
+            var onError;
+            addListener(image, EVENT_LOAD, onLoad = function onLoad2() {
+              removeListener(image, EVENT_ERROR, onError);
+              progress();
+            }, {
+              once: true
+            });
+            addListener(image, EVENT_ERROR, onError = function onError2() {
+              removeListener(image, EVENT_LOAD, onLoad);
+              progress();
+            }, {
+              once: true
+            });
+          }
+        });
+      } else {
+        addListener(element, EVENT_CLICK, this.onStart = function(_ref) {
+          var target = _ref.target;
+          if (target.localName === "img" && (!isFunction(options.filter) || options.filter.call(_this, target))) {
+            _this.view(_this.images.indexOf(target));
+          }
+        });
+      }
+    }
+  }, {
+    key: "build",
+    value: function build() {
+      if (this.ready) {
+        return;
+      }
+      var element = this.element, options = this.options;
+      var parent = element.parentNode;
+      var template = document.createElement("div");
+      template.innerHTML = TEMPLATE;
+      var viewer2 = template.querySelector(".".concat(NAMESPACE, "-container"));
+      var title = viewer2.querySelector(".".concat(NAMESPACE, "-title"));
+      var toolbar = viewer2.querySelector(".".concat(NAMESPACE, "-toolbar"));
+      var navbar = viewer2.querySelector(".".concat(NAMESPACE, "-navbar"));
+      var button = viewer2.querySelector(".".concat(NAMESPACE, "-button"));
+      var canvas = viewer2.querySelector(".".concat(NAMESPACE, "-canvas"));
+      this.parent = parent;
+      this.viewer = viewer2;
+      this.title = title;
+      this.toolbar = toolbar;
+      this.navbar = navbar;
+      this.button = button;
+      this.canvas = canvas;
+      this.footer = viewer2.querySelector(".".concat(NAMESPACE, "-footer"));
+      this.tooltipBox = viewer2.querySelector(".".concat(NAMESPACE, "-tooltip"));
+      this.player = viewer2.querySelector(".".concat(NAMESPACE, "-player"));
+      this.list = viewer2.querySelector(".".concat(NAMESPACE, "-list"));
+      viewer2.id = "".concat(NAMESPACE).concat(this.id);
+      title.id = "".concat(NAMESPACE, "Title").concat(this.id);
+      addClass(title, !options.title ? CLASS_HIDE : getResponsiveClass(Array.isArray(options.title) ? options.title[0] : options.title));
+      addClass(navbar, !options.navbar ? CLASS_HIDE : getResponsiveClass(options.navbar));
+      toggleClass(button, CLASS_HIDE, !options.button);
+      if (options.keyboard) {
+        button.setAttribute("tabindex", 0);
+      }
+      if (options.backdrop) {
+        addClass(viewer2, "".concat(NAMESPACE, "-backdrop"));
+        if (!options.inline && options.backdrop !== "static") {
+          setData(canvas, DATA_ACTION, "hide");
+        }
+      }
+      if (isString(options.className) && options.className) {
+        options.className.split(REGEXP_SPACES).forEach(function(className) {
+          addClass(viewer2, className);
+        });
+      }
+      if (options.toolbar) {
+        var list = document.createElement("ul");
+        var custom = isPlainObject(options.toolbar);
+        var zoomButtons = BUTTONS.slice(0, 3);
+        var rotateButtons = BUTTONS.slice(7, 9);
+        var scaleButtons = BUTTONS.slice(9);
+        if (!custom) {
+          addClass(toolbar, getResponsiveClass(options.toolbar));
+        }
+        forEach(custom ? options.toolbar : BUTTONS, function(value, index) {
+          var deep = custom && isPlainObject(value);
+          var name = custom ? hyphenate(index) : value;
+          var show2 = deep && !isUndefined(value.show) ? value.show : value;
+          if (!show2 || !options.zoomable && zoomButtons.indexOf(name) !== -1 || !options.rotatable && rotateButtons.indexOf(name) !== -1 || !options.scalable && scaleButtons.indexOf(name) !== -1) {
             return;
           }
-          var element = this.element,
-            options = this.options;
-          var parent = element.parentNode;
-          var template = document.createElement('div');
-          template.innerHTML = TEMPLATE;
-          var viewer2 = template.querySelector(
-            '.'.concat(NAMESPACE, '-container'),
-          );
-          var title = viewer2.querySelector('.'.concat(NAMESPACE, '-title'));
-          var toolbar = viewer2.querySelector(
-            '.'.concat(NAMESPACE, '-toolbar'),
-          );
-          var navbar = viewer2.querySelector('.'.concat(NAMESPACE, '-navbar'));
-          var button = viewer2.querySelector('.'.concat(NAMESPACE, '-button'));
-          var canvas = viewer2.querySelector('.'.concat(NAMESPACE, '-canvas'));
-          this.parent = parent;
-          this.viewer = viewer2;
-          this.title = title;
-          this.toolbar = toolbar;
-          this.navbar = navbar;
-          this.button = button;
-          this.canvas = canvas;
-          this.footer = viewer2.querySelector('.'.concat(NAMESPACE, '-footer'));
-          this.tooltipBox = viewer2.querySelector(
-            '.'.concat(NAMESPACE, '-tooltip'),
-          );
-          this.player = viewer2.querySelector('.'.concat(NAMESPACE, '-player'));
-          this.list = viewer2.querySelector('.'.concat(NAMESPACE, '-list'));
-          viewer2.id = ''.concat(NAMESPACE).concat(this.id);
-          title.id = ''.concat(NAMESPACE, 'Title').concat(this.id);
-          addClass(
-            title,
-            !options.title
-              ? CLASS_HIDE
-              : getResponsiveClass(
-                  Array.isArray(options.title)
-                    ? options.title[0]
-                    : options.title,
-                ),
-          );
-          addClass(
-            navbar,
-            !options.navbar ? CLASS_HIDE : getResponsiveClass(options.navbar),
-          );
-          toggleClass(button, CLASS_HIDE, !options.button);
+          var size = deep && !isUndefined(value.size) ? value.size : value;
+          var click2 = deep && !isUndefined(value.click) ? value.click : value;
+          var item = document.createElement("li");
           if (options.keyboard) {
-            button.setAttribute('tabindex', 0);
+            item.setAttribute("tabindex", 0);
           }
-          if (options.backdrop) {
-            addClass(viewer2, ''.concat(NAMESPACE, '-backdrop'));
-            if (!options.inline && options.backdrop !== 'static') {
-              setData(canvas, DATA_ACTION, 'hide');
-            }
+          item.setAttribute("role", "button");
+          addClass(item, "".concat(NAMESPACE, "-").concat(name));
+          if (!isFunction(click2)) {
+            setData(item, DATA_ACTION, name);
           }
-          if (isString(options.className) && options.className) {
-            options.className
-              .split(REGEXP_SPACES)
-              .forEach(function (className) {
-                addClass(viewer2, className);
-              });
+          if (isNumber(show2)) {
+            addClass(item, getResponsiveClass(show2));
           }
-          if (options.toolbar) {
-            var list = document.createElement('ul');
-            var custom = isPlainObject(options.toolbar);
-            var zoomButtons = BUTTONS.slice(0, 3);
-            var rotateButtons = BUTTONS.slice(7, 9);
-            var scaleButtons = BUTTONS.slice(9);
-            if (!custom) {
-              addClass(toolbar, getResponsiveClass(options.toolbar));
-            }
-            forEach(
-              custom ? options.toolbar : BUTTONS,
-              function (value, index) {
-                var deep = custom && isPlainObject(value);
-                var name = custom ? hyphenate(index) : value;
-                var show2 =
-                  deep && !isUndefined(value.show) ? value.show : value;
-                if (
-                  !show2 ||
-                  (!options.zoomable && zoomButtons.indexOf(name) !== -1) ||
-                  (!options.rotatable && rotateButtons.indexOf(name) !== -1) ||
-                  (!options.scalable && scaleButtons.indexOf(name) !== -1)
-                ) {
-                  return;
-                }
-                var size =
-                  deep && !isUndefined(value.size) ? value.size : value;
-                var click2 =
-                  deep && !isUndefined(value.click) ? value.click : value;
-                var item = document.createElement('li');
-                if (options.keyboard) {
-                  item.setAttribute('tabindex', 0);
-                }
-                item.setAttribute('role', 'button');
-                addClass(item, ''.concat(NAMESPACE, '-').concat(name));
-                if (!isFunction(click2)) {
-                  setData(item, DATA_ACTION, name);
-                }
-                if (isNumber(show2)) {
-                  addClass(item, getResponsiveClass(show2));
-                }
-                if (['small', 'large'].indexOf(size) !== -1) {
-                  addClass(item, ''.concat(NAMESPACE, '-').concat(size));
-                } else if (name === 'play') {
-                  addClass(item, ''.concat(NAMESPACE, '-large'));
-                }
-                if (isFunction(click2)) {
-                  addListener(item, EVENT_CLICK, click2);
-                }
-                list.appendChild(item);
-              },
-            );
-            toolbar.appendChild(list);
-          } else {
-            addClass(toolbar, CLASS_HIDE);
+          if (["small", "large"].indexOf(size) !== -1) {
+            addClass(item, "".concat(NAMESPACE, "-").concat(size));
+          } else if (name === "play") {
+            addClass(item, "".concat(NAMESPACE, "-large"));
           }
-          if (!options.rotatable) {
-            var rotates = toolbar.querySelectorAll('li[class*="rotate"]');
-            addClass(rotates, CLASS_INVISIBLE);
-            forEach(rotates, function (rotate2) {
-              toolbar.appendChild(rotate2);
-            });
+          if (isFunction(click2)) {
+            addListener(item, EVENT_CLICK, click2);
           }
-          if (options.inline) {
-            addClass(button, CLASS_FULLSCREEN);
-            setStyle(viewer2, {
-              zIndex: options.zIndexInline,
-            });
-            if (window.getComputedStyle(parent).position === 'static') {
-              setStyle(parent, {
-                position: 'relative',
-              });
-            }
-            parent.insertBefore(viewer2, element.nextSibling);
-          } else {
-            addClass(button, CLASS_CLOSE);
-            addClass(viewer2, CLASS_FIXED);
-            addClass(viewer2, CLASS_FADE);
-            addClass(viewer2, CLASS_HIDE);
-            setStyle(viewer2, {
-              zIndex: options.zIndex,
-            });
-            var container = options.container;
-            if (isString(container)) {
-              container = element.ownerDocument.querySelector(container);
-            }
-            if (!container) {
-              container = this.body;
-            }
-            container.appendChild(viewer2);
-          }
-          if (options.inline) {
-            this.render();
-            this.bind();
-            this.isShown = true;
-          }
-          this.ready = true;
-          if (isFunction(options.ready)) {
-            addListener(element, EVENT_READY, options.ready, {
-              once: true,
-            });
-          }
-          if (dispatchEvent(element, EVENT_READY) === false) {
-            this.ready = false;
-            return;
-          }
-          if (this.ready && options.inline) {
-            this.view(this.index);
-          }
-        },
-        /**
-         * Get the no conflict viewer class.
-         * @returns {Viewer} The viewer class.
-         */
-      },
-    ],
-    [
-      {
-        key: 'noConflict',
-        value: function noConflict() {
-          window.Viewer = AnotherViewer;
-          return Viewer2;
-        },
-        /**
-         * Change the default options.
-         * @param {Object} options - The new default options.
-         */
-      },
-      {
-        key: 'setDefaults',
-        value: function setDefaults(options) {
-          assign(DEFAULTS, isPlainObject(options) && options);
-        },
-      },
-    ],
-  );
+          list.appendChild(item);
+        });
+        toolbar.appendChild(list);
+      } else {
+        addClass(toolbar, CLASS_HIDE);
+      }
+      if (!options.rotatable) {
+        var rotates = toolbar.querySelectorAll('li[class*="rotate"]');
+        addClass(rotates, CLASS_INVISIBLE);
+        forEach(rotates, function(rotate2) {
+          toolbar.appendChild(rotate2);
+        });
+      }
+      if (options.inline) {
+        addClass(button, CLASS_FULLSCREEN);
+        setStyle(viewer2, {
+          zIndex: options.zIndexInline
+        });
+        if (window.getComputedStyle(parent).position === "static") {
+          setStyle(parent, {
+            position: "relative"
+          });
+        }
+        parent.insertBefore(viewer2, element.nextSibling);
+      } else {
+        addClass(button, CLASS_CLOSE);
+        addClass(viewer2, CLASS_FIXED);
+        addClass(viewer2, CLASS_FADE);
+        addClass(viewer2, CLASS_HIDE);
+        setStyle(viewer2, {
+          zIndex: options.zIndex
+        });
+        var container = options.container;
+        if (isString(container)) {
+          container = element.ownerDocument.querySelector(container);
+        }
+        if (!container) {
+          container = this.body;
+        }
+        container.appendChild(viewer2);
+      }
+      if (options.inline) {
+        this.render();
+        this.bind();
+        this.isShown = true;
+      }
+      this.ready = true;
+      if (isFunction(options.ready)) {
+        addListener(element, EVENT_READY, options.ready, {
+          once: true
+        });
+      }
+      if (dispatchEvent(element, EVENT_READY) === false) {
+        this.ready = false;
+        return;
+      }
+      if (this.ready && options.inline) {
+        this.view(this.index);
+      }
+    }
+    /**
+     * Get the no conflict viewer class.
+     * @returns {Viewer} The viewer class.
+     */
+  }], [{
+    key: "noConflict",
+    value: function noConflict() {
+      window.Viewer = AnotherViewer;
+      return Viewer2;
+    }
+    /**
+     * Change the default options.
+     * @param {Object} options - The new default options.
+     */
+  }, {
+    key: "setDefaults",
+    value: function setDefaults(options) {
+      assign(DEFAULTS, isPlainObject(options) && options);
+    }
+  }]);
   return Viewer2;
-})();
+}();
 assign(Viewer.prototype, render, events, handlers, methods, others);
 
 // node_modules/vitepress-plugin-image-viewer/lib/viewer.js
 var viewer = null;
-var setViewer = (el = '.vp-doc', option) => {
+var setViewer = (el = ".vp-doc", option) => {
   const defaultBaseOption = {
     navbar: false,
     title: false,
@@ -3365,29 +2846,27 @@ var setViewer = (el = '.vp-doc', option) => {
       prev: 4,
       next: 4,
       reset: 4,
-      oneToOne: 4,
-    },
+      oneToOne: 4
+    }
   };
   viewer = new Viewer(document.querySelector(el), {
     ...defaultBaseOption,
-    ...option,
+    ...option
   });
 };
 var imageViewer = (route, el, option) => {
   onMounted(() => {
     setViewer(el, option);
   });
-  watch(
-    () => route.path,
-    () =>
-      nextTick(() => {
-        viewer == null ? void 0 : viewer.destroy();
-        setViewer(el, option);
-      }),
-  );
+  watch(() => route.path, () => nextTick(() => {
+    viewer == null ? void 0 : viewer.destroy();
+    setViewer(el, option);
+  }));
 };
 var viewer_default = imageViewer;
-export { viewer_default as default };
+export {
+  viewer_default as default
+};
 /*! Bundled license information:
 
 viewerjs/dist/viewer.esm.js:
