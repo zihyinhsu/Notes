@@ -188,6 +188,10 @@ export default defineConfig({
                   text: '整合 Supabase',
                   link: '/Frontend/nuxt3/supabase',
                 },
+                {
+                  text: '整合 Prisma',
+                  link: '/Frontend/nuxt3/prisma',
+                },
               ],
             },
           ],
