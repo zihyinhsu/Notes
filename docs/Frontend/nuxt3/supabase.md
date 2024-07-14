@@ -34,7 +34,7 @@ postgresql://postgres.aikkoilftwougwymplvd:[DATABASE-PASSWORD]@aws-0-ap-northeas
 ```env [.env]
 SUPABASE_URL = ********
 SUPABASE_KEY = ********
-DATABSE_URL = ********
+DATABASE_URL = ********
 ```
 
 ```ts [nuxt.config.ts]
