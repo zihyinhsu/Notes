@@ -322,6 +322,12 @@ async function handleGoogleLogin() {
 </template>
 ```
 
+### 坑點紀錄
+
+當要部署到正式環境時，要記得來這裡填寫 redirect url，才不會登入後一直跳轉到 `http://localhost:3000`。
+
+![redirectUrl](img/redirectUrl.png)
+
 ## TypeScript support
 
 要讓 supabase 也支援 TS，需進行以下設定：
