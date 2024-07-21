@@ -322,6 +322,15 @@ async function handleGoogleLogin() {
 </template>
 ```
 
+## TypeScript support
+
+要讓 supabase 也支援 TS，需進行以下設定：
+
+```bash
+npx supabase login
+npx supabase gen types --lang=typescript --project-id [project-id] > types/database.types.ts
+```
+
 ---
 
 **參考資料：**
@@ -329,3 +338,4 @@ async function handleGoogleLogin() {
 1. [Supabase Doc](https://supabase.com/docs/guides/getting-started/tutorials/with-nuxt-3)
 2. [Nuxt Supabase](https://supabase.nuxtjs.org/get-started)
 3. [Create a new user](https://supabase.com/docs/reference/javascript/auth-signup)
+4. [Nuxt Supabase TypeScript ](https://supabase.nuxtjs.org/get-started#types)
