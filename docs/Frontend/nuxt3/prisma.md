@@ -120,6 +120,16 @@ pnpm prisma-seed
 
 ![database](img/database.png)
 
+## 坑點紀錄
+
+要部署到正式環境時，記得在 build 指令上也新增 `prisma generate`，如此每次部署時才會匹配最新的資料庫結構。
+
+```json
+"scripts": {
+  "build": "prisma generate && nuxt build",
+},
+```
+
 ---
 
 **參考資料：**
