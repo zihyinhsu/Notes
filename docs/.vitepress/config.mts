@@ -192,6 +192,10 @@ export default defineConfig({
                   text: '整合 Prisma',
                   link: '/Frontend/nuxt3/prisma',
                 },
+                {
+                  text: '整合藍新金流',
+                  link: '/Frontend/nuxt3/newebpay',
+                },
               ],
             },
           ],
